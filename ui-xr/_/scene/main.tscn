@@ -3,11 +3,13 @@
 [ext_resource type="Script" uid="uid://clipxhr1jpdbq" path="res://addons/godot-demo-xr/scenes/demo_scene_base.gd" id="1_c3qei"]
 [ext_resource type="PackedScene" uid="uid://bnx4hithcij6y" path="res://addons/godot-xr-tools/hands/model/Hand_Glove_low_L.gltf" id="1_nm8mh"]
 [ext_resource type="PackedScene" uid="uid://csgsp0wuw8ucy" path="res://addons/godot-xr-tools/hands/model/Hand_Glove_low_R.gltf" id="2_cubx4"]
+[ext_resource type="Script" uid="uid://b18kkstg643yw" path="res://addons/godot-xr-tools/functions/function_pickup.gd" id="3_qp4f5"]
 [ext_resource type="PackedScene" uid="uid://cewdh5p3ml2mk" path="res://_/scene/background.tscn" id="4_cmwcy"]
 [ext_resource type="PackedScene" uid="uid://cqhw276realc" path="res://addons/godot-xr-tools/functions/function_pointer.tscn" id="5_585k0"]
 [ext_resource type="PackedScene" uid="uid://clujaf3u776a3" path="res://addons/godot-xr-tools/objects/viewport_2d_in_3d.tscn" id="6_c3qei"]
 [ext_resource type="PackedScene" uid="uid://usscvf53i5pv" path="res://_/scene/UI.tscn" id="7_585k0"]
 [ext_resource type="PackedScene" uid="uid://dgdb1texynduw" path="res://addons/godot-xr-tools/objects/virtual_keyboard.tscn" id="7_c3qei"]
+[ext_resource type="PackedScene" uid="uid://bei0bw2gg5ig" path="res://_/scene/Nicolas/documentation_pickable_beta.tscn" id="10_qp4f5"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_1gxwg"]
 sky_horizon_color = Color(0.66224277, 0.6717428, 0.6867428, 1)
@@ -21,37 +23,37 @@ background_mode = 2
 sky = SubResource("Sky_glqed")
 tonemap_mode = 2
 
-[sub_resource type="QuadMesh" id="QuadMesh_585k0"]
+[sub_resource type="QuadMesh" id="QuadMesh_rwjbu"]
 resource_local_to_scene = true
 size = Vector2(0.3, 0.6)
 
-[sub_resource type="ViewportTexture" id="ViewportTexture_o511j"]
+[sub_resource type="ViewportTexture" id="ViewportTexture_l4bru"]
 viewport_path = NodePath("Viewport2Din3D/Viewport")
 
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_qp4f5"]
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_bvtn2"]
 transparency = 1
 cull_mode = 2
-albedo_texture = SubResource("ViewportTexture_o511j")
+albedo_texture = SubResource("ViewportTexture_l4bru")
 texture_filter = 1
 
-[sub_resource type="BoxShape3D" id="BoxShape3D_rwjbu"]
+[sub_resource type="BoxShape3D" id="BoxShape3D_jtqnq"]
 resource_local_to_scene = true
 size = Vector3(0.3, 0.6, 0.02)
 
-[sub_resource type="QuadMesh" id="QuadMesh_l4bru"]
+[sub_resource type="QuadMesh" id="QuadMesh_8fnf6"]
 resource_local_to_scene = true
 size = Vector2(0.75, 0.375)
 
-[sub_resource type="ViewportTexture" id="ViewportTexture_bvtn2"]
+[sub_resource type="ViewportTexture" id="ViewportTexture_0bajj"]
 viewport_path = NodePath("VirtualKeyboard/Viewport")
 
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_jtqnq"]
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_8i4cd"]
 cull_mode = 2
 shading_mode = 0
-albedo_texture = SubResource("ViewportTexture_bvtn2")
+albedo_texture = SubResource("ViewportTexture_0bajj")
 texture_filter = 1
 
-[sub_resource type="BoxShape3D" id="BoxShape3D_8fnf6"]
+[sub_resource type="BoxShape3D" id="BoxShape3D_ov4wx"]
 resource_local_to_scene = true
 size = Vector3(0.75, 0.375, 0.02)
 
@@ -74,6 +76,13 @@ tracker = &"left_hand"
 
 [node name="hand_l" parent="XROrigin3D/XRControllerLeft" unique_id=1441204479 instance=ExtResource("1_nm8mh")]
 
+[node name="XRToolsFunctionPickup" type="Node3D" parent="XROrigin3D/XRControllerLeft" unique_id=1325619244]
+script = ExtResource("3_qp4f5")
+metadata/_custom_type_script = "uid://b18kkstg643yw"
+
+[node name="FunctionPointer" parent="XROrigin3D/XRControllerLeft" unique_id=1883081527 instance=ExtResource("5_585k0")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.02, 0.05, -0.1)
+
 [node name="XRControllerRight" type="XRController3D" parent="XROrigin3D" unique_id=1510464946]
 tracker = &"right_hand"
 
@@ -82,10 +91,15 @@ tracker = &"right_hand"
 [node name="FunctionPointer" parent="XROrigin3D/XRControllerRight" unique_id=1203588822 instance=ExtResource("5_585k0")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.02, 0.05, -0.1)
 
+[node name="XRToolsFunctionPickup" type="Node3D" parent="XROrigin3D/XRControllerRight" unique_id=2026082501]
+script = ExtResource("3_qp4f5")
+metadata/_custom_type_script = "uid://b18kkstg643yw"
+
 [node name="Background" parent="." unique_id=72946100 instance=ExtResource("4_cmwcy")]
 
 [node name="Viewport2Din3D" parent="." unique_id=1800671737 instance=ExtResource("6_c3qei")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.10918611, 0.4, -0.8074999)
+visible = false
 screen_size = Vector2(0.3, 0.6)
 viewport_size = Vector2(270, 480)
 
@@ -104,30 +118,36 @@ ratio = 0.5625
 layout_mode = 2
 
 [node name="Screen" parent="Viewport2Din3D" index="1" unique_id=398126368]
-mesh = SubResource("QuadMesh_585k0")
-surface_material_override/0 = SubResource("StandardMaterial3D_qp4f5")
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.48849726, 0.26422712, 0)
+mesh = SubResource("QuadMesh_rwjbu")
+surface_material_override/0 = SubResource("StandardMaterial3D_bvtn2")
 
 [node name="StaticBody3D" parent="Viewport2Din3D" index="2" unique_id=262540866]
 screen_size = Vector2(0.3, 0.6)
 viewport_size = Vector2(270, 480)
 
 [node name="CollisionShape3D" parent="Viewport2Din3D/StaticBody3D" index="0" unique_id=1284190118]
-shape = SubResource("BoxShape3D_rwjbu")
+shape = SubResource("BoxShape3D_jtqnq")
 
 [node name="VirtualKeyboard" parent="." unique_id=1436476854 instance=ExtResource("7_c3qei")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.49762136, 0.40759194, -0.5480784)
+visible = false
 screen_size = Vector2(0.75, 0.375)
 scene_properties_keys = PackedStringArray("virtual_keyboard_2d.gd")
 
 [node name="Screen" parent="VirtualKeyboard" index="1" unique_id=398126368]
-mesh = SubResource("QuadMesh_l4bru")
-surface_material_override/0 = SubResource("StandardMaterial3D_jtqnq")
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.7208849, 0, -0.70516205)
+mesh = SubResource("QuadMesh_8fnf6")
+surface_material_override/0 = SubResource("StandardMaterial3D_8i4cd")
 
 [node name="StaticBody3D" parent="VirtualKeyboard" index="2" unique_id=262540866]
 screen_size = Vector2(0.75, 0.375)
 
 [node name="CollisionShape3D" parent="VirtualKeyboard/StaticBody3D" index="0" unique_id=1284190118]
-shape = SubResource("BoxShape3D_8fnf6")
+shape = SubResource("BoxShape3D_ov4wx")
+
+[node name="DocumentationPickup" parent="." unique_id=2115070077 instance=ExtResource("10_qp4f5")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.8217493, -0.9097098)
 
 [editable path="Viewport2Din3D"]
 [editable path="VirtualKeyboard"]
