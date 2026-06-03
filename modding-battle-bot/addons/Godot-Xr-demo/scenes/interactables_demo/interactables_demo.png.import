@@ -4,15 +4,16 @@ importer="texture"
 type="CompressedTexture2D"
 uid="uid://bv0r0klv2u7tl"
 path.s3tc="res://.godot/imported/interactables_demo.png-0669173b928bfa4f37fdc079fcbaeeb2.s3tc.ctex"
+path.etc2="res://.godot/imported/interactables_demo.png-0669173b928bfa4f37fdc079fcbaeeb2.etc2.ctex"
 metadata={
-"imported_formats": ["s3tc_bptc"],
+"imported_formats": ["s3tc_bptc", "etc2_astc"],
 "vram_texture": true
 }
 
 [deps]
 
 source_file="res://addons/Godot-Xr-demo/scenes/interactables_demo/interactables_demo.png"
-dest_files=["res://.godot/imported/interactables_demo.png-0669173b928bfa4f37fdc079fcbaeeb2.s3tc.ctex"]
+dest_files=["res://.godot/imported/interactables_demo.png-0669173b928bfa4f37fdc079fcbaeeb2.s3tc.ctex", "res://.godot/imported/interactables_demo.png-0669173b928bfa4f37fdc079fcbaeeb2.etc2.ctex"]
 
 [params]
 

@@ -4,15 +4,16 @@ importer="texture"
 type="CompressedTexture2D"
 uid="uid://dqoe1c5yn5dnv"
 path.bptc="res://.godot/imported/SkyOnlyHDRI023_2K-TONEMAPPED.jpg-9f8d807f163ef00810057726b989d6d8.bptc.ctex"
+path.astc="res://.godot/imported/SkyOnlyHDRI023_2K-TONEMAPPED.jpg-9f8d807f163ef00810057726b989d6d8.astc.ctex"
 metadata={
-"imported_formats": ["s3tc_bptc"],
+"imported_formats": ["s3tc_bptc", "etc2_astc"],
 "vram_texture": true
 }
 
 [deps]
 
 source_file="res://addons/Godot-Xr-demo/assets/ambientcg.com/SkyOnlyHDRI023_2K-TONEMAPPED.jpg"
-dest_files=["res://.godot/imported/SkyOnlyHDRI023_2K-TONEMAPPED.jpg-9f8d807f163ef00810057726b989d6d8.bptc.ctex"]
+dest_files=["res://.godot/imported/SkyOnlyHDRI023_2K-TONEMAPPED.jpg-9f8d807f163ef00810057726b989d6d8.bptc.ctex", "res://.godot/imported/SkyOnlyHDRI023_2K-TONEMAPPED.jpg-9f8d807f163ef00810057726b989d6d8.astc.ctex"]
 
 [params]
 

@@ -4,15 +4,16 @@ importer="texture"
 type="CompressedTexture2D"
 uid="uid://bwkm0t73t80cs"
 path.s3tc="res://.godot/imported/grappling_demo.png-9f6bc8c350fa954c358f49841bdaab5e.s3tc.ctex"
+path.etc2="res://.godot/imported/grappling_demo.png-9f6bc8c350fa954c358f49841bdaab5e.etc2.ctex"
 metadata={
-"imported_formats": ["s3tc_bptc"],
+"imported_formats": ["s3tc_bptc", "etc2_astc"],
 "vram_texture": true
 }
 
 [deps]
 
 source_file="res://addons/Godot-Xr-demo/scenes/grappling_demo/grappling_demo.png"
-dest_files=["res://.godot/imported/grappling_demo.png-9f6bc8c350fa954c358f49841bdaab5e.s3tc.ctex"]
+dest_files=["res://.godot/imported/grappling_demo.png-9f6bc8c350fa954c358f49841bdaab5e.s3tc.ctex", "res://.godot/imported/grappling_demo.png-9f6bc8c350fa954c358f49841bdaab5e.etc2.ctex"]
 
 [params]
 
