@@ -4,15 +4,16 @@ importer="texture"
 type="CompressedTexture2D"
 uid="uid://bbe7o7pdq38m2"
 path.s3tc="res://.godot/imported/poke_demo.png-a6e312483f047cc675ce8a8812cd6a0e.s3tc.ctex"
+path.etc2="res://.godot/imported/poke_demo.png-a6e312483f047cc675ce8a8812cd6a0e.etc2.ctex"
 metadata={
-"imported_formats": ["s3tc_bptc"],
+"imported_formats": ["s3tc_bptc", "etc2_astc"],
 "vram_texture": true
 }
 
 [deps]
 
 source_file="res://addons/Godot-Xr-demo/scenes/poke_demo/poke_demo.png"
-dest_files=["res://.godot/imported/poke_demo.png-a6e312483f047cc675ce8a8812cd6a0e.s3tc.ctex"]
+dest_files=["res://.godot/imported/poke_demo.png-a6e312483f047cc675ce8a8812cd6a0e.s3tc.ctex", "res://.godot/imported/poke_demo.png-a6e312483f047cc675ce8a8812cd6a0e.etc2.ctex"]
 
 [params]
 
