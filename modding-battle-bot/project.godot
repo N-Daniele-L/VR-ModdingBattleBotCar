@@ -11,7 +11,7 @@ config_version=5
 [application]
 
 config/name="ModdingBattleBot"
-run/main_scene="uid://dkr1jkk3jerux"
+run/main_scene="uid://dbeb7yij08a0k"
 config/features=PackedStringArray("4.6", "GL Compatibility")
 
 [autoload]
@@ -21,7 +21,7 @@ XRToolsRumbleManager="*uid://by853dk86g1qw"
 
 [editor_plugins]
 
-enabled=PackedStringArray("res://addons/Godot-Xr-demo/addons/godot-xr-tools/plugin.cfg", "res://addons/godot-xr-tools/plugin.cfg")
+enabled=PackedStringArray("res://addons/godot-xr-tools/plugin.cfg")
 
 [physics]
 
