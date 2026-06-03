@@ -1,7 +1,7 @@
 extends Node
 
 ## The place for the player to write code to be run when requested.
-@export var _code_edit:CodeEdit
+@export var code_edit:CodeEdit
 
 func _ready() -> void:
 	load_text_color_style()
@@ -62,4 +62,4 @@ func load_text_color_style():
 	highlighter.add_color_region("'", "'", Color("06DA01"), false)
 	highlighter.add_color_region("#", "", Color("7d7d7d"), true)
 
-	_code_edit.syntax_highlighter = highlighter
+	code_edit.syntax_highlighter = highlighter

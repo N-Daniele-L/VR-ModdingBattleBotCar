@@ -196,57 +196,64 @@ func reduce_text_size() -> void:
 		code_edit.get_theme_font_size("font_size") - 1
 	)
 
-func load_text_color_style() -> void:
+func load_text_color_style():
 	var highlighter := CodeHighlighter.new()
 
+	# Keywords
 	highlighter.keyword_colors = {
-		"if": Color("ff7085"),
-		"elif": Color("ff7085"),
-		"else": Color("ff7085"),
-		"for": Color("ff7085"),
-		"while": Color("ff7085"),
-		"match": Color("ff7085"),
-		"break": Color("ff7085"),
-		"continue": Color("ff7085"),
-		"pass": Color("ff7085"),
-		"return": Color("ff7085"),
-		"class": Color("ff7085"),
-		"class_name": Color("ff7085"),
-		"extends": Color("ff7085"),
-		"func": Color("ff7085"),
-		"static": Color("ff7085"),
-		"const": Color("ff7085"),
-		"var": Color("ff7085"),
-		"enum": Color("ff7085"),
-		"signal": Color("ff7085"),
-		"await": Color("ff7085"),
-		"assert": Color("ff7085")
+		"if": Color("06DA01"),
+		"elif": Color("06DA01"),
+		"else": Color("06DA01"),
+		"for": Color("06DA01"),
+		"while": Color("06DA01"),
+		"match": Color("06DA01"),
+		"break": Color("06DA01"),
+		"continue": Color("06DA01"),
+		"pass": Color("06DA01"),
+		"return": Color("06DA01"),
+		"class": Color("06DA01"),
+		"class_name": Color("06DA01"),
+		"extends": Color("06DA01"),
+		"func": Color("06DA01"),
+		"static": Color("06DA01"),
+		"const": Color("06DA01"),
+		"var": Color("06DA01"),
+		"enum": Color("06DA01"),
+		"signal": Color("06DA01"),
+		"await": Color("06DA01"),
+		"yield": Color("06DA01"),
+		"assert": Color("06DA01")
 	}
 
+	# Built-in types
 	highlighter.member_keyword_colors = {
-		"int": Color("42ffc2"),
-		"float": Color("42ffc2"),
-		"bool": Color("42ffc2"),
-		"String": Color("42ffc2"),
-		"Array": Color("42ffc2"),
-		"Dictionary": Color("42ffc2"),
-		"Vector2": Color("42ffc2"),
-		"Vector3": Color("42ffc2"),
-		"Color": Color("42ffc2"),
-		"Node": Color("42ffc2"),
-		"Node3D": Color("42ffc2"),
-		"Object": Color("42ffc2")
+		"int": Color("000AAB"),
+		"float": Color("000AAB"),
+		"bool": Color("000AAB"),
+		"String": Color("000AAB"),
+		"Array": Color("000AAB"),
+		"Dictionary": Color("000AAB"),
+		"Vector2": Color("000AAB"),
+		"Vector3": Color("000AAB"),
+		"Color": Color("000AAB"),
+		"Node": Color("000AAB"),
+		"Object": Color("000AAB")
 	}
 
-	highlighter.number_color = Color("a1ffe0")
-	highlighter.symbol_color = Color("abc9ff")
-	highlighter.function_color = Color("57b3ff")
-	highlighter.member_variable_color = Color("c6a0ff")
-	highlighter.add_color_region("\"", "\"", Color("ffd942"), false)
-	highlighter.add_color_region("'", "'", Color("ffd942"), false)
-	highlighter.add_color_region("#", "", Color("7a7a7a"), true)
+	# General token colors
+	highlighter.number_color = Color("06DA01")
+	highlighter.symbol_color = Color("514EB2")
+	highlighter.function_color = Color("000AAB")
+	highlighter.member_variable_color = Color("623CD4")
+	
+
+	# Regions
+	highlighter.add_color_region("\"", "\"", Color("06DA01"), false)
+	highlighter.add_color_region("'", "'", Color("06DA01"), false)
+	highlighter.add_color_region("#", "", Color("7d7d7d"), true)
 
 	code_edit.syntax_highlighter = highlighter
+
 
 func run_command() -> void:
 	pass # Replace with function body.
