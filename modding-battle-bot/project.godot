@@ -1,0 +1,45 @@
+; Engine configuration file.
+; It's best edited using the editor UI and not directly,
+; since the parameters that go here are not all obvious.
+;
+; Format:
+;   [section] ; section goes between []
+;   param=value ; assign values to parameters
+
+config_version=5
+
+[application]
+
+config/name="ModdingBattleBot"
+run/main_scene="uid://dkr1jkk3jerux"
+config/features=PackedStringArray("4.6", "GL Compatibility")
+
+[autoload]
+
+XRToolsUserSettings="*uid://bqgb8i74tm0t"
+XRToolsRumbleManager="*uid://by853dk86g1qw"
+
+[editor_plugins]
+
+enabled=PackedStringArray("res://addons/Godot-Xr-demo/addons/godot-xr-tools/plugin.cfg", "res://addons/godot-xr-tools/plugin.cfg")
+
+[physics]
+
+3d/physics_engine="Jolt Physics"
+
+[rendering]
+
+rendering_device/driver.windows="d3d12"
+renderer/rendering_method="gl_compatibility"
+renderer/rendering_method.mobile="gl_compatibility"
+environment/defaults/default_clear_color=Color(0.3019608, 0.3019608, 0.3019608, 0)
+
+[xr]
+
+openxr/enabled=true
+openxr/default_action_map=""
+openxr/extensions/hand_tracking=true
+openxr/extensions/hand_tracking_unobstructed_data_source=true
+openxr/extensions/hand_tracking_controller_data_source=true
+openxr/extensions/hand_interaction_profile=true
+shaders/enabled=true
