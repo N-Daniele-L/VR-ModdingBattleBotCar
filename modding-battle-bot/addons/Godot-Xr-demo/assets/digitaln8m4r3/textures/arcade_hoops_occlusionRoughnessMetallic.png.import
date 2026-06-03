@@ -4,15 +4,16 @@ importer="texture"
 type="CompressedTexture2D"
 uid="uid://ble8jcmcxulaf"
 path.s3tc="res://.godot/imported/arcade_hoops_occlusionRoughnessMetallic.png-5970c0f7dd29372cb05732fe6fc7625a.s3tc.ctex"
+path.etc2="res://.godot/imported/arcade_hoops_occlusionRoughnessMetallic.png-5970c0f7dd29372cb05732fe6fc7625a.etc2.ctex"
 metadata={
-"imported_formats": ["s3tc_bptc"],
+"imported_formats": ["s3tc_bptc", "etc2_astc"],
 "vram_texture": true
 }
 
 [deps]
 
 source_file="res://addons/Godot-Xr-demo/assets/digitaln8m4r3/textures/arcade_hoops_occlusionRoughnessMetallic.png"
-dest_files=["res://.godot/imported/arcade_hoops_occlusionRoughnessMetallic.png-5970c0f7dd29372cb05732fe6fc7625a.s3tc.ctex"]
+dest_files=["res://.godot/imported/arcade_hoops_occlusionRoughnessMetallic.png-5970c0f7dd29372cb05732fe6fc7625a.s3tc.ctex", "res://.godot/imported/arcade_hoops_occlusionRoughnessMetallic.png-5970c0f7dd29372cb05732fe6fc7625a.etc2.ctex"]
 
 [params]
 
