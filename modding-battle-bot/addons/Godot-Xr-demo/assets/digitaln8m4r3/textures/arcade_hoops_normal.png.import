@@ -4,15 +4,16 @@ importer="texture"
 type="CompressedTexture2D"
 uid="uid://dj5e06undxfat"
 path.s3tc="res://.godot/imported/arcade_hoops_normal.png-f9c4a94da64754e1bccb883c2047b42c.s3tc.ctex"
+path.etc2="res://.godot/imported/arcade_hoops_normal.png-f9c4a94da64754e1bccb883c2047b42c.etc2.ctex"
 metadata={
-"imported_formats": ["s3tc_bptc"],
+"imported_formats": ["s3tc_bptc", "etc2_astc"],
 "vram_texture": true
 }
 
 [deps]
 
 source_file="res://addons/Godot-Xr-demo/assets/digitaln8m4r3/textures/arcade_hoops_normal.png"
-dest_files=["res://.godot/imported/arcade_hoops_normal.png-f9c4a94da64754e1bccb883c2047b42c.s3tc.ctex"]
+dest_files=["res://.godot/imported/arcade_hoops_normal.png-f9c4a94da64754e1bccb883c2047b42c.s3tc.ctex", "res://.godot/imported/arcade_hoops_normal.png-f9c4a94da64754e1bccb883c2047b42c.etc2.ctex"]
 
 [params]
 

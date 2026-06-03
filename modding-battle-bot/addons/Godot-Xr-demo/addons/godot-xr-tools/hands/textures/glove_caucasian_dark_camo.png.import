@@ -4,15 +4,16 @@ importer="texture"
 type="CompressedTexture2D"
 uid="uid://c7jutkax2fd1k"
 path.s3tc="res://.godot/imported/glove_caucasian_dark_camo.png-8d3a6ce416ddc54f762e00bd407189c2.s3tc.ctex"
+path.etc2="res://.godot/imported/glove_caucasian_dark_camo.png-8d3a6ce416ddc54f762e00bd407189c2.etc2.ctex"
 metadata={
-"imported_formats": ["s3tc_bptc"],
+"imported_formats": ["s3tc_bptc", "etc2_astc"],
 "vram_texture": true
 }
 
 [deps]
 
 source_file="res://addons/Godot-Xr-demo/addons/godot-xr-tools/hands/textures/glove_caucasian_dark_camo.png"
-dest_files=["res://.godot/imported/glove_caucasian_dark_camo.png-8d3a6ce416ddc54f762e00bd407189c2.s3tc.ctex"]
+dest_files=["res://.godot/imported/glove_caucasian_dark_camo.png-8d3a6ce416ddc54f762e00bd407189c2.s3tc.ctex", "res://.godot/imported/glove_caucasian_dark_camo.png-8d3a6ce416ddc54f762e00bd407189c2.etc2.ctex"]
 
 [params]
 
