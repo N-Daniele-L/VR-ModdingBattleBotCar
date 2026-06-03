@@ -1,0 +1,61 @@
+[gd_scene format=3 uid="uid://usscvf53i5pv"]
+
+[node name="Control" type="Control" unique_id=1209629623]
+layout_mode = 3
+anchor_right = 0.234375
+anchor_bottom = 0.7407407
+offset_bottom = 3.0517578e-05
+grow_horizontal = 2
+grow_vertical = 2
+metadata/_edit_use_anchors_ = true
+
+[node name="ColorRect" type="ColorRect" parent="." unique_id=800126746]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+metadata/_edit_use_anchors_ = true
+
+[node name="AspectRatioContainer" type="AspectRatioContainer" parent="." unique_id=44109277]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+ratio = 0.5625
+metadata/_edit_use_anchors_ = true
+
+[node name="VBoxContainer" type="VBoxContainer" parent="AspectRatioContainer" unique_id=427802915]
+layout_mode = 2
+
+[node name="HBoxContainer" type="HBoxContainer" parent="AspectRatioContainer/VBoxContainer" unique_id=1932958817]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="TextEdit2" type="TextEdit" parent="AspectRatioContainer/VBoxContainer/HBoxContainer" unique_id=540411290]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_font_sizes/font_size = 8
+placeholder_text = "extends Node3D
+
+@onready var sprite_3d: Sprite3D = $Sprite3D
+@onready var sub_viewport: SubViewport = $SubViewport
+
+func _ready() -> void:
+	sprite_3d.texture = sub_viewport.get_texture()
+"
+
+[node name="HBoxContainer2" type="HBoxContainer" parent="AspectRatioContainer/VBoxContainer" unique_id=1259849583]
+layout_mode = 2
+alignment = 1
+
+[node name="Button" type="Button" parent="AspectRatioContainer/VBoxContainer/HBoxContainer2" unique_id=1750027606]
+layout_mode = 2
+text = "RUN"
+
+[node name="Button2" type="Button" parent="AspectRatioContainer/VBoxContainer/HBoxContainer2" unique_id=1068721416]
+layout_mode = 2
+text = "CANCEL"
