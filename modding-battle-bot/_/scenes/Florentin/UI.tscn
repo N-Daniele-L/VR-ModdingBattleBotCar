@@ -1,0 +1,88 @@
+[gd_scene format=3 uid="uid://1d33f8fyvdp1"]
+
+[ext_resource type="FontFile" path="res://_/assets/Florentin/fonts/terminal-grotesque.ttf" id="1_66nus"]
+[ext_resource type="Script" uid="uid://cwpcoivlox3or" path="res://_/scenes/Florentin/CodeEditColor.gd" id="1_802u8"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_802u8"]
+content_margin_left = 16.0
+content_margin_right = 16.0
+bg_color = Color(0.023529412, 0.85490197, 0.003921569, 1)
+anti_aliasing = false
+
+[node name="UI" type="Control" unique_id=1982713081]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="." unique_id=1208743657]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="ColorRect" type="ColorRect" parent="VBoxContainer" unique_id=1975430072]
+layout_mode = 2
+size_flags_vertical = 3
+color = Color(0, 0, 0, 1)
+
+[node name="CodeEdit" type="CodeEdit" parent="VBoxContainer/ColorRect" unique_id=2141369229]
+layout_mode = 0
+anchor_top = 0.0033333334
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_vertical = 3
+theme_override_fonts/font = ExtResource("1_66nus")
+theme_override_font_sizes/font_size = 32
+text = "extends Node
+
+func _ready (delta: float) -> void:
+	pass
+
+func _process(delta: float) -> void:
+	pass"
+placeholder_text = "CODE TO WIN"
+wrap_mode = 1
+gutters_draw_breakpoints_gutter = true
+gutters_draw_bookmarks = true
+gutters_draw_executing_lines = true
+gutters_draw_line_numbers = true
+metadata/_edit_use_anchors_ = true
+
+[node name="CodeEditColor" type="Node" parent="VBoxContainer/ColorRect" unique_id=2134826856 node_paths=PackedStringArray("_code_edit")]
+script = ExtResource("1_802u8")
+_code_edit = NodePath("../CodeEdit")
+
+[node name="BTN_Container" type="HBoxContainer" parent="." unique_id=2033867801]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.3534375
+anchor_top = 0.9166667
+anchor_right = 0.6465625
+anchor_bottom = 0.9766667
+grow_horizontal = 2
+grow_vertical = 0
+size_flags_vertical = 10
+theme_override_constants/separation = 16
+alignment = 1
+metadata/_edit_use_anchors_ = true
+
+[node name="BTN_Run" type="Button" parent="BTN_Container" unique_id=1463923365]
+layout_mode = 2
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_font_sizes/font_size = 32
+theme_override_styles/normal = SubResource("StyleBoxFlat_802u8")
+text = "Run Script"
+
+[node name="BTN_Reset" type="Button" parent="BTN_Container" unique_id=946311897]
+layout_mode = 2
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_font_sizes/font_size = 32
+theme_override_styles/normal = SubResource("StyleBoxFlat_802u8")
+text = "Stop and Reset"
