@@ -4,16 +4,15 @@ importer="texture"
 type="CompressedTexture2D"
 uid="uid://dwryn8mjdj86m"
 path.s3tc="res://.godot/imported/footstep movement demo.png-52241a9078cd0da710713503509c5f51.s3tc.ctex"
-path.etc2="res://.godot/imported/footstep movement demo.png-52241a9078cd0da710713503509c5f51.etc2.ctex"
 metadata={
-"imported_formats": ["s3tc_bptc", "etc2_astc"],
+"imported_formats": ["s3tc_bptc"],
 "vram_texture": true
 }
 
 [deps]
 
 source_file="res://addons/Godot-Xr-demo/scenes/footstep_movement_demo/footstep movement demo.png"
-dest_files=["res://.godot/imported/footstep movement demo.png-52241a9078cd0da710713503509c5f51.s3tc.ctex", "res://.godot/imported/footstep movement demo.png-52241a9078cd0da710713503509c5f51.etc2.ctex"]
+dest_files=["res://.godot/imported/footstep movement demo.png-52241a9078cd0da710713503509c5f51.s3tc.ctex"]
 
 [params]
 

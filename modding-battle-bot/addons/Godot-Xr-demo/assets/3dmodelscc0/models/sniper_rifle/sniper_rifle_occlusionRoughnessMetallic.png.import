@@ -4,16 +4,15 @@ importer="texture"
 type="CompressedTexture2D"
 uid="uid://flu3yu2bcean"
 path.s3tc="res://.godot/imported/sniper_rifle_occlusionRoughnessMetallic.png-4136743d59ba8b9978e25981176de91a.s3tc.ctex"
-path.etc2="res://.godot/imported/sniper_rifle_occlusionRoughnessMetallic.png-4136743d59ba8b9978e25981176de91a.etc2.ctex"
 metadata={
-"imported_formats": ["s3tc_bptc", "etc2_astc"],
+"imported_formats": ["s3tc_bptc"],
 "vram_texture": true
 }
 
 [deps]
 
 source_file="res://addons/Godot-Xr-demo/assets/3dmodelscc0/models/sniper_rifle/sniper_rifle_occlusionRoughnessMetallic.png"
-dest_files=["res://.godot/imported/sniper_rifle_occlusionRoughnessMetallic.png-4136743d59ba8b9978e25981176de91a.s3tc.ctex", "res://.godot/imported/sniper_rifle_occlusionRoughnessMetallic.png-4136743d59ba8b9978e25981176de91a.etc2.ctex"]
+dest_files=["res://.godot/imported/sniper_rifle_occlusionRoughnessMetallic.png-4136743d59ba8b9978e25981176de91a.s3tc.ctex"]
 
 [params]
 

@@ -4,16 +4,15 @@ importer="texture"
 type="CompressedTexture2D"
 uid="uid://cppboiios7ahd"
 path.s3tc="res://.godot/imported/pingpong_baseColor.png-f75c4bc73d37812c3d9db2d848fdcb8c.s3tc.ctex"
-path.etc2="res://.godot/imported/pingpong_baseColor.png-f75c4bc73d37812c3d9db2d848fdcb8c.etc2.ctex"
 metadata={
-"imported_formats": ["s3tc_bptc", "etc2_astc"],
+"imported_formats": ["s3tc_bptc"],
 "vram_texture": true
 }
 
 [deps]
 
 source_file="res://addons/Godot-Xr-demo/assets/digitaln8m4r3/textures/pingpong_baseColor.png"
-dest_files=["res://.godot/imported/pingpong_baseColor.png-f75c4bc73d37812c3d9db2d848fdcb8c.s3tc.ctex", "res://.godot/imported/pingpong_baseColor.png-f75c4bc73d37812c3d9db2d848fdcb8c.etc2.ctex"]
+dest_files=["res://.godot/imported/pingpong_baseColor.png-f75c4bc73d37812c3d9db2d848fdcb8c.s3tc.ctex"]
 
 [params]
 

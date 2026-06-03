@@ -4,16 +4,15 @@ importer="texture"
 type="CompressedTexture2D"
 uid="uid://dhnude8u8a26t"
 path.s3tc="res://.godot/imported/world_grab_demo.png-7820f159ff162cd713a49707e75f8e9f.s3tc.ctex"
-path.etc2="res://.godot/imported/world_grab_demo.png-7820f159ff162cd713a49707e75f8e9f.etc2.ctex"
 metadata={
-"imported_formats": ["s3tc_bptc", "etc2_astc"],
+"imported_formats": ["s3tc_bptc"],
 "vram_texture": true
 }
 
 [deps]
 
 source_file="res://addons/Godot-Xr-demo/scenes/world_grab_demo/world_grab_demo.png"
-dest_files=["res://.godot/imported/world_grab_demo.png-7820f159ff162cd713a49707e75f8e9f.s3tc.ctex", "res://.godot/imported/world_grab_demo.png-7820f159ff162cd713a49707e75f8e9f.etc2.ctex"]
+dest_files=["res://.godot/imported/world_grab_demo.png-7820f159ff162cd713a49707e75f8e9f.s3tc.ctex"]
 
 [params]
 

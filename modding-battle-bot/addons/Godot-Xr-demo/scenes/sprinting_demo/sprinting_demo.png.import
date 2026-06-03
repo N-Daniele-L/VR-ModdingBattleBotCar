@@ -4,16 +4,15 @@ importer="texture"
 type="CompressedTexture2D"
 uid="uid://v4807nasx1dc"
 path.s3tc="res://.godot/imported/sprinting_demo.png-218d5ee9f4e2d0508906eed1efe1435e.s3tc.ctex"
-path.etc2="res://.godot/imported/sprinting_demo.png-218d5ee9f4e2d0508906eed1efe1435e.etc2.ctex"
 metadata={
-"imported_formats": ["s3tc_bptc", "etc2_astc"],
+"imported_formats": ["s3tc_bptc"],
 "vram_texture": true
 }
 
 [deps]
 
 source_file="res://addons/Godot-Xr-demo/scenes/sprinting_demo/sprinting_demo.png"
-dest_files=["res://.godot/imported/sprinting_demo.png-218d5ee9f4e2d0508906eed1efe1435e.s3tc.ctex", "res://.godot/imported/sprinting_demo.png-218d5ee9f4e2d0508906eed1efe1435e.etc2.ctex"]
+dest_files=["res://.godot/imported/sprinting_demo.png-218d5ee9f4e2d0508906eed1efe1435e.s3tc.ctex"]
 
 [params]
 

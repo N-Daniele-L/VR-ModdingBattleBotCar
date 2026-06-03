@@ -4,16 +4,15 @@ importer="texture"
 type="CompressedTexture2D"
 uid="uid://r18u2tdbngqp"
 path.s3tc="res://.godot/imported/godot_token_baseColor.png-fce8116d2f21f177dbb633fb3714f68a.s3tc.ctex"
-path.etc2="res://.godot/imported/godot_token_baseColor.png-fce8116d2f21f177dbb633fb3714f68a.etc2.ctex"
 metadata={
-"imported_formats": ["s3tc_bptc", "etc2_astc"],
+"imported_formats": ["s3tc_bptc"],
 "vram_texture": true
 }
 
 [deps]
 
 source_file="res://addons/Godot-Xr-demo/assets/digitaln8m4r3/textures/godot_token_baseColor.png"
-dest_files=["res://.godot/imported/godot_token_baseColor.png-fce8116d2f21f177dbb633fb3714f68a.s3tc.ctex", "res://.godot/imported/godot_token_baseColor.png-fce8116d2f21f177dbb633fb3714f68a.etc2.ctex"]
+dest_files=["res://.godot/imported/godot_token_baseColor.png-fce8116d2f21f177dbb633fb3714f68a.s3tc.ctex"]
 
 [params]
 

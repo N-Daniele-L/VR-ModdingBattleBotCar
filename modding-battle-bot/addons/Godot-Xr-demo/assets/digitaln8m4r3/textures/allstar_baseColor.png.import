@@ -4,16 +4,15 @@ importer="texture"
 type="CompressedTexture2D"
 uid="uid://ba3u3jr42ft05"
 path.s3tc="res://.godot/imported/allstar_baseColor.png-ae101b4387faa975a20619a3618c505d.s3tc.ctex"
-path.etc2="res://.godot/imported/allstar_baseColor.png-ae101b4387faa975a20619a3618c505d.etc2.ctex"
 metadata={
-"imported_formats": ["s3tc_bptc", "etc2_astc"],
+"imported_formats": ["s3tc_bptc"],
 "vram_texture": true
 }
 
 [deps]
 
 source_file="res://addons/Godot-Xr-demo/assets/digitaln8m4r3/textures/allstar_baseColor.png"
-dest_files=["res://.godot/imported/allstar_baseColor.png-ae101b4387faa975a20619a3618c505d.s3tc.ctex", "res://.godot/imported/allstar_baseColor.png-ae101b4387faa975a20619a3618c505d.etc2.ctex"]
+dest_files=["res://.godot/imported/allstar_baseColor.png-ae101b4387faa975a20619a3618c505d.s3tc.ctex"]
 
 [params]
 
