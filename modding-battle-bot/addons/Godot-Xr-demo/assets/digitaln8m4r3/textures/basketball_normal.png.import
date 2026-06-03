@@ -4,15 +4,16 @@ importer="texture"
 type="CompressedTexture2D"
 uid="uid://b8wj6pe030wco"
 path.s3tc="res://.godot/imported/basketball_normal.png-67dbf0c6e7d33f02ac99a8413f70cdab.s3tc.ctex"
+path.etc2="res://.godot/imported/basketball_normal.png-67dbf0c6e7d33f02ac99a8413f70cdab.etc2.ctex"
 metadata={
-"imported_formats": ["s3tc_bptc"],
+"imported_formats": ["s3tc_bptc", "etc2_astc"],
 "vram_texture": true
 }
 
 [deps]
 
 source_file="res://addons/Godot-Xr-demo/assets/digitaln8m4r3/textures/basketball_normal.png"
-dest_files=["res://.godot/imported/basketball_normal.png-67dbf0c6e7d33f02ac99a8413f70cdab.s3tc.ctex"]
+dest_files=["res://.godot/imported/basketball_normal.png-67dbf0c6e7d33f02ac99a8413f70cdab.s3tc.ctex", "res://.godot/imported/basketball_normal.png-67dbf0c6e7d33f02ac99a8413f70cdab.etc2.ctex"]
 
 [params]
 

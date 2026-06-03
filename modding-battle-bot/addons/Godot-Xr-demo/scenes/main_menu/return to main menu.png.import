@@ -4,15 +4,16 @@ importer="texture"
 type="CompressedTexture2D"
 uid="uid://ckw6nliyayo6a"
 path.s3tc="res://.godot/imported/return to main menu.png-aa1dc73c02b3975ea998924089315c43.s3tc.ctex"
+path.etc2="res://.godot/imported/return to main menu.png-aa1dc73c02b3975ea998924089315c43.etc2.ctex"
 metadata={
-"imported_formats": ["s3tc_bptc"],
+"imported_formats": ["s3tc_bptc", "etc2_astc"],
 "vram_texture": true
 }
 
 [deps]
 
 source_file="res://addons/Godot-Xr-demo/scenes/main_menu/return to main menu.png"
-dest_files=["res://.godot/imported/return to main menu.png-aa1dc73c02b3975ea998924089315c43.s3tc.ctex"]
+dest_files=["res://.godot/imported/return to main menu.png-aa1dc73c02b3975ea998924089315c43.s3tc.ctex", "res://.godot/imported/return to main menu.png-aa1dc73c02b3975ea998924089315c43.etc2.ctex"]
 
 [params]
 

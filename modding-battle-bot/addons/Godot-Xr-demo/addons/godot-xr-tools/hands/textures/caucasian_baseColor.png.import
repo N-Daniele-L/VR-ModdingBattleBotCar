@@ -4,15 +4,16 @@ importer="texture"
 type="CompressedTexture2D"
 uid="uid://c506svon268ms"
 path.s3tc="res://.godot/imported/caucasian_baseColor.png-7f8a819b9255b2a1d5c389f6023393cf.s3tc.ctex"
+path.etc2="res://.godot/imported/caucasian_baseColor.png-7f8a819b9255b2a1d5c389f6023393cf.etc2.ctex"
 metadata={
-"imported_formats": ["s3tc_bptc"],
+"imported_formats": ["s3tc_bptc", "etc2_astc"],
 "vram_texture": true
 }
 
 [deps]
 
 source_file="res://addons/Godot-Xr-demo/addons/godot-xr-tools/hands/textures/caucasian_baseColor.png"
-dest_files=["res://.godot/imported/caucasian_baseColor.png-7f8a819b9255b2a1d5c389f6023393cf.s3tc.ctex"]
+dest_files=["res://.godot/imported/caucasian_baseColor.png-7f8a819b9255b2a1d5c389f6023393cf.s3tc.ctex", "res://.godot/imported/caucasian_baseColor.png-7f8a819b9255b2a1d5c389f6023393cf.etc2.ctex"]
 
 [params]
 

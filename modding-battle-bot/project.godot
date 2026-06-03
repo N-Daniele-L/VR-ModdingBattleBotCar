@@ -32,12 +32,14 @@ enabled=PackedStringArray("res://addons/Godot-Xr-demo/addons/godot-xr-tools/plug
 rendering_device/driver.windows="d3d12"
 renderer/rendering_method="gl_compatibility"
 renderer/rendering_method.mobile="gl_compatibility"
+textures/vram_compression/import_etc2_astc=true
 environment/defaults/default_clear_color=Color(0.3019608, 0.3019608, 0.3019608, 0)
 
 [xr]
 
 openxr/enabled=true
 openxr/default_action_map=""
+openxr/reference_space=2
 openxr/extensions/hand_tracking=true
 openxr/extensions/hand_tracking_unobstructed_data_source=true
 openxr/extensions/hand_tracking_controller_data_source=true
