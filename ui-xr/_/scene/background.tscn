@@ -3,22 +3,99 @@
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_p6vyb"]
 albedo_color = Color(0.41981313, 0.41981313, 0.4198131, 1)
 
-[sub_resource type="QuadMesh" id="QuadMesh_f0iv0"]
+[sub_resource type="QuadMesh" id="QuadMesh_p6vyb"]
 material = SubResource("StandardMaterial3D_p6vyb")
-size = Vector2(15, 15)
+size = Vector2(3, 3)
 orientation = 1
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_rfsgw"]
 margin = 0.01
 size = Vector3(15, 0.01, 15)
 
+[sub_resource type="QuadMesh" id="QuadMesh_rfsgw"]
+material = SubResource("StandardMaterial3D_p6vyb")
+flip_faces = true
+size = Vector2(3, 3)
+orientation = 1
+
+[sub_resource type="QuadMesh" id="QuadMesh_2y74n"]
+material = SubResource("StandardMaterial3D_p6vyb")
+size = Vector2(3, 2.5)
+orientation = 0
+
+[sub_resource type="QuadMesh" id="QuadMesh_f0iv0"]
+material = SubResource("StandardMaterial3D_p6vyb")
+flip_faces = true
+size = Vector2(3, 2.5)
+orientation = 0
+
+[sub_resource type="QuadMesh" id="QuadMesh_p3aya"]
+material = SubResource("StandardMaterial3D_p6vyb")
+flip_faces = true
+size = Vector2(3, 2.5)
+
+[sub_resource type="QuadMesh" id="QuadMesh_gfooo"]
+material = SubResource("StandardMaterial3D_p6vyb")
+size = Vector2(3, 2.5)
+
 [node name="Background" type="Node3D" unique_id=72946100]
 
 [node name="Floor" type="MeshInstance3D" parent="." unique_id=942227440]
-mesh = SubResource("QuadMesh_f0iv0")
+mesh = SubResource("QuadMesh_p6vyb")
 
 [node name="StaticBody3D" type="StaticBody3D" parent="Floor" unique_id=1990199320]
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Floor/StaticBody3D" unique_id=1896160054]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.0043097697, 0)
 shape = SubResource("BoxShape3D_rfsgw")
+
+[node name="Celling" type="MeshInstance3D" parent="." unique_id=947013559]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.5, 0)
+mesh = SubResource("QuadMesh_rfsgw")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="Celling" unique_id=678790157]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Celling/StaticBody3D" unique_id=1955736727]
+shape = SubResource("BoxShape3D_rfsgw")
+
+[node name="Wall" type="MeshInstance3D" parent="." unique_id=1029862678]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.5, 1.25, 0)
+mesh = SubResource("QuadMesh_2y74n")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="Wall" unique_id=1320271575]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Wall/StaticBody3D" unique_id=1792534701]
+transform = Transform3D(-4.371139e-08, -1, 0, 1, -4.371139e-08, 0, 0, 0, 1, 0, 0, 0)
+shape = SubResource("BoxShape3D_rfsgw")
+
+[node name="Wall2" type="MeshInstance3D" parent="." unique_id=1663669092]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.5, 1.25, 0)
+mesh = SubResource("QuadMesh_f0iv0")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="Wall2" unique_id=1895381719]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Wall2/StaticBody3D" unique_id=133942595]
+transform = Transform3D(-4.371139e-08, -1, 0, 1, -4.371139e-08, 0, 0, 0, 1, 0, 0, 0)
+shape = SubResource("BoxShape3D_rfsgw")
+
+[node name="Wall3" type="MeshInstance3D" parent="." unique_id=2002291367]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.25, 1.5)
+mesh = SubResource("QuadMesh_p3aya")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="Wall3" unique_id=1961992905]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Wall3/StaticBody3D" unique_id=1231441094]
+transform = Transform3D(1, 0, 0, 0, -4.371139e-08, -1, 0, 1, -4.371139e-08, 0, 0, 0)
+shape = SubResource("BoxShape3D_rfsgw")
+
+[node name="Wall4" type="MeshInstance3D" parent="." unique_id=1265712281]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.25, -1.5)
+mesh = SubResource("QuadMesh_gfooo")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="Wall4" unique_id=805439397]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Wall4/StaticBody3D" unique_id=868010813]
+transform = Transform3D(1, 0, 0, 0, -4.371139e-08, -1, 0, 1, -4.371139e-08, 0, 0, 0)
+shape = SubResource("BoxShape3D_rfsgw")
+
+[node name="OmniLight3D" type="OmniLight3D" parent="." unique_id=936400758]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.2175364, 0)
