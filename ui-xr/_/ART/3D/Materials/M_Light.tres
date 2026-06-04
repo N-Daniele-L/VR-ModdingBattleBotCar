@@ -1,0 +1,11 @@
+[gd_resource type="StandardMaterial3D" format=3 uid="uid://beqr5x3y46tdo"]
+
+[resource]
+resource_name = "M_Light"
+cull_mode = 2
+albedo_color = Color(1, 0.98984164, 0.7918838, 1)
+roughness = 0.5
+emission_enabled = true
+emission = Color(1, 1, 1, 1)
+emission_energy_multiplier = 3.79
+grow = true

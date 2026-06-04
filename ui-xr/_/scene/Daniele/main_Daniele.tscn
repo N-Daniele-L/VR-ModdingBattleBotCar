@@ -10,10 +10,8 @@
 [ext_resource type="PackedScene" uid="uid://usscvf53i5pv" path="res://_/scene/UI.tscn" id="8_w8iy5"]
 [ext_resource type="PackedScene" uid="uid://dgdb1texynduw" path="res://addons/godot-xr-tools/objects/virtual_keyboard.tscn" id="9_wdkjg"]
 [ext_resource type="PackedScene" uid="uid://bei0bw2gg5ig" path="res://_/scene/Nicolas/documentation_pickable_beta.tscn" id="10_5vy5g"]
-[ext_resource type="Script" uid="uid://ydraalgt1y6v" path="res://_/script/Cedric/core/cs_pool_manager.gd" id="10_liirh"]
 [ext_resource type="Script" uid="uid://b6i42h7jqarx2" path="res://_/script/Daniele/game_manager.gd" id="11_10bsh"]
 [ext_resource type="PackedScene" uid="uid://cvin6pwxbcto3" path="res://_/scene/Daniele/player_test.tscn" id="12_bs5cw"]
-[ext_resource type="PackedScene" uid="uid://ddjlgmesf7ffm" path="res://_/scene/Daniele/basic_enemy.tscn" id="14_ck10e"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_1gxwg"]
 sky_horizon_color = Color(0.66224277, 0.6717428, 0.6867428, 1)
@@ -168,21 +166,11 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -1.256622)
 transform = Transform3D(0.1, 0, 0, 0, 0.1, 0, 0, 0, 0.1, 0, 0, 0)
 mesh = SubResource("SphereMesh_bs5cw")
 
-[node name="DNGameManager" type="Node" parent="." unique_id=348758727 node_paths=PackedStringArray("player_bot", "player_collider")]
+[node name="DNGameManager" type="Node" parent="." unique_id=348758727 node_paths=PackedStringArray("player_bot")]
 script = ExtResource("11_10bsh")
 wave_spawn_point = Array[Vector3]([Vector3(0, 0, 1.0955697)])
 player_bot = NodePath("../PlayerTest/Node3D")
-player_collider = NodePath("../PlayerTest/Node3D/CollisionShape3D")
 metadata/_custom_type_script = "uid://b6i42h7jqarx2"
-
-[node name="CSPoolManager" type="Node" parent="." unique_id=2045671022]
-script = ExtResource("10_liirh")
-scene_templates = {
-"BasicEnemy": ExtResource("14_ck10e"),
-"EnemyProjectile": null,
-"PlayerProjectile": null
-}
-metadata/_custom_type_script = "uid://ydraalgt1y6v"
 
 [editable path="Viewport2Din3D"]
 [editable path="VirtualKeyboard"]

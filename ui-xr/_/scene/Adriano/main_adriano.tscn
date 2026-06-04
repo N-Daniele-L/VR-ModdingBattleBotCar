@@ -1,0 +1,29 @@
+[gd_scene format=3 uid="uid://bdomsacikvu47"]
+
+[ext_resource type="Script" uid="uid://clipxhr1jpdbq" path="res://addons/godot-demo-xr/scenes/demo_scene_base.gd" id="1_bm0ot"]
+[ext_resource type="PackedScene" uid="uid://bnx4hithcij6y" path="res://addons/godot-xr-tools/hands/model/Hand_Glove_low_L.gltf" id="2_8pgmb"]
+[ext_resource type="PackedScene" uid="uid://csgsp0wuw8ucy" path="res://addons/godot-xr-tools/hands/model/Hand_Glove_low_R.gltf" id="3_hyjyx"]
+[ext_resource type="PackedScene" uid="uid://cqhw276realc" path="res://addons/godot-xr-tools/functions/function_pointer.tscn" id="4_ujoyd"]
+[ext_resource type="PackedScene" uid="uid://d3spwpl4gmsnc" path="res://_/scene/Adriano/background_office.tscn" id="8_oymvc"]
+
+[node name="Main" type="Node3D" unique_id=1421353623]
+script = ExtResource("1_bm0ot")
+
+[node name="XROrigin3D" type="XROrigin3D" parent="." unique_id=666322222]
+
+[node name="XRCamera3D" type="XRCamera3D" parent="XROrigin3D" unique_id=278342559]
+
+[node name="XRControllerLeft" type="XRController3D" parent="XROrigin3D" unique_id=1744335750]
+tracker = &"left_hand"
+
+[node name="hand_l" parent="XROrigin3D/XRControllerLeft" unique_id=1441204479 instance=ExtResource("2_8pgmb")]
+
+[node name="XRControllerRight" type="XRController3D" parent="XROrigin3D" unique_id=1510464946]
+tracker = &"right_hand"
+
+[node name="hand_r" parent="XROrigin3D/XRControllerRight" unique_id=2088910385 instance=ExtResource("3_hyjyx")]
+
+[node name="FunctionPointer" parent="XROrigin3D/XRControllerRight" unique_id=1203588822 instance=ExtResource("4_ujoyd")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.02, 0.05, -0.1)
+
+[node name="Background" parent="." unique_id=72946100 instance=ExtResource("8_oymvc")]
