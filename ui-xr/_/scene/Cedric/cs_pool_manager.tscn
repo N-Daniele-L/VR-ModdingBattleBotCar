@@ -1,0 +1,13 @@
+[gd_scene format=3 uid="uid://cdhcp5os0xvff"]
+
+[ext_resource type="Script" uid="uid://ydraalgt1y6v" path="res://_/script/Cedric/core/cs_pool_manager.gd" id="1_qu3la"]
+[ext_resource type="PackedScene" uid="uid://csnd3qq73pnt4" path="res://_/scene/Cedric/cs_enemy.tscn" id="2_142fi"]
+[ext_resource type="PackedScene" uid="uid://bt4nouiyl6ht1" path="res://_/scene/Cedric/cs_projectile.tscn" id="3_rtvyv"]
+
+[node name="CSPoolManager" type="Node" unique_id=1498263392]
+script = ExtResource("1_qu3la")
+scene_templates = {
+"BasicEnemy": ExtResource("2_142fi"),
+"EnemyProjectile": ExtResource("3_rtvyv"),
+"PlayerProjectile": ExtResource("3_rtvyv")
+}

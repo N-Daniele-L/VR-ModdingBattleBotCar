@@ -1,0 +1,23 @@
+[gd_scene format=3 uid="uid://csnd3qq73pnt4"]
+
+[ext_resource type="Script" uid="uid://br4fhb2vf2ve2" path="res://_/script/Cedric/enemy/cs_enemy_controller.gd" id="1_7ng30"]
+[ext_resource type="Script" uid="uid://piaayn6ivga7" path="res://_/script/Cedric/enemy/cs_enemy_movement.gd" id="2_kjh2b"]
+[ext_resource type="Script" uid="uid://0lkusnem3tp4" path="res://_/script/Cedric/enemy/cs_enemy_attack.gd" id="3_imh5o"]
+[ext_resource type="Script" uid="uid://b4e4wvpr505wi" path="res://_/script/Cedric/enemy/cs_enemy_state_bridge.gd" id="4_ltets"]
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_7ng30"]
+
+[node name="CSEnemy" type="CharacterBody3D" unique_id=1348949965]
+script = ExtResource("1_7ng30")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=2059619180]
+shape = SubResource("CapsuleShape3D_7ng30")
+
+[node name="EnemyMovement" type="Node" parent="." unique_id=1811688911]
+script = ExtResource("2_kjh2b")
+
+[node name="EnemyAttack" type="Node" parent="." unique_id=1734415331]
+script = ExtResource("3_imh5o")
+
+[node name="EnemyStateBridge" type="Node" parent="." unique_id=1878997236]
+script = ExtResource("4_ltets")
