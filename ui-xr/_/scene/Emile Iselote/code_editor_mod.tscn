@@ -26,7 +26,7 @@ grow_horizontal = 2
 grow_vertical = 2
 text = "extends Node
 
-var target: Node
+var target: Node = 10
 
 func _on_received_target(new_target: Node) -> void:
 	target = new_target

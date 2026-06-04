@@ -1,0 +1,10 @@
+[gd_resource type="StandardMaterial3D" format=3 uid="uid://cy3owtdtcu6n0"]
+
+[ext_resource type="Texture2D" uid="uid://dlohs17iavlld" path="res://_/ART/3D/Textures/T_Office_D.png" id="1_2c5i3"]
+
+[resource]
+resource_name = "M_Screen02"
+cull_mode = 2
+albedo_color = Color(0, 0, 0, 1)
+albedo_texture = ExtResource("1_2c5i3")
+roughness = 0.12
