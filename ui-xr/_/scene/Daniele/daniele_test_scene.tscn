@@ -1,0 +1,12 @@
+[gd_scene format=3 uid="uid://o041fb5bpn6j"]
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_inbhu"]
+
+[node name="DanieleTestScene" type="Node2D" unique_id=210802027]
+
+[node name="Player" type="Node3D" parent="." unique_id=1009319118]
+
+[node name="CharacterBody3D" type="CharacterBody3D" parent="Player" unique_id=419550920]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Player/CharacterBody3D" unique_id=1233583685]
+shape = SubResource("CapsuleShape3D_inbhu")

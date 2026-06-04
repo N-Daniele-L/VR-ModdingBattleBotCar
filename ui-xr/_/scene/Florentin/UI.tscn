@@ -65,31 +65,7 @@ func _ready (delta: float) -> void:
 	pass
 
 func _process(delta: float) -> void:
-	pass
-adaa
-d
-d
-d
-dddd
-ddddadzfafazfza
-df
-affafaf
-fafafzefazf
-a
-fa
-zf
-azf
-afazfza
-fazfazfaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaafegafazdeazd
-a
-dd
-a
-
-
-
-dad
-af
-a"
+	pass"
 placeholder_text = "CODE TO WIN"
 wrap_mode = 1
 gutters_draw_breakpoints_gutter = true
@@ -103,7 +79,6 @@ script = ExtResource("2_vm31h")
 
 [node name="BTN_Container" type="HBoxContainer" parent="AspectRatioContainer" unique_id=2033867801]
 layout_mode = 2
-size_flags_horizontal = 4
 size_flags_vertical = 8
 theme_override_constants/separation = 70
 alignment = 1
@@ -118,7 +93,7 @@ alignment = 1
 layout_mode = 2
 theme_override_colors/font_color = Color(1, 1, 1, 1)
 theme_override_fonts/font = ExtResource("1_66nus")
-theme_override_font_sizes/font_size = 48
+theme_override_font_sizes/font_size = 32
 theme_override_styles/normal = SubResource("StyleBoxFlat_802u8")
 text = "Zoom +"
 
@@ -126,7 +101,7 @@ text = "Zoom +"
 layout_mode = 2
 theme_override_colors/font_color = Color(1, 1, 1, 1)
 theme_override_fonts/font = ExtResource("1_66nus")
-theme_override_font_sizes/font_size = 48
+theme_override_font_sizes/font_size = 32
 theme_override_styles/normal = SubResource("StyleBoxFlat_802u8")
 text = "Zoom -"
 
@@ -134,7 +109,7 @@ text = "Zoom -"
 layout_mode = 2
 theme_override_colors/font_color = Color(1, 1, 1, 1)
 theme_override_fonts/font = ExtResource("1_66nus")
-theme_override_font_sizes/font_size = 48
+theme_override_font_sizes/font_size = 32
 theme_override_styles/normal = SubResource("StyleBoxFlat_802u8")
 text = "Run Script"
 
@@ -142,7 +117,7 @@ text = "Run Script"
 layout_mode = 2
 theme_override_colors/font_color = Color(1, 1, 1, 1)
 theme_override_fonts/font = ExtResource("1_66nus")
-theme_override_font_sizes/font_size = 48
+theme_override_font_sizes/font_size = 32
 theme_override_styles/normal = SubResource("StyleBoxFlat_802u8")
 text = "Reset Code"
 
@@ -150,6 +125,6 @@ text = "Reset Code"
 layout_mode = 2
 theme_override_colors/font_color = Color(1, 1, 1, 1)
 theme_override_fonts/font = ExtResource("1_66nus")
-theme_override_font_sizes/font_size = 48
+theme_override_font_sizes/font_size = 32
 theme_override_styles/normal = SubResource("StyleBoxFlat_802u8")
 text = "Stop and Restart"
