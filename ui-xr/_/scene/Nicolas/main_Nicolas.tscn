@@ -1,0 +1,45 @@
+[gd_scene format=3 uid="uid://dkrwaucp4tsgb"]
+
+[ext_resource type="Script" uid="uid://clipxhr1jpdbq" path="res://addons/godot-demo-xr/scenes/demo_scene_base.gd" id="1_dn16q"]
+[ext_resource type="PackedScene" uid="uid://bnx4hithcij6y" path="res://addons/godot-xr-tools/hands/model/Hand_Glove_low_L.gltf" id="2_jtqef"]
+[ext_resource type="Script" uid="uid://b18kkstg643yw" path="res://addons/godot-xr-tools/functions/function_pickup.gd" id="3_sgves"]
+[ext_resource type="PackedScene" uid="uid://cqhw276realc" path="res://addons/godot-xr-tools/functions/function_pointer.tscn" id="4_8ewul"]
+[ext_resource type="PackedScene" uid="uid://csgsp0wuw8ucy" path="res://addons/godot-xr-tools/hands/model/Hand_Glove_low_R.gltf" id="5_6n3o0"]
+[ext_resource type="PackedScene" uid="uid://cewdh5p3ml2mk" path="res://_/scene/background.tscn" id="6_llvr6"]
+[ext_resource type="PackedScene" uid="uid://bei0bw2gg5ig" path="res://_/scene/Nicolas/documentation_pickable_beta.tscn" id="10_6pf6d"]
+
+[node name="Main" type="Node3D" unique_id=1421353623]
+script = ExtResource("1_dn16q")
+
+[node name="XROrigin3D" type="XROrigin3D" parent="." unique_id=666322222]
+
+[node name="XRCamera3D" type="XRCamera3D" parent="XROrigin3D" unique_id=278342559]
+
+[node name="XRControllerLeft" type="XRController3D" parent="XROrigin3D" unique_id=1744335750]
+tracker = &"left_hand"
+
+[node name="hand_l" parent="XROrigin3D/XRControllerLeft" unique_id=1441204479 instance=ExtResource("2_jtqef")]
+
+[node name="XRToolsFunctionPickup" type="Node3D" parent="XROrigin3D/XRControllerLeft" unique_id=1325619244]
+script = ExtResource("3_sgves")
+metadata/_custom_type_script = "uid://b18kkstg643yw"
+
+[node name="FunctionPointer" parent="XROrigin3D/XRControllerLeft" unique_id=1883081527 instance=ExtResource("4_8ewul")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.02, 0.05, -0.1)
+
+[node name="XRControllerRight" type="XRController3D" parent="XROrigin3D" unique_id=1510464946]
+tracker = &"right_hand"
+
+[node name="hand_r" parent="XROrigin3D/XRControllerRight" unique_id=2088910385 instance=ExtResource("5_6n3o0")]
+
+[node name="FunctionPointer" parent="XROrigin3D/XRControllerRight" unique_id=1203588822 instance=ExtResource("4_8ewul")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.02, 0.05, -0.1)
+
+[node name="XRToolsFunctionPickup" type="Node3D" parent="XROrigin3D/XRControllerRight" unique_id=2026082501]
+script = ExtResource("3_sgves")
+metadata/_custom_type_script = "uid://b18kkstg643yw"
+
+[node name="Background" parent="." unique_id=72946100 instance=ExtResource("6_llvr6")]
+
+[node name="DocumentationPickup" parent="." unique_id=2115070077 instance=ExtResource("10_6pf6d")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.8217493, -0.9097098)
