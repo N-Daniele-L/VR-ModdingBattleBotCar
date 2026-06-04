@@ -1,0 +1,10 @@
+[gd_resource type="StandardMaterial3D" format=3 uid="uid://cmknqvo5subfh"]
+
+[ext_resource type="Texture2D" uid="uid://dlohs17iavlld" path="res://_/ART/3D/Textures/T_Office_D.png" id="1_ujcuh"]
+
+[resource]
+resource_name = "M_OfficeSoft"
+cull_mode = 2
+albedo_color = Color(0.9063318, 0.9063318, 0.9063318, 1)
+albedo_texture = ExtResource("1_ujcuh")
+roughness = 0.3655914
