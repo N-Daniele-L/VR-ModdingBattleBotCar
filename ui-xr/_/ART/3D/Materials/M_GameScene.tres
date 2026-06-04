@@ -1,0 +1,11 @@
+[gd_resource type="StandardMaterial3D" format=3 uid="uid://wog5kifhuqgq"]
+
+[ext_resource type="Texture2D" uid="uid://d2yjkasxauycc" path="res://_/ART/3D/Textures/T_GameScene.png" id="1_7vrqw"]
+
+[resource]
+resource_name = "M_GameScene"
+transparency = 4
+cull_mode = 2
+albedo_color = Color(0.9063318, 0.9063318, 0.9063318, 1)
+albedo_texture = ExtResource("1_7vrqw")
+roughness = 0.5

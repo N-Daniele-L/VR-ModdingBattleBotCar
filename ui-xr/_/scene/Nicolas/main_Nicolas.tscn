@@ -8,7 +8,7 @@
 [ext_resource type="PackedScene" path="res://_/scene/Nicolas/paper_ball_pickable.tscn" id="8_iqrj0"]
 [ext_resource type="PackedScene" uid="uid://d3spwpl4gmsnc" path="res://_/scene/Adriano/background_office.tscn" id="8_v7wsq"]
 [ext_resource type="PackedScene" uid="uid://dgdb1texynduw" path="res://addons/godot-xr-tools/objects/virtual_keyboard.tscn" id="9_gmri5"]
-[ext_resource type="PackedScene" uid="uid://cuvhkqy0mqv7p" path="res://_/scene/Nicolas/viewport_to_text_edit.tscn" id="9_v7wsq"]
+[ext_resource type="PackedScene" path="res://_/scene/Nicolas/viewport_to_text_edit.tscn" id="9_v7wsq"]
 [ext_resource type="PackedScene" uid="uid://bei0bw2gg5ig" path="res://_/scene/Nicolas/documentation_pickable_beta.tscn" id="10_6pf6d"]
 
 [node name="Main" type="Node3D" unique_id=1421353623]

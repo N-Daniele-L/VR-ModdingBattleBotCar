@@ -1,6 +1,9 @@
 [gd_scene format=3 uid="uid://d3spwpl4gmsnc"]
 
 [ext_resource type="PackedScene" uid="uid://c032h8jskloju" path="res://_/ART/3D/Models/3D_BG_Office.glb" id="1_opxxu"]
+[ext_resource type="Script" uid="uid://b0kro1jcw6l38" path="res://_/scene/Adriano/viewport_to_CRT.gd" id="2_1x0uo"]
+[ext_resource type="PackedScene" uid="uid://qwhpmux245gg" path="res://_/scene/Adriano/cctv_adriano.tscn" id="2_fs4ot"]
+[ext_resource type="PackedScene" uid="uid://b4cgx3a0bt4sv" path="res://_/database/Prefabs/P_Enn_BladeMech.tscn" id="3_1x0uo"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_opxxu"]
 sky_horizon_color = Color(0.66224277, 0.6717428, 0.6867428, 1)
@@ -63,8 +66,16 @@ data = PackedVector3Array(-0.17629999, 0.345, 0.115399994, -0.175, 0.1195, 0.109
 [sub_resource type="ConcavePolygonShape3D" id="ConcavePolygonShape3D_1x0uo"]
 data = PackedVector3Array(0.0736, -0.0022, -0.0736, 0.0446, 0.2499, -0.107599996, 0.039899997, -0.0022, -0.0962, 0.039899997, -0.0022, -0.0962, 0.0446, 0.2499, -0.107599996, 0, 0.2499, -0.1165, 0.039899997, -0.0022, -0.0962, 0, 0.2499, -0.1165, 0, -0.0022, -0.1042, 0.0736, -0.0022, -0.0736, 0.0823, 0.2499, -0.0823, 0.0446, 0.2499, -0.107599996, 0.0962, -0.0022, -0.039899997, 0.0823, 0.2499, -0.0823, 0.0736, -0.0022, -0.0736, 0.0962, -0.0022, -0.039899997, 0.107599996, 0.2499, -0.0446, 0.0823, 0.2499, -0.0823, 0.1042, -0.0022, 0, 0.107599996, 0.2499, -0.0446, 0.0962, -0.0022, -0.039899997, 0.1042, -0.0022, 0, 0.1165, 0.2499, 0, 0.107599996, 0.2499, -0.0446, 0.0962, -0.0022, 0.039899997, 0.1165, 0.2499, 0, 0.1042, -0.0022, 0, 0.0962, -0.0022, 0.039899997, 0.107599996, 0.2499, 0.0446, 0.1165, 0.2499, 0, 0.0736, -0.0022, 0.0736, 0.107599996, 0.2499, 0.0446, 0.0962, -0.0022, 0.039899997, 0.0736, -0.0022, 0.0736, 0.0823, 0.2499, 0.0823, 0.107599996, 0.2499, 0.0446, 0.039899997, -0.0022, 0.0962, 0.0823, 0.2499, 0.0823, 0.0736, -0.0022, 0.0736, 0.039899997, -0.0022, 0.0962, 0.0446, 0.2499, 0.107599996, 0.0823, 0.2499, 0.0823, 0, -0.0022, 0.1042, 0.0446, 0.2499, 0.107599996, 0.039899997, -0.0022, 0.0962, 0, -0.0022, 0.1042, 0, 0.2499, 0.1165, 0.0446, 0.2499, 0.107599996, -0.039899997, -0.0022, 0.0962, 0, 0.2499, 0.1165, 0, -0.0022, 0.1042, -0.039899997, -0.0022, 0.0962, -0.0446, 0.2499, 0.107599996, 0, 0.2499, 0.1165, -0.0736, -0.0022, 0.0736, -0.0446, 0.2499, 0.107599996, -0.039899997, -0.0022, 0.0962, -0.0736, -0.0022, 0.0736, -0.0823, 0.2499, 0.0823, -0.0446, 0.2499, 0.107599996, -0.0962, -0.0022, 0.039899997, -0.0823, 0.2499, 0.0823, -0.0736, -0.0022, 0.0736, -0.0962, -0.0022, 0.039899997, -0.107599996, 0.2499, 0.0446, -0.0823, 0.2499, 0.0823, -0.1042, -0.0022, 0, -0.107599996, 0.2499, 0.0446, -0.0962, -0.0022, 0.039899997, -0.1042, -0.0022, 0, -0.1165, 0.2499, 0, -0.107599996, 0.2499, 0.0446, -0.0962, -0.0022, -0.039899997, -0.1165, 0.2499, 0, -0.1042, -0.0022, 0, -0.0962, -0.0022, -0.039899997, -0.107599996, 0.2499, -0.0446, -0.1165, 0.2499, 0, -0.0736, -0.0022, -0.0736, -0.107599996, 0.2499, -0.0446, -0.0962, -0.0022, -0.039899997, -0.0736, -0.0022, -0.0736, -0.0823, 0.2499, -0.0823, -0.107599996, 0.2499, -0.0446, -0.039899997, -0.0022, -0.0962, -0.0823, 0.2499, -0.0823, -0.0736, -0.0022, -0.0736, -0.039899997, -0.0022, -0.0962, -0.0446, 0.2499, -0.107599996, -0.0823, 0.2499, -0.0823, 0, -0.0022, -0.1042, -0.0446, 0.2499, -0.107599996, -0.039899997, -0.0022, -0.0962, 0, -0.0022, -0.1042, 0, 0.2499, -0.1165, -0.0446, 0.2499, -0.107599996, -0.0736, -0.0022, -0.0736, 0, -0.0022, -0.1042, -0.039899997, -0.0022, -0.0962, 0, -0.0022, -0.1042, 0.0736, -0.0022, -0.0736, 0.039899997, -0.0022, -0.0962, -0.0736, -0.0022, -0.0736, 0.0736, -0.0022, -0.0736, 0, -0.0022, -0.1042, 0.0736, -0.0022, -0.0736, 0.1042, -0.0022, 0, 0.0962, -0.0022, -0.039899997, 0.0736, -0.0022, -0.0736, 0.0736, -0.0022, 0.0736, 0.1042, -0.0022, 0, -0.0736, -0.0022, -0.0736, 0.0736, -0.0022, 0.0736, 0.0736, -0.0022, -0.0736, 0.1042, -0.0022, 0, 0.0736, -0.0022, 0.0736, 0.0962, -0.0022, 0.039899997, -0.1042, -0.0022, 0, -0.0736, -0.0022, -0.0736, -0.0962, -0.0022, -0.039899997, -0.0736, -0.0022, 0.0736, -0.0736, -0.0022, -0.0736, -0.1042, -0.0022, 0, 0.0736, -0.0022, 0.0736, -0.0736, -0.0022, -0.0736, -0.0736, -0.0022, 0.0736, -0.0736, -0.0022, 0.0736, -0.1042, -0.0022, 0, -0.0962, -0.0022, 0.039899997, 0.0736, -0.0022, 0.0736, -0.0736, -0.0022, 0.0736, 0, -0.0022, 0.1042, 0, -0.0022, 0.1042, -0.0736, -0.0022, 0.0736, -0.039899997, -0.0022, 0.0962, 0.0736, -0.0022, 0.0736, 0, -0.0022, 0.1042, 0.039899997, -0.0022, 0.0962, 0.0726, -0.0008, -0.0726, 0.0438, 0.25, -0.10569999, 0.0809, 0.25, -0.0809, 0.0726, -0.0008, -0.0726, 0.0393, -0.0008, -0.0949, 0.0438, 0.25, -0.10569999, 0.0393, -0.0008, -0.0949, 0, 0.25, -0.11449999, 0.0438, 0.25, -0.10569999, 0.0393, -0.0008, -0.0949, 0, -0.0008, -0.102699995, 0, 0.25, -0.11449999, 0.0949, -0.0008, -0.0393, 0.0726, -0.0008, -0.0726, 0.0809, 0.25, -0.0809, 0.0949, -0.0008, -0.0393, 0.0809, 0.25, -0.0809, 0.10569999, 0.25, -0.0438, 0.102699995, -0.0008, 0, 0.0949, -0.0008, -0.0393, 0.10569999, 0.25, -0.0438, 0.102699995, -0.0008, 0, 0.10569999, 0.25, -0.0438, 0.11449999, 0.25, 0, 0.0949, -0.0008, 0.0393, 0.102699995, -0.0008, 0, 0.11449999, 0.25, 0, 0.0949, -0.0008, 0.0393, 0.11449999, 0.25, 0, 0.10569999, 0.25, 0.0438, 0.0726, -0.0008, 0.0726, 0.0949, -0.0008, 0.0393, 0.10569999, 0.25, 0.0438, 0.0726, -0.0008, 0.0726, 0.10569999, 0.25, 0.0438, 0.0809, 0.25, 0.0809, 0.0393, -0.0008, 0.0949, 0.0726, -0.0008, 0.0726, 0.0809, 0.25, 0.0809, 0.0393, -0.0008, 0.0949, 0.0809, 0.25, 0.0809, 0.0438, 0.25, 0.10569999, 0, -0.0008, 0.102699995, 0.0393, -0.0008, 0.0949, 0.0438, 0.25, 0.10569999, 0, -0.0008, 0.102699995, 0.0438, 0.25, 0.10569999, 0, 0.25, 0.11449999, -0.0393, -0.0008, 0.0949, 0, -0.0008, 0.102699995, 0, 0.25, 0.11449999, -0.0393, -0.0008, 0.0949, 0, 0.25, 0.11449999, -0.0438, 0.25, 0.10569999, -0.0726, -0.0008, 0.0726, -0.0393, -0.0008, 0.0949, -0.0438, 0.25, 0.10569999, -0.0726, -0.0008, 0.0726, -0.0438, 0.25, 0.10569999, -0.0809, 0.25, 0.0809, -0.0949, -0.0008, 0.0393, -0.0726, -0.0008, 0.0726, -0.0809, 0.25, 0.0809, -0.0949, -0.0008, 0.0393, -0.0809, 0.25, 0.0809, -0.10569999, 0.25, 0.0438, -0.102699995, -0.0008, 0, -0.0949, -0.0008, 0.0393, -0.10569999, 0.25, 0.0438, -0.102699995, -0.0008, 0, -0.10569999, 0.25, 0.0438, -0.11449999, 0.25, 0, -0.0949, -0.0008, -0.0393, -0.102699995, -0.0008, 0, -0.11449999, 0.25, 0, -0.0949, -0.0008, -0.0393, -0.11449999, 0.25, 0, -0.10569999, 0.25, -0.0438, -0.0726, -0.0008, -0.0726, -0.0949, -0.0008, -0.0393, -0.10569999, 0.25, -0.0438, -0.0726, -0.0008, -0.0726, -0.10569999, 0.25, -0.0438, -0.0809, 0.25, -0.0809, -0.0393, -0.0008, -0.0949, -0.0726, -0.0008, -0.0726, -0.0809, 0.25, -0.0809, -0.0393, -0.0008, -0.0949, -0.0809, 0.25, -0.0809, -0.0438, 0.25, -0.10569999, 0, -0.0008, -0.102699995, -0.0393, -0.0008, -0.0949, -0.0438, 0.25, -0.10569999, 0, -0.0008, -0.102699995, -0.0438, 0.25, -0.10569999, 0, 0.25, -0.11449999, 0, -0.0008, -0.102699995, -0.0726, -0.0008, -0.0726, -0.0393, -0.0008, -0.0949, -0.0726, -0.0008, -0.0726, -0.102699995, -0.0008, 0, -0.0949, -0.0008, -0.0393, 0, -0.0008, -0.102699995, -0.102699995, -0.0008, 0, -0.0726, -0.0008, -0.0726, -0.102699995, -0.0008, 0, -0.0726, -0.0008, 0.0726, -0.0949, -0.0008, 0.0393, -0.102699995, -0.0008, 0, 0, -0.0008, 0.102699995, -0.0726, -0.0008, 0.0726, 0, -0.0008, -0.102699995, 0, -0.0008, 0.102699995, -0.102699995, -0.0008, 0, -0.0726, -0.0008, 0.0726, 0, -0.0008, 0.102699995, -0.0393, -0.0008, 0.0949, 0.0726, -0.0008, -0.0726, 0, -0.0008, -0.102699995, 0.0393, -0.0008, -0.0949, 0.102699995, -0.0008, 0, 0, -0.0008, -0.102699995, 0.0726, -0.0008, -0.0726, 0, -0.0008, 0.102699995, 0, -0.0008, -0.102699995, 0.102699995, -0.0008, 0, 0.102699995, -0.0008, 0, 0.0726, -0.0008, -0.0726, 0.0949, -0.0008, -0.0393, 0, -0.0008, 0.102699995, 0.102699995, -0.0008, 0, 0.0726, -0.0008, 0.0726, 0.0726, -0.0008, 0.0726, 0.102699995, -0.0008, 0, 0.0949, -0.0008, 0.0393, 0, -0.0008, 0.102699995, 0.0726, -0.0008, 0.0726, 0.0393, -0.0008, 0.0949, 0, 0.2499, -0.1165, -0.0438, 0.25, -0.10569999, -0.0446, 0.2499, -0.107599996, 0, 0.2499, -0.1165, 0, 0.25, -0.11449999, -0.0438, 0.25, -0.10569999, -0.0446, 0.2499, -0.107599996, -0.0438, 0.25, -0.10569999, -0.0809, 0.25, -0.0809, -0.0446, 0.2499, -0.107599996, -0.0809, 0.25, -0.0809, -0.0823, 0.2499, -0.0823, -0.0823, 0.2499, -0.0823, -0.0809, 0.25, -0.0809, -0.10569999, 0.25, -0.0438, -0.0823, 0.2499, -0.0823, -0.10569999, 0.25, -0.0438, -0.107599996, 0.2499, -0.0446, -0.107599996, 0.2499, -0.0446, -0.10569999, 0.25, -0.0438, -0.11449999, 0.25, 0, -0.107599996, 0.2499, -0.0446, -0.11449999, 0.25, 0, -0.1165, 0.2499, 0, -0.1165, 0.2499, 0, -0.11449999, 0.25, 0, -0.10569999, 0.25, 0.0438, -0.1165, 0.2499, 0, -0.10569999, 0.25, 0.0438, -0.107599996, 0.2499, 0.0446, -0.107599996, 0.2499, 0.0446, -0.10569999, 0.25, 0.0438, -0.0809, 0.25, 0.0809, -0.107599996, 0.2499, 0.0446, -0.0809, 0.25, 0.0809, -0.0823, 0.2499, 0.0823, -0.0823, 0.2499, 0.0823, -0.0809, 0.25, 0.0809, -0.0438, 0.25, 0.10569999, -0.0823, 0.2499, 0.0823, -0.0438, 0.25, 0.10569999, -0.0446, 0.2499, 0.107599996, -0.0446, 0.2499, 0.107599996, -0.0438, 0.25, 0.10569999, 0, 0.25, 0.11449999, -0.0446, 0.2499, 0.107599996, 0, 0.25, 0.11449999, 0, 0.2499, 0.1165, 0, 0.2499, 0.1165, 0, 0.25, 0.11449999, 0.0438, 0.25, 0.10569999, 0, 0.2499, 0.1165, 0.0438, 0.25, 0.10569999, 0.0446, 0.2499, 0.107599996, 0.0446, 0.2499, 0.107599996, 0.0438, 0.25, 0.10569999, 0.0809, 0.25, 0.0809, 0.0446, 0.2499, 0.107599996, 0.0809, 0.25, 0.0809, 0.0823, 0.2499, 0.0823, 0.0823, 0.2499, 0.0823, 0.0809, 0.25, 0.0809, 0.10569999, 0.25, 0.0438, 0.0823, 0.2499, 0.0823, 0.10569999, 0.25, 0.0438, 0.107599996, 0.2499, 0.0446, 0.107599996, 0.2499, 0.0446, 0.10569999, 0.25, 0.0438, 0.11449999, 0.25, 0, 0.107599996, 0.2499, 0.0446, 0.11449999, 0.25, 0, 0.1165, 0.2499, 0, 0.1165, 0.2499, 0, 0.11449999, 0.25, 0, 0.10569999, 0.25, -0.0438, 0.1165, 0.2499, 0, 0.10569999, 0.25, -0.0438, 0.107599996, 0.2499, -0.0446, 0.107599996, 0.2499, -0.0446, 0.10569999, 0.25, -0.0438, 0.0809, 0.25, -0.0809, 0.107599996, 0.2499, -0.0446, 0.0809, 0.25, -0.0809, 0.0823, 0.2499, -0.0823, 0.0823, 0.2499, -0.0823, 0.0809, 0.25, -0.0809, 0.0438, 0.25, -0.10569999, 0.0823, 0.2499, -0.0823, 0.0438, 0.25, -0.10569999, 0.0446, 0.2499, -0.107599996, 0.0446, 0.2499, -0.107599996, 0.0438, 0.25, -0.10569999, 0, 0.25, -0.11449999, 0.0446, 0.2499, -0.107599996, 0, 0.25, -0.11449999, 0, 0.2499, -0.1165)
 
-[sub_resource type="ViewportTexture" id="ViewportTexture_opxxu"]
-viewport_path = NodePath("SubViewport")
+[sub_resource type="ViewportTexture" id="ViewportTexture_fs4ot"]
+viewport_path = NodePath("graphic/P_CRT/SubViewport")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_a34ln"]
+resource_local_to_scene = true
+albedo_texture = SubResource("ViewportTexture_fs4ot")
+
+[sub_resource type="QuadMesh" id="QuadMesh_d2eip"]
+material = SubResource("StandardMaterial3D_a34ln")
+size = Vector2(0.365, 0.275)
 
 [node name="P_Background" type="Node3D" unique_id=72946100]
 
@@ -74,8 +85,8 @@ environment = SubResource("Environment_fs4ot")
 [node name="---Light---" type="Node" parent="." unique_id=1539997929]
 
 [node name="Light_CCTV01" type="OmniLight3D" parent="---Light---" unique_id=562136057]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.16559981, 0.95006657, -1.8933856)
-light_color = Color(0.96862745, 1, 1, 1)
+transform = Transform3D(0.9697443, 0, -0.2441228, 0, 1, 0, 0.2441228, 0, 0.9697443, 0.23635173, 0.99832654, -1.8548448)
+light_color = Color(0.99916905, 0.65726364, 0.59114283, 1)
 light_energy = 0.25
 shadow_enabled = true
 shadow_bias = 0.0
@@ -89,7 +100,7 @@ distance_fade_length = 1.0
 omni_range = 1.404
 
 [node name="Light_CCTV02" type="OmniLight3D" parent="---Light---" unique_id=540712808]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.22744931, 0.95006657, -1.8612199)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.23744932, 0.95006657, -1.8212199)
 light_color = Color(0.96862745, 1, 1, 1)
 light_energy = 0.05
 shadow_enabled = true
@@ -123,7 +134,7 @@ cast_shadow = 2
 
 [node name="3D_BG_Office" parent="graphic/MeshInstance3D" unique_id=608721767 instance=ExtResource("1_opxxu")]
 
-[node name="GEO_Office" parent="graphic/MeshInstance3D/3D_BG_Office" index="0" unique_id=1341794936]
+[node name="GEO_Office" parent="graphic/MeshInstance3D/3D_BG_Office" index="0" unique_id=1154840488]
 cast_shadow = 2
 
 [node name="StaticBody3D" type="StaticBody3D" parent="graphic/MeshInstance3D/3D_BG_Office/GEO_Office" index="0" unique_id=201938318]
@@ -144,7 +155,7 @@ shape = SubResource("BoxShape3D_opxxu")
 transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 0.016571585, 1.4007246, -1.9549403)
 shape = SubResource("BoxShape3D_opxxu")
 
-[node name="GEO_Ceilling" parent="graphic/MeshInstance3D/3D_BG_Office" index="2" unique_id=1951666748]
+[node name="GEO_Ceilling" parent="graphic/MeshInstance3D/3D_BG_Office" index="2" unique_id=747508142]
 transform = Transform3D(1.1, 0, 0, 0, 1.096, 0, 0, 0, 1.237, 0, 0.078490585, 0)
 cast_shadow = 2
 
@@ -158,10 +169,10 @@ shape = SubResource("BoxShape3D_ow5fq")
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.09165575, 0)
 shape = SubResource("BoxShape3D_ow5fq")
 
-[node name="GEO_Drawers" parent="graphic/MeshInstance3D/3D_BG_Office" index="5" unique_id=419663733]
+[node name="GEO_Drawers" parent="graphic/MeshInstance3D/3D_BG_Office" index="5" unique_id=1640767633]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -1.8280938)
 
-[node name="GEO_Desk_Left" parent="graphic/MeshInstance3D/3D_BG_Office" index="6" unique_id=1560113590]
+[node name="GEO_Desk_Left" parent="graphic/MeshInstance3D/3D_BG_Office" index="6" unique_id=1991126806]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -1.8280938)
 
 [node name="StaticBody3D" type="StaticBody3D" parent="graphic/MeshInstance3D/3D_BG_Office/GEO_Desk_Left" index="0" unique_id=776324118]
@@ -169,7 +180,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -1.8280938)
 [node name="CollisionShape3D" type="CollisionShape3D" parent="graphic/MeshInstance3D/3D_BG_Office/GEO_Desk_Left/StaticBody3D" unique_id=657978132]
 shape = SubResource("ConcavePolygonShape3D_opxxu")
 
-[node name="GEO_Desk" parent="graphic/MeshInstance3D/3D_BG_Office" index="7" unique_id=1142208562]
+[node name="GEO_Desk" parent="graphic/MeshInstance3D/3D_BG_Office" index="7" unique_id=440896075]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -1.8280938)
 
 [node name="StaticBody3D" type="StaticBody3D" parent="graphic/MeshInstance3D/3D_BG_Office/GEO_Desk" index="0" unique_id=1558750511]
@@ -177,7 +188,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -1.8280938)
 [node name="CollisionShape3D" type="CollisionShape3D" parent="graphic/MeshInstance3D/3D_BG_Office/GEO_Desk/StaticBody3D" unique_id=1253855602]
 shape = SubResource("ConcavePolygonShape3D_ow5fq")
 
-[node name="GEO_Desk_Right" parent="graphic/MeshInstance3D/3D_BG_Office" index="8" unique_id=564596894]
+[node name="GEO_Desk_Right" parent="graphic/MeshInstance3D/3D_BG_Office" index="8" unique_id=13765922]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.57121843, 0, -1.8280938)
 
 [node name="StaticBody3D" type="StaticBody3D" parent="graphic/MeshInstance3D/3D_BG_Office/GEO_Desk_Right" index="0" unique_id=1186632614]
@@ -185,7 +196,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.57121843, 0, -1.8280938)
 [node name="CollisionShape3D" type="CollisionShape3D" parent="graphic/MeshInstance3D/3D_BG_Office/GEO_Desk_Right/StaticBody3D" unique_id=99738685]
 shape = SubResource("ConcavePolygonShape3D_fs4ot")
 
-[node name="GEO_PC" parent="graphic/MeshInstance3D/3D_BG_Office" index="9" unique_id=1636736009]
+[node name="GEO_PC" parent="graphic/MeshInstance3D/3D_BG_Office" index="9" unique_id=448714528]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.57690763, 0.06802502, -1.8280938)
 
 [node name="StaticBody3D" type="StaticBody3D" parent="graphic/MeshInstance3D/3D_BG_Office/GEO_PC" index="0" unique_id=1700788220]
@@ -193,37 +204,37 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.57690763, 0.06802502, -1.82
 [node name="CollisionShape3D" type="CollisionShape3D" parent="graphic/MeshInstance3D/3D_BG_Office/GEO_PC/StaticBody3D" unique_id=1367946678]
 shape = SubResource("ConcavePolygonShape3D_1igh1")
 
-[node name="GEO_Monitor01" parent="graphic/MeshInstance3D/3D_BG_Office" index="10" unique_id=1908253607]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.26026097, 0.7109312, -1.9896183)
+[node name="GEO_Monitor01" parent="graphic/MeshInstance3D/3D_BG_Office" index="10" unique_id=1513490273]
+transform = Transform3D(1.2, 0, 0, 0, 1.2, 0, 0, 0, 1.2, -0.27226096, 0.7109312, -1.9896183)
 
 [node name="StaticBody3D" type="StaticBody3D" parent="graphic/MeshInstance3D/3D_BG_Office/GEO_Monitor01" index="0" unique_id=1148936533]
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="graphic/MeshInstance3D/3D_BG_Office/GEO_Monitor01/StaticBody3D" unique_id=1694741516]
 shape = SubResource("ConcavePolygonShape3D_a34ln")
 
-[node name="GEO_Mouse" parent="graphic/MeshInstance3D/3D_BG_Office" index="11" unique_id=1680686685]
+[node name="GEO_Mouse" parent="graphic/MeshInstance3D/3D_BG_Office" index="11" unique_id=1934089449]
 transform = Transform3D(-0.9103608, 0.41381538, 4.4703484e-08, 4.4703484e-08, 1.1920929e-07, -1, -0.41381538, -0.9103608, -1.1920929e-07, 0.33608437, 0.7069755, -1.6939936)
 
-[node name="GEO_PencilHolder" parent="graphic/MeshInstance3D/3D_BG_Office" index="12" unique_id=1003707601]
+[node name="GEO_PencilHolder" parent="graphic/MeshInstance3D/3D_BG_Office" index="12" unique_id=2116255425]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.52726245, 0.7092487, -1.8788891)
 
-[node name="GEO_Pen_001" parent="graphic/MeshInstance3D/3D_BG_Office" index="13" unique_id=353714318]
+[node name="GEO_Pen_001" parent="graphic/MeshInstance3D/3D_BG_Office" index="13" unique_id=688563476]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.53156585, 0.7277335, -1.8693169)
 
-[node name="GEO_Pen_002" parent="graphic/MeshInstance3D/3D_BG_Office" index="14" unique_id=328861947]
+[node name="GEO_Pen_002" parent="graphic/MeshInstance3D/3D_BG_Office" index="14" unique_id=188669071]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.51448303, 0.72695637, -1.8891815)
 
-[node name="GEO_Pen_003" parent="graphic/MeshInstance3D/3D_BG_Office" index="15" unique_id=1495526766]
+[node name="GEO_Pen_003" parent="graphic/MeshInstance3D/3D_BG_Office" index="15" unique_id=1611382420]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.53251064, 0.7284543, -1.8800647)
 
-[node name="GEO_Pen_004" parent="graphic/MeshInstance3D/3D_BG_Office" index="16" unique_id=1012008109]
+[node name="GEO_Pen_004" parent="graphic/MeshInstance3D/3D_BG_Office" index="16" unique_id=1266789228]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.5372621, 0.7302481, -1.8852655)
 
-[node name="GEO_Mug" parent="graphic/MeshInstance3D/3D_BG_Office" index="17" unique_id=1432188191]
+[node name="GEO_Mug" parent="graphic/MeshInstance3D/3D_BG_Office" index="17" unique_id=1192005860]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.05625373, 0.71337736, -1.8312752)
 
-[node name="GEO_Rack" parent="graphic/MeshInstance3D/3D_BG_Office" index="18" unique_id=827511319]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.5753815, 0.7112168, -1.9079593)
+[node name="GEO_Rack" parent="graphic/MeshInstance3D/3D_BG_Office" index="18" unique_id=1782938055]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.5953815, 0.7112168, -1.9079593)
 
 [node name="StaticBody3D" type="StaticBody3D" parent="graphic/MeshInstance3D/3D_BG_Office/GEO_Rack" index="0" unique_id=1349034720]
 
@@ -251,16 +262,16 @@ shape = SubResource("BoxShape3D_1x0uo")
 transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 0.00051259995, 0.07382834, -0.17624152)
 shape = SubResource("BoxShape3D_1igh1")
 
-[node name="GEO_Lamp" parent="graphic/MeshInstance3D/3D_BG_Office" index="19" unique_id=529169314]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.59523255, 0.70871276, -2.0140102)
+[node name="GEO_Lamp" parent="graphic/MeshInstance3D/3D_BG_Office" index="19" unique_id=195590611]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.63523257, 0.70871276, -1.9740102)
 
 [node name="StaticBody3D" type="StaticBody3D" parent="graphic/MeshInstance3D/3D_BG_Office/GEO_Lamp" index="0" unique_id=1100064569]
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="graphic/MeshInstance3D/3D_BG_Office/GEO_Lamp/StaticBody3D" unique_id=516650211]
 shape = SubResource("ConcavePolygonShape3D_d2eip")
 
-[node name="GEO_Monitor02" parent="graphic/MeshInstance3D/3D_BG_Office" index="20" unique_id=1770531998]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.20382753, 0.7109312, -2.0186963)
+[node name="GEO_Monitor02" parent="graphic/MeshInstance3D/3D_BG_Office" index="20" unique_id=1658369902]
+transform = Transform3D(1.2, 0, 0, 0, 1.2, 0, 0, 0, 1.2, 0.26382753, 0.7109312, -2.0186963)
 cast_shadow = 2
 
 [node name="StaticBody3D" type="StaticBody3D" parent="graphic/MeshInstance3D/3D_BG_Office/GEO_Monitor02" index="0" unique_id=1815341021]
@@ -268,7 +279,7 @@ cast_shadow = 2
 [node name="CollisionShape3D" type="CollisionShape3D" parent="graphic/MeshInstance3D/3D_BG_Office/GEO_Monitor02/StaticBody3D" unique_id=1545555166]
 shape = SubResource("ConcavePolygonShape3D_1waep")
 
-[node name="GEO_Trashbin" parent="graphic/MeshInstance3D/3D_BG_Office" index="21" unique_id=1666593364]
+[node name="GEO_Trashbin" parent="graphic/MeshInstance3D/3D_BG_Office" index="21" unique_id=194481331]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.9953785, 0.0051471908, -1.2443819)
 
 [node name="StaticBody3D" type="StaticBody3D" parent="graphic/MeshInstance3D/3D_BG_Office/GEO_Trashbin" index="0" unique_id=1910551455]
@@ -277,23 +288,49 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.9953785, 0.0051471908, -1.2
 visible = false
 shape = SubResource("ConcavePolygonShape3D_1x0uo")
 
-[node name="GEO_Stapler" parent="graphic/MeshInstance3D/3D_BG_Office" index="22" unique_id=566355040]
+[node name="GEO_Stapler" parent="graphic/MeshInstance3D/3D_BG_Office" index="22" unique_id=1968118943]
 transform = Transform3D(-0.75926316, 0, -0.65078354, 0, 1, 0, 0.65078354, 0, -0.75926316, -0.62353516, 0.7106932, -1.7280802)
 
-[node name="GEO_Ashtray" parent="graphic/MeshInstance3D/3D_BG_Office" index="23" unique_id=892999504]
+[node name="GEO_Ashtray" parent="graphic/MeshInstance3D/3D_BG_Office" index="23" unique_id=1042847570]
 transform = Transform3D(1.3125, 0, 0, 0, 1.2200341, 0, 0, 0, 1.3125, -0.40401947, 0.7102446, -1.6958139)
 
-[node name="GEO_Cigarette_001" parent="graphic/MeshInstance3D/3D_BG_Office" index="24" unique_id=1477128270]
+[node name="GEO_Cigarette_001" parent="graphic/MeshInstance3D/3D_BG_Office" index="24" unique_id=1703893537]
 transform = Transform3D(0.10000001, 0, 0, 0, 2.2253754, 0, 0, 0, 0.10000001, -0.4077753, 0.7161236, -1.7210357)
 
-[node name="GEO_Cigarette_002" parent="graphic/MeshInstance3D/3D_BG_Office" index="25" unique_id=1745037938]
+[node name="GEO_Cigarette_002" parent="graphic/MeshInstance3D/3D_BG_Office" index="25" unique_id=1615645103]
 transform = Transform3D(0.10000001, 0, 0, 0, 2.2253754, 0, 0, 0, 0.10000001, -0.37803772, 0.71408457, -1.6891148)
 
-[node name="GEO_Cigarette_003" parent="graphic/MeshInstance3D/3D_BG_Office" index="26" unique_id=202686366]
+[node name="GEO_Cigarette_003" parent="graphic/MeshInstance3D/3D_BG_Office" index="26" unique_id=365642979]
 transform = Transform3D(-0.0046213986, -1.7252226, 0.06299616, 0.087413, -0.74909675, -0.03501238, 0.04834886, 1.1894356, 0.06932258, -0.41037047, 0.718534, -1.6972125)
 
-[node name="Sprite3D_CCTV01" type="Sprite3D" parent="graphic" unique_id=1498909568]
-transform = Transform3D(0.02946498, 0, -0.0056404686, 0, 0.03, 0, 0.0056404686, 0, 0.02946498, 0.17605957, 0.94308287, -1.8772134)
-texture = SubResource("ViewportTexture_opxxu")
+[node name="CRT_GameScene" type="MeshInstance3D" parent="graphic" unique_id=664323941 node_paths=PackedStringArray("viewport")]
+transform = Transform3D(0.98216605, 0, -0.18801562, 0, 1, 0, 0.18801562, 0, 0.98216605, 0.23122923, 0.98941755, -1.8462892)
+mesh = SubResource("QuadMesh_d2eip")
+script = ExtResource("2_1x0uo")
+viewport = NodePath("../P_CRT/SubViewport")
+
+[node name="P_CRT" parent="graphic" unique_id=1705081193 instance=ExtResource("2_fs4ot")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.91, 0)
+
+[node name="SubViewport" parent="graphic/P_CRT" index="0" unique_id=1225241606]
+canvas_cull_mask = 4293918722
+
+[node name="Anchor_Camera3D" parent="graphic/P_CRT/SubViewport" index="0" unique_id=143777878]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 4.3, 0)
+
+[node name="P_Enn_BladeMech" parent="graphic/P_CRT/SubViewport/Anchor_Camera3D" index="1" unique_id=1774846936 instance=ExtResource("3_1x0uo")]
+transform = Transform3D(0.9659258, 0, 0.25881904, 0, 1, 0, -0.25881904, 0, 0.9659258, -8.849437, -4.3, -26.915705)
+
+[node name="P_Enn_BladeMech2" parent="graphic/P_CRT/SubViewport/Anchor_Camera3D" index="2" unique_id=766988637 instance=ExtResource("3_1x0uo")]
+transform = Transform3D(0.9659258, 0, -0.25881904, 0, 1, 0, 0.25881904, 0, 0.9659258, 9.253909, -4.3, -24.790133)
+
+[node name="P_Enn_BladeMech3" parent="graphic/P_CRT/SubViewport/Anchor_Camera3D" index="3" unique_id=26449818 instance=ExtResource("3_1x0uo")]
+transform = Transform3D(-1, 0, 8.742278e-08, 0, 1, 0, -8.742278e-08, 0, -1, -0.020001411, -4.3, -8.190002)
+
+[node name="Camera3D" parent="graphic/P_CRT/SubViewport/Anchor_Camera3D" index="4" unique_id=69060824]
+transform = Transform3D(1, 0, 0, 0, 0.9659258, 0.25881904, 0, -0.25881904, 0.9659258, 0, 5.6378293, -2.8906977)
+cull_mask = 2
+fov = 80.0
 
 [editable path="graphic/MeshInstance3D/3D_BG_Office"]
+[editable path="graphic/P_CRT"]
