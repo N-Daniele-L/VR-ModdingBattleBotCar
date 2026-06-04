@@ -7,6 +7,7 @@
 [ext_resource type="PackedScene" uid="uid://raeeicvvindd" path="res://addons/godot-xr-tools/hands/scenes/highpoly/right_hand.tscn" id="5_v7wsq"]
 [ext_resource type="PackedScene" uid="uid://cewdh5p3ml2mk" path="res://_/scene/background.tscn" id="6_llvr6"]
 [ext_resource type="PackedScene" uid="uid://dit5utrlm4qhc" path="res://_/scene/Nicolas/paper_ball_pickable.tscn" id="8_iqrj0"]
+[ext_resource type="Script" uid="uid://68m5x47mwjix" path="res://_/script/Nicolas/pool_system.gd" id="9_v7wsq"]
 [ext_resource type="PackedScene" uid="uid://bei0bw2gg5ig" path="res://_/scene/Nicolas/documentation_pickable_beta.tscn" id="10_6pf6d"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_08ycx"]
@@ -79,3 +80,16 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.0749397, 0.19559127, 0.115
 
 [node name="PaperBallPickable3" parent="." unique_id=939972357 instance=ExtResource("8_iqrj0")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.0749397, 0.19559127, -0.122933)
+
+[node name="NCARPoolSystem" type="Node3D" parent="." unique_id=952529673]
+script = ExtResource("9_v7wsq")
+object_to_instantiate = ExtResource("8_iqrj0")
+name_pooled = "PaperBall"
+metadata/_custom_type_script = "uid://68m5x47mwjix"
+
+[node name="NCARPoolSystem2" type="Node3D" parent="." unique_id=11241462]
+script = ExtResource("9_v7wsq")
+object_to_instantiate = ExtResource("10_6pf6d")
+number_of_object = 5
+name_pooled = "Documentation"
+metadata/_custom_type_script = "uid://68m5x47mwjix"
