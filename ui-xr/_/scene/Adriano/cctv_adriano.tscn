@@ -1,17 +1,35 @@
 [gd_scene format=3 uid="uid://qwhpmux245gg"]
 
-[sub_resource type="CylinderMesh" id="CylinderMesh_v6qmf"]
+[ext_resource type="PackedScene" uid="uid://bsiv4kj5g53hr" path="res://_/database/Prefabs/P_CRT.tscn" id="1_k7d43"]
 
-[node name="P_CCTV01" type="Node3D" unique_id=1705081193]
+[sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_k7d43"]
+sky_top_color = Color(0.56, 0.15866669, 0.07839999, 1)
+sky_horizon_color = Color(0.336, 0.34136665, 0.35, 1)
+ground_horizon_color = Color(0.36439404, 0.37015697, 0.38743266, 1)
+
+[sub_resource type="Sky" id="Sky_wkl24"]
+sky_material = SubResource("ProceduralSkyMaterial_k7d43")
+
+[sub_resource type="Environment" id="Environment_p3hf8"]
+background_mode = 2
+sky = SubResource("Sky_wkl24")
+ssr_enabled = true
+ssao_enabled = true
+ssil_enabled = true
+sdfgi_enabled = true
+glow_enabled = true
+
+[node name="P_CRT" type="Node3D" unique_id=1705081193]
 
 [node name="SubViewport" type="SubViewport" parent="." unique_id=1225241606]
 size = Vector2i(1024, 768)
+render_target_update_mode = 4
 
 [node name="Anchor_Camera3D" type="Node3D" parent="SubViewport" unique_id=143777878]
 
+[node name="P_CRT" parent="SubViewport/Anchor_Camera3D" unique_id=353366061 instance=ExtResource("1_k7d43")]
+
 [node name="Camera3D" type="Camera3D" parent="SubViewport/Anchor_Camera3D" unique_id=69060824]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.8184813, 0)
-
-[node name="MeshInstance3D" type="MeshInstance3D" parent="." unique_id=1993947678]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -4.0979004)
-mesh = SubResource("CylinderMesh_v6qmf")
+environment = SubResource("Environment_p3hf8")
+current = true
