@@ -1,7 +1,7 @@
 extends Node
 
 ## The place for the player to write code to be run when requested.
-@export var _code_edit:CodeEdit
+@export var code_edit:CodeEdit
 
 func _ready() -> void:
 	load_text_color_style()
@@ -19,10 +19,11 @@ func load_text_color_style():
 		"match": Color("06DA01"),
 		"break": Color("06DA01"),
 		"continue": Color("06DA01"),
-		"pass": Color("06DA01"),
+		"pass": Color("ff7fc5ff"),
 		"return": Color("06DA01"),
 		"class": Color("06DA01"),
 		"class_name": Color("06DA01"),
+		"export": Color("06DA01"),
 		"extends": Color("06DA01"),
 		"func": Color("06DA01"),
 		"static": Color("06DA01"),
@@ -37,29 +38,29 @@ func load_text_color_style():
 
 	# Built-in types
 	highlighter.member_keyword_colors = {
-		"int": Color("000AAB"),
-		"float": Color("000AAB"),
-		"bool": Color("000AAB"),
-		"String": Color("000AAB"),
-		"Array": Color("000AAB"),
-		"Dictionary": Color("000AAB"),
-		"Vector2": Color("000AAB"),
-		"Vector3": Color("000AAB"),
-		"Color": Color("000AAB"),
-		"Node": Color("000AAB"),
-		"Object": Color("000AAB")
+		"int": Color("4179feff"),
+		"float": Color("4179feff"),
+		"bool": Color("4179feff"),
+		"String": Color("4179feff"),
+		"Array": Color("4179feff"),
+		"Dictionary": Color("4179feff"),
+		"Vector2": Color("4179feff"),
+		"Vector3": Color("4179feff"),
+		"Color": Color("4179feff"),
+		"Node": Color("4179feff"),
+		"Object": Color("4179feff")
 	}
 
 	# General token colors
-	highlighter.number_color = Color("06DA01")
-	highlighter.symbol_color = Color("514EB2")
-	highlighter.function_color = Color("000AAB")
-	highlighter.member_variable_color = Color("623CD4")
+	highlighter.number_color = Color("ffffffff")
+	highlighter.symbol_color = Color("ffffff")
+	highlighter.function_color = Color("ff523cff")
+	highlighter.member_variable_color = Color("ffffffff")
 	
 
 	# Regions
-	highlighter.add_color_region("\"", "\"", Color("06DA01"), false)
-	highlighter.add_color_region("'", "'", Color("06DA01"), false)
+	highlighter.add_color_region("\"", "\"", Color("7d7d7d"), false)
+	highlighter.add_color_region("'", "'", Color("7d7d7d"), false)
 	highlighter.add_color_region("#", "", Color("7d7d7d"), true)
 
-	_code_edit.syntax_highlighter = highlighter
+	code_edit.syntax_highlighter = highlighter

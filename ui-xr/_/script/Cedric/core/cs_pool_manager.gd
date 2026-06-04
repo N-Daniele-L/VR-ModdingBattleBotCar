@@ -19,7 +19,7 @@ func _ready() -> void:
 	for key in scene_templates.keys():
 		_pools[key] = []
 
-func get_from_pool(pool_name: String) -> Node:
+func get_from_pool(pool_name: String) -> Node3D:
 	if not scene_templates.has(pool_name):
 		return null
 		
@@ -48,7 +48,7 @@ func get_from_pool(pool_name: String) -> Node:
 	object_requested.emit(pool_name)
 	return new_instance
 
-func return_to_pool(instance: Node) -> void:
+func return_to_pool(instance: Node3D) -> void:
 	if instance == null or not is_instance_valid(instance):
 		return
 		

@@ -1,24 +1,26 @@
 [gd_scene format=3 uid="uid://dkrwaucp4tsgb"]
 
 [ext_resource type="Script" uid="uid://clipxhr1jpdbq" path="res://addons/godot-demo-xr/scenes/demo_scene_base.gd" id="1_dn16q"]
-[ext_resource type="PackedScene" uid="uid://bnx4hithcij6y" path="res://addons/godot-xr-tools/hands/model/Hand_Glove_low_L.gltf" id="2_jtqef"]
 [ext_resource type="Script" uid="uid://b18kkstg643yw" path="res://addons/godot-xr-tools/functions/function_pickup.gd" id="3_sgves"]
 [ext_resource type="PackedScene" uid="uid://cqhw276realc" path="res://addons/godot-xr-tools/functions/function_pointer.tscn" id="4_8ewul"]
-[ext_resource type="PackedScene" uid="uid://csgsp0wuw8ucy" path="res://addons/godot-xr-tools/hands/model/Hand_Glove_low_R.gltf" id="5_6n3o0"]
-[ext_resource type="PackedScene" uid="uid://cewdh5p3ml2mk" path="res://_/scene/background.tscn" id="6_llvr6"]
+[ext_resource type="PackedScene" uid="uid://njx823gyk04n" path="res://addons/godot-xr-tools/hands/scenes/highpoly/left_hand.tscn" id="4_iqrj0"]
+[ext_resource type="PackedScene" uid="uid://raeeicvvindd" path="res://addons/godot-xr-tools/hands/scenes/highpoly/right_hand.tscn" id="5_v7wsq"]
+[ext_resource type="PackedScene" uid="uid://dit5utrlm4qhc" path="res://_/scene/Nicolas/paper_ball_pickable.tscn" id="8_iqrj0"]
+[ext_resource type="PackedScene" uid="uid://d3spwpl4gmsnc" path="res://_/scene/Adriano/background_office.tscn" id="8_v7wsq"]
+[ext_resource type="PackedScene" uid="uid://dgdb1texynduw" path="res://addons/godot-xr-tools/objects/virtual_keyboard.tscn" id="9_gmri5"]
+[ext_resource type="PackedScene" uid="uid://cuvhkqy0mqv7p" path="res://_/scene/Nicolas/viewport_to_text_edit.tscn" id="9_v7wsq"]
 [ext_resource type="PackedScene" uid="uid://bei0bw2gg5ig" path="res://_/scene/Nicolas/documentation_pickable_beta.tscn" id="10_6pf6d"]
 
 [node name="Main" type="Node3D" unique_id=1421353623]
 script = ExtResource("1_dn16q")
 
 [node name="XROrigin3D" type="XROrigin3D" parent="." unique_id=666322222]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -1.2587796)
 
 [node name="XRCamera3D" type="XRCamera3D" parent="XROrigin3D" unique_id=278342559]
 
 [node name="XRControllerLeft" type="XRController3D" parent="XROrigin3D" unique_id=1744335750]
 tracker = &"left_hand"
-
-[node name="hand_l" parent="XROrigin3D/XRControllerLeft" unique_id=1441204479 instance=ExtResource("2_jtqef")]
 
 [node name="XRToolsFunctionPickup" type="Node3D" parent="XROrigin3D/XRControllerLeft" unique_id=1325619244]
 script = ExtResource("3_sgves")
@@ -27,10 +29,10 @@ metadata/_custom_type_script = "uid://b18kkstg643yw"
 [node name="FunctionPointer" parent="XROrigin3D/XRControllerLeft" unique_id=1883081527 instance=ExtResource("4_8ewul")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.02, 0.05, -0.1)
 
+[node name="LeftHand" parent="XROrigin3D/XRControllerLeft" unique_id=1828235213 instance=ExtResource("4_iqrj0")]
+
 [node name="XRControllerRight" type="XRController3D" parent="XROrigin3D" unique_id=1510464946]
 tracker = &"right_hand"
-
-[node name="hand_r" parent="XROrigin3D/XRControllerRight" unique_id=2088910385 instance=ExtResource("5_6n3o0")]
 
 [node name="FunctionPointer" parent="XROrigin3D/XRControllerRight" unique_id=1203588822 instance=ExtResource("4_8ewul")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.02, 0.05, -0.1)
@@ -39,7 +41,26 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.02, 0.05, -0.1)
 script = ExtResource("3_sgves")
 metadata/_custom_type_script = "uid://b18kkstg643yw"
 
-[node name="Background" parent="." unique_id=72946100 instance=ExtResource("6_llvr6")]
+[node name="RightHand" parent="XROrigin3D/XRControllerRight" unique_id=1624821747 instance=ExtResource("5_v7wsq")]
 
 [node name="DocumentationPickup" parent="." unique_id=2115070077 instance=ExtResource("10_6pf6d")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.8217493, -0.9097098)
+transform = Transform3D(1, 0, 0, 0, -0.10343998, 0.9946357, 0, -0.9946357, -0.10343998, -0.70669293, 0.39146787, -0.9097098)
+
+[node name="PaperBallPickable" parent="." unique_id=1557228164 instance=ExtResource("8_iqrj0")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.0749397, 0.19559127, 0)
+
+[node name="PaperBallPickable2" parent="." unique_id=1440499314 instance=ExtResource("8_iqrj0")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.0749397, 0.19559127, 0.115976155)
+
+[node name="PaperBallPickable3" parent="." unique_id=939972357 instance=ExtResource("8_iqrj0")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.0749397, 0.19559127, -0.122933)
+
+[node name="Background" parent="." unique_id=72946100 instance=ExtResource("8_v7wsq")]
+
+[node name="ViewportToTextEdit" parent="." unique_id=1639018848 instance=ExtResource("9_v7wsq")]
+transform = Transform3D(0.94614065, 0, 0.32375574, 0, 1, 0, -0.32375574, 0, 0.94614065, -0.21034871, 0.94462425, -1.8558388)
+screen_size = Vector2(0.3, 0.225)
+
+[node name="VirtualKeyboard" parent="." unique_id=1694852370 instance=ExtResource("9_gmri5")]
+transform = Transform3D(0.25, 0, 0, 0, -1.0927847e-08, 0.25, 0, -0.25, -1.0927847e-08, 0, 0.7234334, -1.6370298)
+scene_properties_keys = PackedStringArray("virtual_keyboard_2d.gd")

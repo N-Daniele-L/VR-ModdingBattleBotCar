@@ -11,7 +11,7 @@ config_version=5
 [application]
 
 config/name="UI-XR"
-run/main_scene="uid://b6w7bif6vmpve"
+run/main_scene="uid://bp8thihlgx7pa"
 config/features=PackedStringArray("4.6", "GL Compatibility")
 config/icon="res://icon.svg"
 
@@ -19,7 +19,7 @@ config/icon="res://icon.svg"
 
 XRToolsUserSettings="*uid://bqgb8i74tm0t"
 XRToolsRumbleManager="*uid://by853dk86g1qw"
-CsPoolManager="*uid://ydraalgt1y6v"
+CsPoolManager="*uid://cdhcp5os0xvff"
 
 [editor_plugins]
 

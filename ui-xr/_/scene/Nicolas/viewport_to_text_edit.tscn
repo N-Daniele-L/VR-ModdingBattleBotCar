@@ -1,0 +1,51 @@
+[gd_scene format=3 uid="uid://cuvhkqy0mqv7p"]
+
+[ext_resource type="Script" uid="uid://eavk7267igp7" path="res://addons/godot-xr-tools/objects/viewport_2d_in_3d.gd" id="1_hk6vk"]
+[ext_resource type="PackedScene" uid="uid://bobmtrjrbq1a5" path="res://_/scene/Nicolas/ui_node_2d.tscn" id="2_hk6vk"]
+[ext_resource type="Script" uid="uid://cpl5yiyf1ypft" path="res://addons/godot-xr-tools/objects/viewport_2d_in_3d_body.gd" id="3_im2uy"]
+
+[sub_resource type="QuadMesh" id="QuadMesh_nc27s"]
+size = Vector2(8, 6)
+
+[sub_resource type="ViewportTexture" id="ViewportTexture_1oiy2"]
+viewport_path = NodePath("Viewport")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_k6et6"]
+cull_mode = 2
+albedo_texture = SubResource("ViewportTexture_1oiy2")
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_amt6q"]
+resource_local_to_scene = true
+size = Vector3(8, 6, 0.02)
+
+[node name="ViewportToTextEdit" type="Node3D" unique_id=1639018848]
+script = ExtResource("1_hk6vk")
+screen_size = Vector2(8, 6)
+scene = ExtResource("2_hk6vk")
+viewport_size = Vector2(800, 600)
+throttle_fps = 15.0
+transparent = 1
+alpha_scissor_threshold = 0.25
+unshaded = false
+filter = true
+scene_properties_keys = PackedStringArray()
+metadata/_custom_type_script = "uid://eavk7267igp7"
+
+[node name="Viewport" type="SubViewport" parent="." unique_id=1301503223]
+size = Vector2i(800, 600)
+render_target_update_mode = 1
+
+[node name="Screen" type="MeshInstance3D" parent="." unique_id=646481014]
+mesh = SubResource("QuadMesh_nc27s")
+surface_material_override/0 = SubResource("StandardMaterial3D_k6et6")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="." unique_id=1793582716]
+collision_layer = 5242881
+collision_mask = 0
+script = ExtResource("3_im2uy")
+screen_size = Vector2(8, 6)
+viewport_size = Vector2(800, 600)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D" unique_id=2096491863]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -0.01)
+shape = SubResource("BoxShape3D_amt6q")
