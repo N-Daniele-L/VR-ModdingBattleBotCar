@@ -1,0 +1,37 @@
+[gd_scene format=3 uid="uid://cmuexu11vfik5"]
+
+[ext_resource type="Script" uid="uid://cxm5kh7l5i8pv" path="res://_/script/Nicolas/viewport_documentation.gd" id="1_53dan"]
+[ext_resource type="PackedScene" uid="uid://cfodj3tsisygl" path="res://_/scene/Nicolas/text_documentation.tscn" id="2_53dan"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_wt7j0"]
+
+[sub_resource type="BoxMesh" id="BoxMesh_wt7j0"]
+material = SubResource("StandardMaterial3D_wt7j0")
+size = Vector3(0.22, 0.31, 0.001)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_jvk35"]
+
+[sub_resource type="QuadMesh" id="QuadMesh_jvk35"]
+material = SubResource("StandardMaterial3D_jvk35")
+size = Vector2(0.21, 0.297)
+center_offset = Vector3(0, 0, 0.0007)
+
+[node name="documentation" type="Node3D" unique_id=206676284]
+script = ExtResource("1_53dan")
+
+[node name="size" type="Node3D" parent="." unique_id=35611992]
+
+[node name="Paper" type="MeshInstance3D" parent="size" unique_id=92643947]
+mesh = SubResource("BoxMesh_wt7j0")
+
+[node name="Quad" type="MeshInstance3D" parent="size" unique_id=1998571990]
+mesh = SubResource("QuadMesh_jvk35")
+
+[node name="SubViewport" type="SubViewport" parent="size" unique_id=2130570605]
+size = Vector2i(210, 297)
+
+[node name="Control" parent="size/SubViewport" unique_id=1797425709 instance=ExtResource("2_53dan")]
+offset_right = 133.35
+offset_bottom = 24.65097
+
+[connection signal="send_text_to_control" from="." to="size/SubViewport/Control" method="change_text"]
