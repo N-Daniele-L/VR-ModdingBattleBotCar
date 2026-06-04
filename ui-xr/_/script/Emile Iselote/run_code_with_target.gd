@@ -227,23 +227,23 @@ func load_text_color_style():
 
 	# Built-in types
 	highlighter.member_keyword_colors = {
-		"int": Color("000AAB"),
-		"float": Color("000AAB"),
-		"bool": Color("000AAB"),
-		"String": Color("000AAB"),
-		"Array": Color("000AAB"),
-		"Dictionary": Color("000AAB"),
-		"Vector2": Color("000AAB"),
-		"Vector3": Color("000AAB"),
-		"Color": Color("000AAB"),
-		"Node": Color("000AAB"),
-		"Object": Color("000AAB")
+		"int": Color("2FFFF5"),
+		"float": Color("2FFFF5"),
+		"bool": Color("2FFFF5"),
+		"String": Color("2FFFF5"),
+		"Array": Color("2FFFF5"),
+		"Dictionary": Color("2FFFF5"),
+		"Vector2": Color("2FFFF5"),
+		"Vector3": Color("2FFFF5"),
+		"Color": Color("2FFFF5"),
+		"Node": Color("2FFFF5"),
+		"Object": Color("2FFFF5")
 	}
 
 	# General token colors
 	highlighter.number_color = Color("06DA01")
 	highlighter.symbol_color = Color("514EB2")
-	highlighter.function_color = Color("000AAB")
+	highlighter.function_color = Color("ce0000ff")
 	highlighter.member_variable_color = Color("623CD4")
 	
 

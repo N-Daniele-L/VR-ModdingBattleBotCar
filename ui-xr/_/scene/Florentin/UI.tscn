@@ -51,26 +51,22 @@ color = Color(0, 0, 0, 1)
 [node name="CodeEdit" type="CodeEdit" parent="AspectRatioContainer/CodeEdit_Container/ColorRect" unique_id=2141369229]
 layout_mode = 1
 anchors_preset = -1
-anchor_left = 0.037037037
-anchor_top = 0.049382716
-anchor_right = 0.962963
-anchor_bottom = 0.88272846
+anchor_top = 0.02
+anchor_right = 0.98
+anchor_bottom = 0.88
 grow_horizontal = 2
 grow_vertical = 2
 size_flags_vertical = 3
 theme_override_fonts/font = ExtResource("1_66nus")
 theme_override_font_sizes/font_size = 24
 theme_override_styles/normal = SubResource("StyleBoxFlat_vm31h")
-text = "extends Node
-
-func _ready():
-	print(\"Bonjour madame\")"
-placeholder_text = "CODE TO WIN"
+placeholder_text = "#Start coding here"
 wrap_mode = 1
 gutters_draw_breakpoints_gutter = true
 gutters_draw_bookmarks = true
 gutters_draw_executing_lines = true
 gutters_draw_line_numbers = true
+indent_size = 3
 metadata/_edit_use_anchors_ = true
 
 [node name="BTN_Container" type="HBoxContainer" parent="AspectRatioContainer" unique_id=2033867801]
@@ -83,7 +79,7 @@ metadata/_edit_use_anchors_ = true
 
 [node name="BTN_Zoom-" type="Button" parent="AspectRatioContainer/BTN_Container" unique_id=539935282]
 layout_mode = 2
-theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_colors/font_pressed_color = Color(0, 0, 0, 1)
 theme_override_fonts/font = ExtResource("1_66nus")
 theme_override_font_sizes/font_size = 24
@@ -93,7 +89,7 @@ text = "-"
 
 [node name="BTN_Zoom+" type="Button" parent="AspectRatioContainer/BTN_Container" unique_id=1208571942]
 layout_mode = 2
-theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_colors/font_pressed_color = Color(0, 0, 0, 1)
 theme_override_fonts/font = ExtResource("1_66nus")
 theme_override_font_sizes/font_size = 24
@@ -103,7 +99,7 @@ text = "+"
 
 [node name="BTN_RunScript" type="Button" parent="AspectRatioContainer/BTN_Container" unique_id=907210518]
 layout_mode = 2
-theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_colors/font_pressed_color = Color(0, 0, 0, 1)
 theme_override_fonts/font = ExtResource("1_66nus")
 theme_override_font_sizes/font_size = 24
@@ -113,7 +109,7 @@ text = "Run Script"
 
 [node name="BTN_ResetCode" type="Button" parent="AspectRatioContainer/BTN_Container" unique_id=1624758680]
 layout_mode = 2
-theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_colors/font_pressed_color = Color(0, 0, 0, 1)
 theme_override_fonts/font = ExtResource("1_66nus")
 theme_override_font_sizes/font_size = 24
@@ -123,7 +119,7 @@ text = "Reset Code"
 
 [node name="BTN_StopAndRestart" type="Button" parent="AspectRatioContainer/BTN_Container" unique_id=583311573]
 layout_mode = 2
-theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_colors/font_pressed_color = Color(0, 0, 0, 1)
 theme_override_fonts/font = ExtResource("1_66nus")
 theme_override_font_sizes/font_size = 24
