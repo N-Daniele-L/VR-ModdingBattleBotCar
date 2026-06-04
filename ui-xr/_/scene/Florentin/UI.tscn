@@ -20,10 +20,10 @@ bg_color = Color(1, 1, 1, 1)
 
 [node name="UI" type="Control" unique_id=1982713081 node_paths=PackedStringArray("code_edit")]
 layout_mode = 3
-anchor_right = 1.3888888
-anchor_bottom = 1.8518518
-offset_right = -736.0
-offset_bottom = -552.0
+anchor_right = 0.26000002
+anchor_bottom = 0.61700004
+offset_right = 500.47998
+offset_bottom = 200.18396
 grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_hgu0o")
