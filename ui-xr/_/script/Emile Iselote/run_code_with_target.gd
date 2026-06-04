@@ -21,19 +21,14 @@ signal reset_all_overrides_requested
 @export_group("Debug")
 @export var created_node_holding_code: Node
 
-var default_code: String = """extends Node
-
-var target: Node = 10
-
-func _on_received_target(new_target: Node) -> void:
-	target = new_target
-	if target and target.has_method("shoot"):
-		target.shoot()
+var default_code: String = """
 """
 
 func _ready() -> void:
 	if code_edit and code_edit.text.strip_edges() == "":
 		code_edit.text = default_code
+
+	
 
 	if use_default_color_style and code_edit:
 		load_text_color_style()
@@ -50,7 +45,7 @@ func _on_reset_code_button_pressed() -> void:
 func _on_reset_all_overrides_button_pressed() -> void:
 	reset_all_overrides_requested.emit()
 
-	if target_node and target_node.has_method("reset_all_overrides"):
+	if target_node  and target_node.has_method("reset_all_overrides"):
 		target_node.call("reset_all_overrides")
 
 func _on_plus_size_button_pressed() -> void:
