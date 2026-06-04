@@ -18,7 +18,7 @@ signal controlled_target_changed(node: Node)
 
 @export_group("Limits")
 @export var min_damage: int = 1
-@export var max_damage: int = 999
+@export var max_damage: int = 100
 @export var min_range: float = 1.0
 @export var max_range: float = 100.0
 @export var min_fire_rate: float = 0.1
