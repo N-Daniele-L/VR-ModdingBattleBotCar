@@ -14,6 +14,8 @@ func _ready() -> void:
 	if Engine.is_editor_hint():
 		return
 	enforce_enemy_quota()
+	var x = request_enemy_from_pool()
+	x.visible = true
 
 func enforce_enemy_quota() -> void:
 	while active_enemies.size() < MAX_SIMULTANEOUS_ENEMIES:
