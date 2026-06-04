@@ -14,7 +14,7 @@ signal reset_all_overrides_requested
 @export var target_node: Node
 @export var where_to_run_code: Node
 @export var method_to_notify_new_target: String = "_on_received_target"
-@export var unique_code_file_name: String = "player_mod_code.gd"
+@export var unique_code_file_name: String = "code_edit"
 @export var create_node_as_node_3d: bool = false
 @export var use_default_color_style: bool = true
 
@@ -23,7 +23,7 @@ signal reset_all_overrides_requested
 
 var default_code: String = """extends Node
 
-var target: Node
+var target: Node = 10
 
 func _on_received_target(new_target: Node) -> void:
 	target = new_target
