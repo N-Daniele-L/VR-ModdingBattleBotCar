@@ -1,0 +1,19 @@
+[gd_scene format=3 uid="uid://d3ffwrn6hmhym"]
+
+[ext_resource type="PackedScene" uid="uid://ctmiv4vbk0if4" path="res://_/ART/3D/Models/3D_A_Ply_PlayerMech.glb" id="1_n0hxm"]
+[ext_resource type="Material" uid="uid://wog5kifhuqgq" path="res://_/ART/3D/Materials/M_GameScene.tres" id="2_a7n14"]
+
+[node name="P_Ply_PlayerMech" type="Node3D" unique_id=346653880]
+
+[node name="3D_A_Ply_PlayerMech" parent="." unique_id=1076190745 instance=ExtResource("1_n0hxm")]
+
+[node name="3D_MissleLuncher" parent="3D_A_Ply_PlayerMech/Armature/Skeleton3D" parent_id_path=PackedInt32Array(1076190745, 1759950438) index="0" unique_id=912445592]
+surface_material_override/0 = ExtResource("2_a7n14")
+
+[node name="3D_RobotMain_004" parent="3D_A_Ply_PlayerMech/Armature/Skeleton3D" parent_id_path=PackedInt32Array(1076190745, 1759950438) index="1" unique_id=1890902751]
+surface_material_override/0 = ExtResource("2_a7n14")
+
+[node name="3D_UnderArmGun" parent="3D_A_Ply_PlayerMech/Armature/Skeleton3D" parent_id_path=PackedInt32Array(1076190745, 1759950438) index="2" unique_id=482448437]
+surface_material_override/0 = ExtResource("2_a7n14")
+
+[editable path="3D_A_Ply_PlayerMech"]
