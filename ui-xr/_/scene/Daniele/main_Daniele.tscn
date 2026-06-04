@@ -66,13 +66,6 @@ size = Vector3(0.75, 0.375, 0.02)
 [node name="Main" type="Node3D" unique_id=1421353623]
 script = ExtResource("1_f02s8")
 
-[node name="WorldEnvironment" type="WorldEnvironment" parent="." unique_id=990813102]
-environment = SubResource("Environment_c3qei")
-
-[node name="DirectionalLight3D" type="DirectionalLight3D" parent="." unique_id=1576666891]
-transform = Transform3D(-0.8660254, -0.43301278, 0.25, 0, 0.49999997, 0.86602545, -0.50000006, 0.75, -0.43301266, 0, 0, 0)
-shadow_enabled = true
-
 [node name="XROrigin3D" type="XROrigin3D" parent="." unique_id=666322222]
 
 [node name="XRCamera3D" type="XRCamera3D" parent="XROrigin3D" unique_id=278342559]
@@ -100,6 +93,13 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.02, 0.05, -0.1)
 [node name="XRToolsFunctionPickup" type="Node3D" parent="XROrigin3D/XRControllerRight" unique_id=2026082501]
 script = ExtResource("3_jkwih")
 metadata/_custom_type_script = "uid://b18kkstg643yw"
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="." unique_id=990813102]
+environment = SubResource("Environment_c3qei")
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="." unique_id=1576666891]
+transform = Transform3D(-0.8660254, -0.43301278, 0.25, 0, 0.49999997, 0.86602545, -0.50000006, 0.75, -0.43301266, 0, 0, 0)
+shadow_enabled = true
 
 [node name="Background" parent="." unique_id=72946100 instance=ExtResource("6_thtoo")]
 
@@ -159,23 +159,23 @@ visible = false
 [node name="PlayerTest" parent="." unique_id=233253796 instance=ExtResource("12_bs5cw")]
 transform = Transform3D(0.1, 0, 0, 0, 0.1, 0, 0, 0, 0.1, 0, 0.14390445, 0.14697224)
 
-[node name="DNGameManager" type="Node" parent="." unique_id=348758727 node_paths=PackedStringArray("player_bot", "player_collider")]
-script = ExtResource("11_10bsh")
-wave_spawn_point = Array[Vector3]([Vector3(0, 0, 1.0955697)])
-player_bot = NodePath("../PlayerTest")
-player_collider = NodePath("../PlayerTest/CollisionShape3D")
-metadata/_custom_type_script = "uid://b6i42h7jqarx2"
-
 [node name="Waves" type="Node3D" parent="." unique_id=1251513735]
 
 [node name="WavePoint" type="Node3D" parent="Waves" unique_id=1714118893]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 1.0955697)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -1.256622)
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="Waves/WavePoint" unique_id=1046368387]
 transform = Transform3D(0.1, 0, 0, 0, 0.1, 0, 0, 0, 0.1, 0, 0, 0)
 mesh = SubResource("SphereMesh_bs5cw")
 
-[node name="CSPoolManager" type="Node" parent="." unique_id=595101626]
+[node name="DNGameManager" type="Node" parent="." unique_id=348758727 node_paths=PackedStringArray("player_bot", "player_collider")]
+script = ExtResource("11_10bsh")
+wave_spawn_point = Array[Vector3]([Vector3(0, 0, 1.0955697)])
+player_bot = NodePath("../PlayerTest/Node3D")
+player_collider = NodePath("../PlayerTest/Node3D/CollisionShape3D")
+metadata/_custom_type_script = "uid://b6i42h7jqarx2"
+
+[node name="CSPoolManager" type="Node" parent="." unique_id=2045671022]
 script = ExtResource("10_liirh")
 scene_templates = {
 "BasicEnemy": ExtResource("14_ck10e"),
