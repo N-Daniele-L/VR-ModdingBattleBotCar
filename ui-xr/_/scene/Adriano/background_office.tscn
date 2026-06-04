@@ -75,7 +75,7 @@ albedo_texture = SubResource("ViewportTexture_fs4ot")
 
 [sub_resource type="QuadMesh" id="QuadMesh_d2eip"]
 material = SubResource("StandardMaterial3D_a34ln")
-size = Vector2(0.31, 0.23)
+size = Vector2(0.365, 0.275)
 
 [node name="P_Background" type="Node3D" unique_id=72946100]
 
@@ -85,8 +85,8 @@ environment = SubResource("Environment_fs4ot")
 [node name="---Light---" type="Node" parent="." unique_id=1539997929]
 
 [node name="Light_CCTV01" type="OmniLight3D" parent="---Light---" unique_id=562136057]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.16559981, 0.95006657, -1.8933856)
-light_color = Color(0.96862745, 1, 1, 1)
+transform = Transform3D(0.9697443, 0, -0.2441228, 0, 1, 0, 0.2441228, 0, 0.9697443, 0.23635173, 0.99832654, -1.8548448)
+light_color = Color(0.99916905, 0.65726364, 0.59114283, 1)
 light_energy = 0.25
 shadow_enabled = true
 shadow_bias = 0.0
@@ -100,7 +100,7 @@ distance_fade_length = 1.0
 omni_range = 1.404
 
 [node name="Light_CCTV02" type="OmniLight3D" parent="---Light---" unique_id=540712808]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.22744931, 0.95006657, -1.8612199)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.23744932, 0.95006657, -1.8212199)
 light_color = Color(0.96862745, 1, 1, 1)
 light_energy = 0.05
 shadow_enabled = true
@@ -205,7 +205,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.57690763, 0.06802502, -1.82
 shape = SubResource("ConcavePolygonShape3D_1igh1")
 
 [node name="GEO_Monitor01" parent="graphic/MeshInstance3D/3D_BG_Office" index="10" unique_id=1513490273]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.26026097, 0.7109312, -1.9896183)
+transform = Transform3D(1.2, 0, 0, 0, 1.2, 0, 0, 0, 1.2, -0.27226096, 0.7109312, -1.9896183)
 
 [node name="StaticBody3D" type="StaticBody3D" parent="graphic/MeshInstance3D/3D_BG_Office/GEO_Monitor01" index="0" unique_id=1148936533]
 
@@ -234,7 +234,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.5372621, 0.7302481, -1.885
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.05625373, 0.71337736, -1.8312752)
 
 [node name="GEO_Rack" parent="graphic/MeshInstance3D/3D_BG_Office" index="18" unique_id=1782938055]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.5753815, 0.7112168, -1.9079593)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.5953815, 0.7112168, -1.9079593)
 
 [node name="StaticBody3D" type="StaticBody3D" parent="graphic/MeshInstance3D/3D_BG_Office/GEO_Rack" index="0" unique_id=1349034720]
 
@@ -263,7 +263,7 @@ transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 0.00
 shape = SubResource("BoxShape3D_1igh1")
 
 [node name="GEO_Lamp" parent="graphic/MeshInstance3D/3D_BG_Office" index="19" unique_id=195590611]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.59523255, 0.70871276, -2.0140102)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.63523257, 0.70871276, -1.9740102)
 
 [node name="StaticBody3D" type="StaticBody3D" parent="graphic/MeshInstance3D/3D_BG_Office/GEO_Lamp" index="0" unique_id=1100064569]
 
@@ -271,7 +271,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.59523255, 0.70871276, -2.0
 shape = SubResource("ConcavePolygonShape3D_d2eip")
 
 [node name="GEO_Monitor02" parent="graphic/MeshInstance3D/3D_BG_Office" index="20" unique_id=1658369902]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.20382753, 0.7109312, -2.0186963)
+transform = Transform3D(1.2, 0, 0, 0, 1.2, 0, 0, 0, 1.2, 0.26382753, 0.7109312, -2.0186963)
 cast_shadow = 2
 
 [node name="StaticBody3D" type="StaticBody3D" parent="graphic/MeshInstance3D/3D_BG_Office/GEO_Monitor02" index="0" unique_id=1815341021]
@@ -304,7 +304,7 @@ transform = Transform3D(0.10000001, 0, 0, 0, 2.2253754, 0, 0, 0, 0.10000001, -0.
 transform = Transform3D(-0.0046213986, -1.7252226, 0.06299616, 0.087413, -0.74909675, -0.03501238, 0.04834886, 1.1894356, 0.06932258, -0.41037047, 0.718534, -1.6972125)
 
 [node name="CRT_GameScene" type="MeshInstance3D" parent="graphic" unique_id=664323941 node_paths=PackedStringArray("viewport")]
-transform = Transform3D(0.98216605, 0, -0.18801562, 0, 1, 0, 0.18801562, 0, 0.98216605, 0.17605957, 0.94308287, -1.8772134)
+transform = Transform3D(0.98216605, 0, -0.18801562, 0, 1, 0, 0.18801562, 0, 0.98216605, 0.23122923, 0.98941755, -1.8462892)
 mesh = SubResource("QuadMesh_d2eip")
 script = ExtResource("2_1x0uo")
 viewport = NodePath("../P_CRT/SubViewport")
