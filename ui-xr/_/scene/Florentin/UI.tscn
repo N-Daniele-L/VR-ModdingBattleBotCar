@@ -15,14 +15,17 @@ content_margin_bottom = 16.0
 bg_color = Color(0.023529412, 0.85490197, 0.003921569, 1)
 anti_aliasing = false
 
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_hgu0o"]
+bg_color = Color(1, 1, 1, 1)
+
 [node name="UI" type="Control" unique_id=1982713081]
 layout_mode = 3
 anchor_right = 1.3888888
 anchor_bottom = 1.8518518
+offset_right = -736.0
+offset_bottom = -552.0
 grow_horizontal = 2
 grow_vertical = 2
-size_flags_vertical = 3
-metadata/_edit_use_anchors_ = true
 
 [node name="AspectRatioContainer" type="AspectRatioContainer" parent="." unique_id=548256345]
 layout_mode = 1
@@ -45,19 +48,15 @@ color = Color(0, 0, 0, 1)
 [node name="CodeEdit" type="CodeEdit" parent="AspectRatioContainer/CodeEdit_Container/ColorRect" unique_id=2141369229]
 layout_mode = 1
 anchors_preset = -1
-anchor_left = -0.00625
-anchor_top = 0.02417918
-anchor_right = 0.98
-anchor_bottom = 0.9741792
-offset_left = 32.0
-offset_top = 32.0
-offset_right = -32.0
-offset_bottom = -198.0
+anchor_left = 0.037037037
+anchor_top = 0.049382716
+anchor_right = 0.962963
+anchor_bottom = 0.88272846
 grow_horizontal = 2
 grow_vertical = 2
 size_flags_vertical = 3
 theme_override_fonts/font = ExtResource("1_66nus")
-theme_override_font_sizes/font_size = 32
+theme_override_font_sizes/font_size = 24
 theme_override_styles/normal = SubResource("StyleBoxFlat_vm31h")
 text = "extends Node
 
@@ -74,57 +73,64 @@ gutters_draw_executing_lines = true
 gutters_draw_line_numbers = true
 metadata/_edit_use_anchors_ = true
 
-[node name="CodeEditColor" type="Node" parent="AspectRatioContainer/CodeEdit_Container/ColorRect" unique_id=2134826856]
+[node name="CodeEditColor" type="Node" parent="AspectRatioContainer/CodeEdit_Container/ColorRect" unique_id=2134826856 node_paths=PackedStringArray("code_edit")]
 script = ExtResource("2_vm31h")
+code_edit = NodePath("../CodeEdit")
 
 [node name="BTN_Container" type="HBoxContainer" parent="AspectRatioContainer" unique_id=2033867801]
 layout_mode = 2
+size_flags_horizontal = 4
 size_flags_vertical = 8
-theme_override_constants/separation = 70
-alignment = 1
+theme_override_constants/separation = 24
+alignment = 2
 metadata/_edit_use_anchors_ = true
 
-[node name="BTN_Zoom_Container" type="VBoxContainer" parent="AspectRatioContainer/BTN_Container" unique_id=147935682]
-layout_mode = 2
-size_flags_horizontal = 4
-alignment = 1
-
-[node name="BTN_Zoom+" type="Button" parent="AspectRatioContainer/BTN_Container/BTN_Zoom_Container" unique_id=1208571942]
+[node name="BTN_Zoom-" type="Button" parent="AspectRatioContainer/BTN_Container" unique_id=539935282]
 layout_mode = 2
 theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_pressed_color = Color(0, 0, 0, 1)
 theme_override_fonts/font = ExtResource("1_66nus")
-theme_override_font_sizes/font_size = 32
+theme_override_font_sizes/font_size = 24
 theme_override_styles/normal = SubResource("StyleBoxFlat_802u8")
-text = "Zoom +"
+theme_override_styles/pressed = SubResource("StyleBoxFlat_hgu0o")
+text = "-"
 
-[node name="BTN_Zoom-" type="Button" parent="AspectRatioContainer/BTN_Container/BTN_Zoom_Container" unique_id=539935282]
+[node name="BTN_Zoom+" type="Button" parent="AspectRatioContainer/BTN_Container" unique_id=1208571942]
 layout_mode = 2
 theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_pressed_color = Color(0, 0, 0, 1)
 theme_override_fonts/font = ExtResource("1_66nus")
-theme_override_font_sizes/font_size = 32
+theme_override_font_sizes/font_size = 24
 theme_override_styles/normal = SubResource("StyleBoxFlat_802u8")
-text = "Zoom -"
+theme_override_styles/pressed = SubResource("StyleBoxFlat_hgu0o")
+text = "+"
 
 [node name="BTN_RunScript" type="Button" parent="AspectRatioContainer/BTN_Container" unique_id=907210518]
 layout_mode = 2
 theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_pressed_color = Color(0, 0, 0, 1)
 theme_override_fonts/font = ExtResource("1_66nus")
-theme_override_font_sizes/font_size = 32
+theme_override_font_sizes/font_size = 24
 theme_override_styles/normal = SubResource("StyleBoxFlat_802u8")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_hgu0o")
 text = "Run Script"
 
 [node name="BTN_ResetCode" type="Button" parent="AspectRatioContainer/BTN_Container" unique_id=1624758680]
 layout_mode = 2
 theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_pressed_color = Color(0, 0, 0, 1)
 theme_override_fonts/font = ExtResource("1_66nus")
-theme_override_font_sizes/font_size = 32
+theme_override_font_sizes/font_size = 24
 theme_override_styles/normal = SubResource("StyleBoxFlat_802u8")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_hgu0o")
 text = "Reset Code"
 
 [node name="BTN_StopAndRestart" type="Button" parent="AspectRatioContainer/BTN_Container" unique_id=583311573]
 layout_mode = 2
 theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_pressed_color = Color(0, 0, 0, 1)
 theme_override_fonts/font = ExtResource("1_66nus")
-theme_override_font_sizes/font_size = 32
+theme_override_font_sizes/font_size = 24
 theme_override_styles/normal = SubResource("StyleBoxFlat_802u8")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_hgu0o")
 text = "Stop and Restart"

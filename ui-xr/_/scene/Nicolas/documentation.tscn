@@ -33,3 +33,5 @@ size = Vector2i(210, 297)
 [node name="Control" parent="size/SubViewport" unique_id=1797425709 instance=ExtResource("2_53dan")]
 offset_right = 133.35
 offset_bottom = 24.65097
+
+[connection signal="send_text_to_control" from="." to="size/SubViewport/Control" method="change_text"]

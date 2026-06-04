@@ -18,11 +18,13 @@ var actual_state: game_state = game_state.NONE
 @export var player_bot: Node
 @export var player_collider: CollisionShape3D
 var chrono : float
+@export var enemy_pool: CSPoolManager
 
 #var enemies_node: Array[Enemy]
-#var enemy_pool_system: PoolSystem
 
 func _ready() -> void:
+	#var node = enemy_pool.get_from_pool("BasicEnemy")
+	#node.transform = wave_spawn_point[0]
 	actual_state = game_state.StartCoding
 	chrono = chronometer_in_second
 	if !player_bot:
@@ -65,9 +67,7 @@ func start_battle_bot():
 		#if enemy.isDead()
 		#enemies_node.removeItem(enemy)
 	#if enemies_node.size() >= 2:
-		#return
-	#var enemy: node = enemy_pool_system.GetItem(item)
-	
+		#return	
 
 func game_over():
 	pass
