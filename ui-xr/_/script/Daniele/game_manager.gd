@@ -16,27 +16,16 @@ var actual_state: game_state = game_state.NONE
 @export var wave_spawn_point: Array[Vector3]
 @export var cooldown_respawn_enemy: float = 5
 @export var player_bot: Node
-@export var player_collider: CollisionShape3D
 var chrono : float
-@export var enemy_pool: CSPoolManager
 
 #var enemies_node: Array[Enemy]
 
 func _ready() -> void:
-	#var node = enemy_pool.get_from_pool("BasicEnemy")
-	#node.transform = wave_spawn_point[0]
+	var node = CsPoolManager.get_from_pool("BasicEnemy")
+	node.global_position = wave_spawn_point[0]
+	node.visible = true
 	actual_state = game_state.StartCoding
 	chrono = chronometer_in_second
-	if !player_bot:
-		return
-	if player_collider:
-		return
-	for child in player_bot:
-		if child is not CollisionObject3D:
-			continue
-		else:
-			player_collider = child
-			return
 
 func _process(delta: float) -> void:
 	match actual_state:
