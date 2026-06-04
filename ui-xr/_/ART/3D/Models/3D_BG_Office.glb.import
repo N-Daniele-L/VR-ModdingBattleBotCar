@@ -39,6 +39,11 @@ materials/extract_format=0
 materials/extract_path=""
 _subresources={
 "materials": {
+"M_Light": {
+"use_external/enabled": true,
+"use_external/fallback_path": "res://_/ART/3D/Materials/M_Light.tres",
+"use_external/path": "uid://beqr5x3y46tdo"
+},
 "M_Office": {
 "use_external/enabled": true,
 "use_external/fallback_path": "res://_/ART/3D/Materials/M_Office.tres",
