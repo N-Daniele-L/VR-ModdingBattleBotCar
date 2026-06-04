@@ -23,7 +23,7 @@ var chrono : float
 
 func _ready() -> void:
 	var node = CsPoolManager.get_from_pool("BasicEnemy")
-	node.transform = wave_spawn_point[0]
+	#node.transform = wave_spawn_point[0]
 	actual_state = game_state.StartCoding
 	chrono = chronometer_in_second
 	if !player_bot:

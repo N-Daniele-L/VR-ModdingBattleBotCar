@@ -27,37 +27,37 @@ background_mode = 2
 sky = SubResource("Sky_glqed")
 tonemap_mode = 2
 
-[sub_resource type="QuadMesh" id="QuadMesh_bs5cw"]
+[sub_resource type="QuadMesh" id="QuadMesh_ck10e"]
 resource_local_to_scene = true
 size = Vector2(0.3, 0.6)
 
-[sub_resource type="ViewportTexture" id="ViewportTexture_liirh"]
+[sub_resource type="ViewportTexture" id="ViewportTexture_5lhks"]
 viewport_path = NodePath("Viewport2Din3D/Viewport")
 
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_ck10e"]
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_ip5m8"]
 transparency = 1
 cull_mode = 2
-albedo_texture = SubResource("ViewportTexture_liirh")
+albedo_texture = SubResource("ViewportTexture_5lhks")
 texture_filter = 1
 
-[sub_resource type="BoxShape3D" id="BoxShape3D_5lhks"]
+[sub_resource type="BoxShape3D" id="BoxShape3D_1ewp0"]
 resource_local_to_scene = true
 size = Vector3(0.3, 0.6, 0.02)
 
-[sub_resource type="QuadMesh" id="QuadMesh_ip5m8"]
+[sub_resource type="QuadMesh" id="QuadMesh_1sbb0"]
 resource_local_to_scene = true
 size = Vector2(0.75, 0.375)
 
-[sub_resource type="ViewportTexture" id="ViewportTexture_1ewp0"]
+[sub_resource type="ViewportTexture" id="ViewportTexture_y3jik"]
 viewport_path = NodePath("VirtualKeyboard/Viewport")
 
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_1sbb0"]
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_0an83"]
 cull_mode = 2
 shading_mode = 0
-albedo_texture = SubResource("ViewportTexture_1ewp0")
+albedo_texture = SubResource("ViewportTexture_y3jik")
 texture_filter = 1
 
-[sub_resource type="BoxShape3D" id="BoxShape3D_y3jik"]
+[sub_resource type="BoxShape3D" id="BoxShape3D_2n4hv"]
 resource_local_to_scene = true
 size = Vector3(0.75, 0.375, 0.02)
 
@@ -125,15 +125,15 @@ layout_mode = 2
 
 [node name="Screen" parent="Viewport2Din3D" index="1" unique_id=398126368]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.48849726, 0.26422712, 0)
-mesh = SubResource("QuadMesh_bs5cw")
-surface_material_override/0 = SubResource("StandardMaterial3D_ck10e")
+mesh = SubResource("QuadMesh_ck10e")
+surface_material_override/0 = SubResource("StandardMaterial3D_ip5m8")
 
 [node name="StaticBody3D" parent="Viewport2Din3D" index="2" unique_id=262540866]
 screen_size = Vector2(0.3, 0.6)
 viewport_size = Vector2(270, 480)
 
 [node name="CollisionShape3D" parent="Viewport2Din3D/StaticBody3D" index="0" unique_id=1284190118]
-shape = SubResource("BoxShape3D_5lhks")
+shape = SubResource("BoxShape3D_1ewp0")
 
 [node name="VirtualKeyboard" parent="." unique_id=1436476854 instance=ExtResource("9_wdkjg")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.49762136, 0.40759194, -0.5480784)
@@ -143,14 +143,14 @@ scene_properties_keys = PackedStringArray("virtual_keyboard_2d.gd")
 
 [node name="Screen" parent="VirtualKeyboard" index="1" unique_id=398126368]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.7208849, 0, -0.70516205)
-mesh = SubResource("QuadMesh_ip5m8")
-surface_material_override/0 = SubResource("StandardMaterial3D_1sbb0")
+mesh = SubResource("QuadMesh_1sbb0")
+surface_material_override/0 = SubResource("StandardMaterial3D_0an83")
 
 [node name="StaticBody3D" parent="VirtualKeyboard" index="2" unique_id=262540866]
 screen_size = Vector2(0.75, 0.375)
 
 [node name="CollisionShape3D" parent="VirtualKeyboard/StaticBody3D" index="0" unique_id=1284190118]
-shape = SubResource("BoxShape3D_y3jik")
+shape = SubResource("BoxShape3D_2n4hv")
 
 [node name="DocumentationPickup" parent="." unique_id=2115070077 instance=ExtResource("10_5vy5g")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.8217493, -0.9097098)
