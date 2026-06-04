@@ -7,17 +7,30 @@
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_7ng30"]
 
-[node name="CSEnemy" type="CharacterBody3D" unique_id=1348949965]
+[sub_resource type="CylinderMesh" id="CylinderMesh_7ng30"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_kjh2b"]
+albedo_color = Color(1, 0, 0, 1)
+
+[node name="CSEnemy" type="Node3D" unique_id=875952272]
+
+[node name="CharacterBody3D" type="CharacterBody3D" parent="." unique_id=938695871]
 script = ExtResource("1_7ng30")
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=2059619180]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="CharacterBody3D" unique_id=2059619180]
 shape = SubResource("CapsuleShape3D_7ng30")
 
-[node name="EnemyMovement" type="Node" parent="." unique_id=1811688911]
+[node name="MeshInstance3D" type="MeshInstance3D" parent="CharacterBody3D" unique_id=1394304534]
+mesh = SubResource("CylinderMesh_7ng30")
+surface_material_override/0 = SubResource("StandardMaterial3D_kjh2b")
+
+[node name="EnemyMovement" type="Node" parent="CharacterBody3D" unique_id=1811688911]
 script = ExtResource("2_kjh2b")
 
-[node name="EnemyAttack" type="Node" parent="." unique_id=1734415331]
+[node name="EnemyAttack" type="Node" parent="CharacterBody3D" unique_id=1734415331]
 script = ExtResource("3_imh5o")
 
-[node name="EnemyStateBridge" type="Node" parent="." unique_id=1878997236]
+[node name="EnemyStateBridge" type="Node" parent="CharacterBody3D" unique_id=1878997236]
 script = ExtResource("4_ltets")
+
+[connection signal="state_changed" from="CharacterBody3D" to="CharacterBody3D/EnemyStateBridge" method="_on_enemy_state_changed"]
