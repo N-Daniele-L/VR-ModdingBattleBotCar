@@ -14,6 +14,9 @@ extends RigidBody3D
 ## Grab-points can be defined by adding different types of [XRToolsGrabPoint]
 ## child nodes controlling hand and snap-zone grab locations.
 
+@export_multiline var text_to_display : String
+
+signal send_text_to_documentation(text : String)
 
 # Signal emitted when this object is picked up (held by a player or snap-zone)
 signal picked_up(pickable)
@@ -123,6 +126,8 @@ func is_xr_class(xr_name:  String) -> bool:
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
+	send_text_to_documentation.emit(text_to_display)
+	
 	# Get all grab points
 	for child in get_children():
 		var grab_point := child as XRToolsGrabPoint
