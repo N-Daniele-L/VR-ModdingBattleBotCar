@@ -1,0 +1,189 @@
+[gd_scene format=3 uid="uid://jt3y8wq27ucv"]
+
+[ext_resource type="Script" uid="uid://clipxhr1jpdbq" path="res://addons/godot-demo-xr/scenes/demo_scene_base.gd" id="1_f02s8"]
+[ext_resource type="PackedScene" uid="uid://bnx4hithcij6y" path="res://addons/godot-xr-tools/hands/model/Hand_Glove_low_L.gltf" id="2_x1v1y"]
+[ext_resource type="Script" uid="uid://b18kkstg643yw" path="res://addons/godot-xr-tools/functions/function_pickup.gd" id="3_jkwih"]
+[ext_resource type="PackedScene" uid="uid://cqhw276realc" path="res://addons/godot-xr-tools/functions/function_pointer.tscn" id="4_ytgn8"]
+[ext_resource type="PackedScene" uid="uid://csgsp0wuw8ucy" path="res://addons/godot-xr-tools/hands/model/Hand_Glove_low_R.gltf" id="5_4g1y6"]
+[ext_resource type="PackedScene" uid="uid://cewdh5p3ml2mk" path="res://_/scene/background.tscn" id="6_thtoo"]
+[ext_resource type="PackedScene" uid="uid://clujaf3u776a3" path="res://addons/godot-xr-tools/objects/viewport_2d_in_3d.tscn" id="7_ub8nb"]
+[ext_resource type="PackedScene" uid="uid://usscvf53i5pv" path="res://_/scene/UI.tscn" id="8_w8iy5"]
+[ext_resource type="PackedScene" uid="uid://dgdb1texynduw" path="res://addons/godot-xr-tools/objects/virtual_keyboard.tscn" id="9_wdkjg"]
+[ext_resource type="PackedScene" uid="uid://bei0bw2gg5ig" path="res://_/scene/Nicolas/documentation_pickable_beta.tscn" id="10_5vy5g"]
+[ext_resource type="Script" uid="uid://ydraalgt1y6v" path="res://_/script/Cedric/core/cs_pool_manager.gd" id="10_liirh"]
+[ext_resource type="Script" uid="uid://b6i42h7jqarx2" path="res://_/script/Daniele/game_manager.gd" id="11_10bsh"]
+[ext_resource type="PackedScene" uid="uid://cvin6pwxbcto3" path="res://_/scene/Daniele/player_test.tscn" id="12_bs5cw"]
+[ext_resource type="PackedScene" uid="uid://ddjlgmesf7ffm" path="res://_/scene/Daniele/basic_enemy.tscn" id="14_ck10e"]
+
+[sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_1gxwg"]
+sky_horizon_color = Color(0.66224277, 0.6717428, 0.6867428, 1)
+ground_horizon_color = Color(0.66224277, 0.6717428, 0.6867428, 1)
+
+[sub_resource type="Sky" id="Sky_glqed"]
+sky_material = SubResource("ProceduralSkyMaterial_1gxwg")
+
+[sub_resource type="Environment" id="Environment_c3qei"]
+background_mode = 2
+sky = SubResource("Sky_glqed")
+tonemap_mode = 2
+
+[sub_resource type="QuadMesh" id="QuadMesh_ck10e"]
+resource_local_to_scene = true
+size = Vector2(0.3, 0.6)
+
+[sub_resource type="ViewportTexture" id="ViewportTexture_5lhks"]
+viewport_path = NodePath("Viewport2Din3D/Viewport")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_ip5m8"]
+transparency = 1
+cull_mode = 2
+albedo_texture = SubResource("ViewportTexture_5lhks")
+texture_filter = 1
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_1ewp0"]
+resource_local_to_scene = true
+size = Vector3(0.3, 0.6, 0.02)
+
+[sub_resource type="QuadMesh" id="QuadMesh_1sbb0"]
+resource_local_to_scene = true
+size = Vector2(0.75, 0.375)
+
+[sub_resource type="ViewportTexture" id="ViewportTexture_y3jik"]
+viewport_path = NodePath("VirtualKeyboard/Viewport")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_0an83"]
+cull_mode = 2
+shading_mode = 0
+albedo_texture = SubResource("ViewportTexture_y3jik")
+texture_filter = 1
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_2n4hv"]
+resource_local_to_scene = true
+size = Vector3(0.75, 0.375, 0.02)
+
+[sub_resource type="SphereMesh" id="SphereMesh_bs5cw"]
+
+[node name="Main" type="Node3D" unique_id=1421353623]
+script = ExtResource("1_f02s8")
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="." unique_id=990813102]
+environment = SubResource("Environment_c3qei")
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="." unique_id=1576666891]
+transform = Transform3D(-0.8660254, -0.43301278, 0.25, 0, 0.49999997, 0.86602545, -0.50000006, 0.75, -0.43301266, 0, 0, 0)
+shadow_enabled = true
+
+[node name="XROrigin3D" type="XROrigin3D" parent="." unique_id=666322222]
+
+[node name="XRCamera3D" type="XRCamera3D" parent="XROrigin3D" unique_id=278342559]
+
+[node name="XRControllerLeft" type="XRController3D" parent="XROrigin3D" unique_id=1744335750]
+tracker = &"left_hand"
+
+[node name="hand_l" parent="XROrigin3D/XRControllerLeft" unique_id=1441204479 instance=ExtResource("2_x1v1y")]
+
+[node name="XRToolsFunctionPickup" type="Node3D" parent="XROrigin3D/XRControllerLeft" unique_id=1325619244]
+script = ExtResource("3_jkwih")
+metadata/_custom_type_script = "uid://b18kkstg643yw"
+
+[node name="FunctionPointer" parent="XROrigin3D/XRControllerLeft" unique_id=1883081527 instance=ExtResource("4_ytgn8")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.02, 0.05, -0.1)
+
+[node name="XRControllerRight" type="XRController3D" parent="XROrigin3D" unique_id=1510464946]
+tracker = &"right_hand"
+
+[node name="hand_r" parent="XROrigin3D/XRControllerRight" unique_id=2088910385 instance=ExtResource("5_4g1y6")]
+
+[node name="FunctionPointer" parent="XROrigin3D/XRControllerRight" unique_id=1203588822 instance=ExtResource("4_ytgn8")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.02, 0.05, -0.1)
+
+[node name="XRToolsFunctionPickup" type="Node3D" parent="XROrigin3D/XRControllerRight" unique_id=2026082501]
+script = ExtResource("3_jkwih")
+metadata/_custom_type_script = "uid://b18kkstg643yw"
+
+[node name="Background" parent="." unique_id=72946100 instance=ExtResource("6_thtoo")]
+
+[node name="Viewport2Din3D" parent="." unique_id=1800671737 instance=ExtResource("7_ub8nb")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.10918611, 0.4, -0.8074999)
+visible = false
+screen_size = Vector2(0.3, 0.6)
+viewport_size = Vector2(270, 480)
+
+[node name="Viewport" parent="Viewport2Din3D" index="0" unique_id=1032098040]
+size = Vector2i(270, 480)
+
+[node name="AspectRatioContainer" type="AspectRatioContainer" parent="Viewport2Din3D/Viewport" index="0" unique_id=220739649]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+ratio = 0.5625
+
+[node name="Control" parent="Viewport2Din3D/Viewport/AspectRatioContainer" unique_id=1209629623 instance=ExtResource("8_w8iy5")]
+layout_mode = 2
+
+[node name="Screen" parent="Viewport2Din3D" index="1" unique_id=398126368]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.48849726, 0.26422712, 0)
+mesh = SubResource("QuadMesh_ck10e")
+surface_material_override/0 = SubResource("StandardMaterial3D_ip5m8")
+
+[node name="StaticBody3D" parent="Viewport2Din3D" index="2" unique_id=262540866]
+screen_size = Vector2(0.3, 0.6)
+viewport_size = Vector2(270, 480)
+
+[node name="CollisionShape3D" parent="Viewport2Din3D/StaticBody3D" index="0" unique_id=1284190118]
+shape = SubResource("BoxShape3D_1ewp0")
+
+[node name="VirtualKeyboard" parent="." unique_id=1436476854 instance=ExtResource("9_wdkjg")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.49762136, 0.40759194, -0.5480784)
+visible = false
+screen_size = Vector2(0.75, 0.375)
+scene_properties_keys = PackedStringArray("virtual_keyboard_2d.gd")
+
+[node name="Screen" parent="VirtualKeyboard" index="1" unique_id=398126368]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.7208849, 0, -0.70516205)
+mesh = SubResource("QuadMesh_1sbb0")
+surface_material_override/0 = SubResource("StandardMaterial3D_0an83")
+
+[node name="StaticBody3D" parent="VirtualKeyboard" index="2" unique_id=262540866]
+screen_size = Vector2(0.75, 0.375)
+
+[node name="CollisionShape3D" parent="VirtualKeyboard/StaticBody3D" index="0" unique_id=1284190118]
+shape = SubResource("BoxShape3D_2n4hv")
+
+[node name="DocumentationPickup" parent="." unique_id=2115070077 instance=ExtResource("10_5vy5g")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.8217493, -0.9097098)
+visible = false
+
+[node name="PlayerTest" parent="." unique_id=233253796 instance=ExtResource("12_bs5cw")]
+transform = Transform3D(0.1, 0, 0, 0, 0.1, 0, 0, 0, 0.1, 0, 0.14390445, 0.14697224)
+
+[node name="DNGameManager" type="Node" parent="." unique_id=348758727 node_paths=PackedStringArray("player_bot", "player_collider")]
+script = ExtResource("11_10bsh")
+wave_spawn_point = Array[Vector3]([Vector3(0, 0, 1.0955697)])
+player_bot = NodePath("../PlayerTest")
+player_collider = NodePath("../PlayerTest/CollisionShape3D")
+metadata/_custom_type_script = "uid://b6i42h7jqarx2"
+
+[node name="Waves" type="Node3D" parent="." unique_id=1251513735]
+
+[node name="WavePoint" type="Node3D" parent="Waves" unique_id=1714118893]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 1.0955697)
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Waves/WavePoint" unique_id=1046368387]
+transform = Transform3D(0.1, 0, 0, 0, 0.1, 0, 0, 0, 0.1, 0, 0, 0)
+mesh = SubResource("SphereMesh_bs5cw")
+
+[node name="CSPoolManager" type="Node" parent="." unique_id=595101626]
+script = ExtResource("10_liirh")
+scene_templates = {
+"BasicEnemy": ExtResource("14_ck10e"),
+"EnemyProjectile": null,
+"PlayerProjectile": null
+}
+metadata/_custom_type_script = "uid://ydraalgt1y6v"
+
+[editable path="Viewport2Din3D"]
+[editable path="VirtualKeyboard"]
+[editable path="PlayerTest"]
