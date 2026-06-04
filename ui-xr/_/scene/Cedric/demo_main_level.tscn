@@ -1,0 +1,91 @@
+[gd_scene format=3 uid="uid://dbn62yenf72ld"]
+
+[ext_resource type="PackedScene" uid="uid://bnx4hithcij6y" path="res://addons/godot-xr-tools/hands/model/Hand_Glove_low_L.gltf" id="1_7h3y2"]
+[ext_resource type="Script" uid="uid://b8laxxnmmn2yh" path="res://_/script/Cedric/targeting/cs_test_turret_controller.gd" id="1_ixos7"]
+[ext_resource type="Script" uid="uid://clipxhr1jpdbq" path="res://addons/godot-demo-xr/scenes/demo_scene_base.gd" id="1_phwsf"]
+[ext_resource type="Script" uid="uid://b18kkstg643yw" path="res://addons/godot-xr-tools/functions/function_pickup.gd" id="2_phwsf"]
+[ext_resource type="Script" uid="uid://nqesmd5xd2b4" path="res://_/script/Cedric/combat/cs_weapon_manager.gd" id="2_r188b"]
+[ext_resource type="PackedScene" uid="uid://cqhw276realc" path="res://addons/godot-xr-tools/functions/function_pointer.tscn" id="3_2yfcw"]
+[ext_resource type="Script" uid="uid://bk0tilp7ug4ao" path="res://_/script/Cedric/combat/cs_projectile_spawner.gd" id="3_mb78t"]
+[ext_resource type="PackedScene" uid="uid://csgsp0wuw8ucy" path="res://addons/godot-xr-tools/hands/model/Hand_Glove_low_R.gltf" id="4_bs33w"]
+[ext_resource type="Script" uid="uid://dc3nyjmhvs5eo" path="res://_/script/Cedric/enemy/cs_enemy_spawn_director.gd" id="4_r188b"]
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_mb78t"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_mdwjw"]
+albedo_color = Color(0.52, 0.52, 0.52, 1)
+
+[sub_resource type="WorldBoundaryShape3D" id="WorldBoundaryShape3D_jk0kj"]
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_7h3y2"]
+
+[node name="DemoMainLevel" type="Node3D" unique_id=1363928404]
+script = ExtResource("1_phwsf")
+
+[node name="XROrigin3D" type="XROrigin3D" parent="." unique_id=671282447]
+
+[node name="XRCamera3D" type="XRCamera3D" parent="XROrigin3D" unique_id=1187190618]
+
+[node name="XRControllerLeft" type="XRController3D" parent="XROrigin3D" unique_id=506737728]
+tracker = &"left_hand"
+
+[node name="hand_l" parent="XROrigin3D/XRControllerLeft" unique_id=905026887 instance=ExtResource("1_7h3y2")]
+
+[node name="XRToolsFunctionPickup" type="Node3D" parent="XROrigin3D/XRControllerLeft" unique_id=377379060]
+script = ExtResource("2_phwsf")
+metadata/_custom_type_script = "uid://b18kkstg643yw"
+
+[node name="FunctionPointer" parent="XROrigin3D/XRControllerLeft" unique_id=1231467827 instance=ExtResource("3_2yfcw")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.02, 0.05, -0.1)
+
+[node name="XRControllerRight" type="XRController3D" parent="XROrigin3D" unique_id=94517623]
+tracker = &"right_hand"
+
+[node name="hand_r" parent="XROrigin3D/XRControllerRight" unique_id=1854682241 instance=ExtResource("4_bs33w")]
+
+[node name="FunctionPointer" parent="XROrigin3D/XRControllerRight" unique_id=1581957030 instance=ExtResource("3_2yfcw")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.02, 0.05, -0.1)
+
+[node name="XRToolsFunctionPickup" type="Node3D" parent="XROrigin3D/XRControllerRight" unique_id=163034483]
+script = ExtResource("2_phwsf")
+metadata/_custom_type_script = "uid://b18kkstg643yw"
+
+[node name="CSTestTurret" type="Node3D" parent="." unique_id=1473977012]
+script = ExtResource("1_ixos7")
+
+[node name="WeaponPoint" type="Node3D" parent="CSTestTurret" unique_id=62761300]
+script = ExtResource("2_r188b")
+
+[node name="ProjectileSpawner" type="Node3D" parent="CSTestTurret/WeaponPoint" unique_id=476421837]
+script = ExtResource("3_mb78t")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="." unique_id=335633817]
+transform = Transform3D(20.665842, 0, 0, 0, 1, 0, 0, 0, 20.84408, 0, 0, 0)
+mesh = SubResource("PlaneMesh_mb78t")
+surface_material_override/0 = SubResource("StandardMaterial3D_mdwjw")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="MeshInstance3D" unique_id=650878417]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="MeshInstance3D/StaticBody3D" unique_id=1665427048]
+shape = SubResource("WorldBoundaryShape3D_jk0kj")
+
+[node name="EnemySpawnDirector" type="Node3D" parent="." unique_id=1743919541 node_paths=PackedStringArray("spawn_points") groups=["PlayerTargets"]]
+script = ExtResource("4_r188b")
+spawn_points = [NodePath("Marker3D"), NodePath("Marker3D2")]
+
+[node name="Marker3D" type="Marker3D" parent="EnemySpawnDirector" unique_id=4633003]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -10, 0, 0)
+
+[node name="Marker3D2" type="Marker3D" parent="EnemySpawnDirector" unique_id=1240746280]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 10, 0, 0)
+
+[node name="PlayerTargetInstance" type="StaticBody3D" parent="." unique_id=961538496 groups=["PlayerTargets"]]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="PlayerTargetInstance" unique_id=1192663657]
+shape = SubResource("CapsuleShape3D_7h3y2")
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="." unique_id=1963490707]
+transform = Transform3D(0.49999997, 0.6123724, -0.6123725, 0, 0.7071068, 0.7071067, 0.86602545, -0.35355332, 0.35355338, 0, 0, 0)
+shadow_enabled = true
+
+[connection signal="shot_requested" from="CSTestTurret" to="CSTestTurret/WeaponPoint" method="handle_shoot_signal"]

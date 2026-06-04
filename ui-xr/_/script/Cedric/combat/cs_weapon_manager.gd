@@ -40,3 +40,7 @@ func handle_shoot_signal(target_position: Vector3) -> void:
 		if spawner != null:
 			spawner.spawn_projectile(pool_bullet_type, bullet_damage, bullet_lifetime, bullet_speed, trajectory_type, target_position, bullet_color)
 			weapon_fired.emit()
+
+
+func _on_cs_test_turret_shot_requested(target_position: Vector3) -> void:
+	pass # Replace with function body.
