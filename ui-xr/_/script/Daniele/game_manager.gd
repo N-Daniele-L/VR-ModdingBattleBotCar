@@ -15,16 +15,16 @@ enum game_state {
 @export var player_bot_life: int = 3
 @export var wave_spawn_point: Array[Vector3]
 @export var cooldown_respawn_enemy: float = 1
-@export var player_bot: Node
 @export var enemy_pool: NCARPoolSystem
 var chrono : float
-var enemies_node: Array[Node3D]
+
 var is_enemy_killed : bool
 var spawn_enemy: bool
 var timer_spawn_enemy: float = 1
 
 @export_group("Debug State")
 @export var actual_state: game_state = game_state.NONE
+@export var enemies_node: Array[Node3D]
 
 func _ready() -> void:
 	actual_state = game_state.StartCoding
@@ -89,6 +89,9 @@ func on_retry_pressed():
 	actual_state = game_state.StartCoding
 	chronometer_in_second = chrono
 	player_bot_life = 3
+
+func get_initial_enemies(enemies: Array[Node3D]):
+	enemies_node = enemies_node
 
 func get_damaged():
 	player_bot_life -= player_bot_life
