@@ -1,0 +1,70 @@
+[remap]
+
+importer="scene"
+importer_version=1
+type="PackedScene"
+uid="uid://c032h8jskloju"
+path="res://.godot/imported/3D_BG_Office.glb-735d9ac66ed9b559f326f2d85909336c.scn"
+
+[deps]
+
+source_file="res://_/ART/3D/Models/3D_BG_Office.glb"
+dest_files=["res://.godot/imported/3D_BG_Office.glb-735d9ac66ed9b559f326f2d85909336c.scn"]
+
+[params]
+
+nodes/root_type=""
+nodes/root_name=""
+nodes/root_script=null
+nodes/apply_root_scale=true
+nodes/root_scale=1.0
+nodes/import_as_skeleton_bones=false
+nodes/use_name_suffixes=true
+nodes/use_node_type_suffixes=true
+meshes/ensure_tangents=true
+meshes/generate_lods=true
+meshes/create_shadow_meshes=true
+meshes/light_baking=1
+meshes/lightmap_texel_size=0.2
+meshes/force_disable_compression=false
+skins/use_named_skins=true
+animation/import=true
+animation/fps=30
+animation/trimming=false
+animation/remove_immutable_tracks=true
+animation/import_rest_as_RESET=false
+import_script/path=""
+materials/extract=0
+materials/extract_format=0
+materials/extract_path=""
+_subresources={
+"materials": {
+"M_Office": {
+"use_external/enabled": true,
+"use_external/fallback_path": "res://_/ART/3D/Materials/M_Office.tres",
+"use_external/path": "uid://bred8d5vtyl8s"
+},
+"M_OfficeEmissive": {
+"use_external/enabled": true,
+"use_external/fallback_path": "res://_/ART/3D/Materials/M_OfficeEmissive.tres",
+"use_external/path": "uid://dx2fv1x4ldy2c"
+},
+"M_OfficeSoft": {
+"use_external/enabled": true,
+"use_external/fallback_path": "res://_/ART/3D/Materials/M_OfficeSoft.tres",
+"use_external/path": "uid://cmknqvo5subfh"
+},
+"M_Screen01": {
+"use_external/enabled": true,
+"use_external/fallback_path": "res://_/ART/3D/Materials/M_Screen01.tres",
+"use_external/path": "uid://cfjdoe72xnjha"
+},
+"M_Screen02": {
+"use_external/enabled": true,
+"use_external/fallback_path": "res://_/ART/3D/Materials/M_Screen02.tres",
+"use_external/path": "uid://cy3owtdtcu6n0"
+}
+}
+}
+gltf/naming_version=2
+gltf/embedded_image_handling=1

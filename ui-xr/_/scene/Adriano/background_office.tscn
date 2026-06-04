@@ -1,0 +1,88 @@
+[gd_scene format=3 uid="uid://d3spwpl4gmsnc"]
+
+[ext_resource type="PackedScene" uid="uid://c032h8jskloju" path="res://_/ART/3D/Models/3D_BG_Office.glb" id="1_opxxu"]
+
+[sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_opxxu"]
+sky_horizon_color = Color(0.66224277, 0.6717428, 0.6867428, 1)
+ground_horizon_color = Color(0.66224277, 0.6717428, 0.6867428, 1)
+
+[sub_resource type="Sky" id="Sky_ow5fq"]
+sky_material = SubResource("ProceduralSkyMaterial_opxxu")
+
+[sub_resource type="Environment" id="Environment_fs4ot"]
+background_mode = 1
+sky = SubResource("Sky_ow5fq")
+tonemap_mode = 3
+tonemap_exposure = 0.5
+tonemap_white = 2.0
+ssr_enabled = true
+ssr_max_steps = 60
+ssr_fade_in = 0.058843907
+ssr_fade_out = 0.06470411
+ssr_depth_tolerance = 0.81
+ssao_enabled = true
+ssil_enabled = true
+sdfgi_enabled = true
+glow_enabled = true
+glow_bloom = 1.0
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_rfsgw"]
+margin = 0.01
+size = Vector3(15, 0.01, 15)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_p6vyb"]
+albedo_color = Color(0.41981313, 0.41981313, 0.4198131, 1)
+
+[sub_resource type="QuadMesh" id="QuadMesh_f0iv0"]
+material = SubResource("StandardMaterial3D_p6vyb")
+size = Vector2(15, 15)
+orientation = 1
+
+[sub_resource type="ViewportTexture" id="ViewportTexture_opxxu"]
+viewport_path = NodePath("SubViewport")
+
+[node name="Background" type="Node3D" unique_id=72946100]
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="." unique_id=1823233665]
+environment = SubResource("Environment_fs4ot")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="." unique_id=45354595]
+cast_shadow = 2
+
+[node name="3D_BG_Office" parent="MeshInstance3D" unique_id=1484805761 instance=ExtResource("1_opxxu")]
+
+[node name="GEO_Monitor02" parent="MeshInstance3D/3D_BG_Office" index="19" unique_id=529274009]
+cast_shadow = 2
+
+[node name="StaticBody3D" type="StaticBody3D" parent="MeshInstance3D/3D_BG_Office" unique_id=1990199320]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="MeshInstance3D/3D_BG_Office/StaticBody3D" unique_id=1896160054]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.0043097697, 0)
+shape = SubResource("BoxShape3D_rfsgw")
+
+[node name="Floor" type="MeshInstance3D" parent="." unique_id=942227440]
+visible = false
+mesh = SubResource("QuadMesh_f0iv0")
+
+[node name="OmniLight3D" type="OmniLight3D" parent="." unique_id=562136057]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.16559981, 0.9485909, -1.923981)
+shadow_enabled = true
+distance_fade_enabled = true
+distance_fade_begin = 5.0
+distance_fade_shadow = 6.0
+distance_fade_length = 1.0
+omni_range = 1.175
+
+[node name="SubViewport" type="SubViewport" parent="." unique_id=29630630]
+size = Vector2i(1024, 768)
+
+[node name="Anchor_Camera3D" type="Node3D" parent="SubViewport" unique_id=1485738997]
+
+[node name="Camera3D" type="Camera3D" parent="SubViewport/Anchor_Camera3D" unique_id=1844450322]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.8184813, 0)
+
+[node name="Sprite3D" type="Sprite3D" parent="." unique_id=1498909568]
+transform = Transform3D(0.02946498, 0, -0.0056404686, 0, 0.03, 0, 0.0056404686, 0, 0.02946498, 0.17605957, 0.94308287, -1.8874555)
+texture = SubResource("ViewportTexture_opxxu")
+
+[editable path="MeshInstance3D/3D_BG_Office"]
