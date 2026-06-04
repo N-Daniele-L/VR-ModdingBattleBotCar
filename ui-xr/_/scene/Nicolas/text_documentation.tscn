@@ -1,5 +1,7 @@
 [gd_scene format=3 uid="uid://cfodj3tsisygl"]
 
+[ext_resource type="Script" uid="uid://bp1kpvbxplovl" path="res://_/scene/Nicolas/text_documentation.gd" id="1_dmdrt"]
+
 [node name="Control" type="Control" unique_id=1797425709]
 layout_mode = 3
 anchor_right = 0.365
@@ -8,6 +10,7 @@ offset_right = -210.48001
 offset_bottom = -297.21606
 grow_horizontal = 2
 grow_vertical = 2
+script = ExtResource("1_dmdrt")
 
 [node name="AspectRatioContainer" type="AspectRatioContainer" parent="." unique_id=1363603712]
 layout_mode = 1

@@ -8,15 +8,19 @@ material = SubResource("StandardMaterial3D_p6vyb")
 size = Vector2(3, 3)
 orientation = 1
 
-[sub_resource type="BoxShape3D" id="BoxShape3D_rfsgw"]
+[sub_resource type="BoxShape3D" id="BoxShape3D_p6vyb"]
 margin = 0.01
-size = Vector3(15, 0.01, 15)
+size = Vector3(15, 0.5, 15)
 
 [sub_resource type="QuadMesh" id="QuadMesh_rfsgw"]
 material = SubResource("StandardMaterial3D_p6vyb")
 flip_faces = true
 size = Vector2(3, 3)
 orientation = 1
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_rfsgw"]
+margin = 0.01
+size = Vector3(15, 0.01, 15)
 
 [sub_resource type="QuadMesh" id="QuadMesh_2y74n"]
 material = SubResource("StandardMaterial3D_p6vyb")
@@ -46,7 +50,8 @@ mesh = SubResource("QuadMesh_p6vyb")
 [node name="StaticBody3D" type="StaticBody3D" parent="Floor" unique_id=1990199320]
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Floor/StaticBody3D" unique_id=1896160054]
-shape = SubResource("BoxShape3D_rfsgw")
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.25, 0)
+shape = SubResource("BoxShape3D_p6vyb")
 
 [node name="Celling" type="MeshInstance3D" parent="." unique_id=947013559]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.5, 0)

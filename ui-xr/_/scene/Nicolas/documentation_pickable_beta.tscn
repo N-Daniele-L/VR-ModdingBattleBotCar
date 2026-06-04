@@ -9,7 +9,6 @@
 [ext_resource type="Animation" uid="uid://c8dghcftg1thx" path="res://addons/godot-xr-tools/hands/animations/right/Grip Shaft.res" id="7_ojf4q"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_flo73"]
-margin = 0.01
 size = Vector3(0.22, 0.31, 0.01)
 
 [sub_resource type="BoxMesh" id="BoxMesh_nqxuj"]
@@ -58,3 +57,5 @@ script = ExtResource("4_2l4da")
 hand = 1
 hand_pose = SubResource("Resource_ic1di")
 metadata/_custom_type_script = "uid://dx3swqg2owe4p"
+
+[connection signal="send_text_to_documentation" from="." to="documentation" method="emit_text_to_control"]

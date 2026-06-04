@@ -43,3 +43,6 @@ metadata/_custom_type_script = "uid://b18kkstg643yw"
 
 [node name="DocumentationPickup" parent="." unique_id=2115070077 instance=ExtResource("10_qp4f5")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.6458471, -0.48472166)
+mass = 0.1
+continuous_cd = true
+text_to_display = "Ceci est un Test"
