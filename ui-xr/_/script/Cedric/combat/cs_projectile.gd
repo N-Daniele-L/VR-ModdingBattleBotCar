@@ -41,3 +41,4 @@ func _process(delta: float) -> void:
 
 func _on_collision_impact(target: Node3D) -> void:
 	projectile_impacted.emit(self, target)
+	

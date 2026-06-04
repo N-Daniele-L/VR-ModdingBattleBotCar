@@ -7,7 +7,7 @@ signal shot_requested(target_position: Vector3)
 ## Émis lorsqu'une nouvelle cible prioritaire est verrouillée par le radar.
 signal target_acquired(target: Node3D)
 
-@export var targets_to_aim: Array[Node3D] = []
+@export var targets_to_aim: Array[Node3D]
 @export var automatic_fire: bool = true
 
 var fire_timer: float = 0.0

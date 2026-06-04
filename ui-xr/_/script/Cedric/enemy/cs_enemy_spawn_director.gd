@@ -6,6 +6,9 @@ extends Node3D
 signal quota_verified(active_count: int)
 
 @export var spawn_points: Array[Marker3D] = []
+@export var enemy_pool: NCARPoolSystem
+@export var turret: CSTestTurretController
+var current_enemy_alive: Array[CSEnemyController]
 
 var active_enemies: Array[CSEnemyController] = []
 const MAX_SIMULTANEOUS_ENEMIES: int = 2
@@ -14,8 +17,14 @@ func _ready() -> void:
 	if Engine.is_editor_hint():
 		return
 	enforce_enemy_quota()
-	var x = request_enemy_from_pool()
-	x.visible = true
+	var enemy_node = enemy_pool.get_object_from_pool()
+	enemy_node.global_position = spawn_points[0].global_position
+	enemy_node.global_position.y += 1
+	enemy_node.visible
+	turret.targets_to_aim.append(enemy_node)
+	#current_enemy_alive.append(enemy_node)
+
+
 
 func enforce_enemy_quota() -> void:
 	while active_enemies.size() < MAX_SIMULTANEOUS_ENEMIES:

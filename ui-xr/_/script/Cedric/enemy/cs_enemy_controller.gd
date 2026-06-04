@@ -1,4 +1,4 @@
-@tool
+#@tool
 class_name CSEnemyController
 extends CharacterBody3D
 
@@ -6,6 +6,14 @@ extends CharacterBody3D
 signal enemy_lifecycle_ended(instance: CSEnemyController)
 ## Émis lors de chaque changement interne d'état comportemental.
 signal state_changed(new_state: int, state_name: String)
+
+## Émis lorsque la cible d'entraînement prend des dégâts.
+signal target_damaged(current_health: int)
+## Émis lorsque la vie de la cible atteint zéro.
+signal target_destroyed()
+
+@export var health: int = 5
+@export var auto_reset: bool = true
 
 enum EnemyState { INITIALIZING, SEARCHING_TARGET, MOVING_TO_TARGET, ATTACKING_TARGET, DYING, DEAD }
 
@@ -17,6 +25,7 @@ func _ready() -> void:
 		return
 	var bridge = get_node_or_null("EnemyStateBridge") as CSEnemyStateBridge
 	if bridge != null:
+		pass
 		state_changed.connect(bridge._on_enemy_state_changed)
 
 func activate_enemy(spawn_position: Vector3) -> void:
@@ -73,3 +82,18 @@ func take_bullet_hit() -> void:
 	velocity = Vector3.ZERO
 	change_state(EnemyState.DEAD)
 	enemy_lifecycle_ended.emit(self)
+	
+func take_damage(amount: int) -> void:
+	health -= amount
+	target_damaged.emit(health)
+	
+	if health <= 0:
+		target_destroyed.emit()
+		if auto_reset:
+			health = 5
+		else:
+			queue_free()
+			
+
+func _on_area_entered(area: Area3D) -> void:
+	take_damage(5)

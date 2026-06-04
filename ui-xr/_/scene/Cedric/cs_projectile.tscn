@@ -4,14 +4,25 @@
 [ext_resource type="Script" uid="uid://bjcqdqhoqfw4" path="res://_/script/Cedric/combat/cs_collision_damage.gd" id="2_0vltx"]
 [ext_resource type="Script" uid="uid://dtjorgknnden0" path="res://_/script/Cedric/combat/cs_trajectory_calculator.gd" id="3_0vltx"]
 [ext_resource type="Script" uid="uid://dnqjjh5gkaonp" path="res://_/script/Cedric/combat/cs_visual_effects_manager.gd" id="4_0xvq1"]
+[ext_resource type="Script" uid="uid://cwdt53ccolu2g" path="res://_/script/Cedric/strategies/trajectory_strategy.gd" id="4_3txee"]
+[ext_resource type="Script" uid="uid://3y06whi6v5aa" path="res://_/script/Cedric/strategies/linear_trajectory.gd" id="5_4ka3f"]
+[ext_resource type="Script" uid="uid://cvaou4uc4np3p" path="res://_/script/Cedric/strategies/parabola_trajectory.gd" id="6_44bxj"]
 
 [sub_resource type="SphereShape3D" id="SphereShape3D_0xvq1"]
+
+[sub_resource type="Resource" id="Resource_oealx"]
+script = ExtResource("5_4ka3f")
+metadata/_custom_type_script = "uid://3y06whi6v5aa"
+
+[sub_resource type="Resource" id="Resource_0qf6u"]
+script = ExtResource("6_44bxj")
+metadata/_custom_type_script = "uid://cvaou4uc4np3p"
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_0xvq1"]
 emission_enabled = true
 emission = Color(1, 1, 1, 1)
 
-[sub_resource type="CylinderMesh" id="CylinderMesh_0xvq1"]
+[sub_resource type="SphereMesh" id="SphereMesh_0xvq1"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_25yj1"]
 albedo_color = Color(1, 0, 0, 1)
@@ -27,19 +38,17 @@ script = ExtResource("2_0vltx")
 
 [node name="TrajectoryCalculator" type="Node" parent="." unique_id=1922909444]
 script = ExtResource("3_0vltx")
+trajectories = Array[ExtResource("4_3txee")]([SubResource("Resource_oealx"), SubResource("Resource_0qf6u")])
 
 [node name="VisualEffectsManager" type="Node3D" parent="." unique_id=1519939199]
 script = ExtResource("4_0xvq1")
 
 [node name="GlowLight" type="OmniLight3D" parent="VisualEffectsManager" unique_id=1454186475]
-visible = false
 
 [node name="VisualMesh" type="MeshInstance3D" parent="VisualEffectsManager" unique_id=958069853]
 material_override = SubResource("StandardMaterial3D_0xvq1")
-mesh = SubResource("CylinderMesh_0xvq1")
+mesh = SubResource("SphereMesh_0xvq1")
 surface_material_override/0 = SubResource("StandardMaterial3D_25yj1")
 
 [node name="TrailParticles" type="GPUParticles3D" parent="VisualEffectsManager" unique_id=1990282735]
 visible = false
-
-[connection signal="impact_emitted" from="CollisionDamage" to="." method="_on_collision_impact"]

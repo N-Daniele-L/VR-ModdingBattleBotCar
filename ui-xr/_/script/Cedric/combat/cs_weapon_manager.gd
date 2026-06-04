@@ -13,6 +13,7 @@ signal weapon_fired()
 @export var trajectory_type: int = 0
 @export var parabola_height: float = 3.0
 @export var bullet_color: Color = Color(1.0, 0.5, 0.0, 1.0)
+var target_to_aim: Array[Node3D]
 
 var time_since_last_fire: float = 0.0
 var can_shoot: bool = true
@@ -22,6 +23,7 @@ func _ready() -> void:
 		return
 	var turret = get_parent() as CSTestTurretController
 	if turret != null:
+		target_to_aim = turret.targets_to_aim
 		turret.shot_requested.connect(handle_shoot_signal)
 
 func _process(delta: float) -> void:
@@ -32,6 +34,8 @@ func _process(delta: float) -> void:
 		if time_since_last_fire >= fire_rate:
 			can_shoot = true
 			time_since_last_fire = 0.0
+	if can_shoot:
+		handle_shoot_signal(target_to_aim[0].global_position)
 
 func handle_shoot_signal(target_position: Vector3) -> void:
 	if can_shoot:

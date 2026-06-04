@@ -2,7 +2,13 @@
 class_name CSEnemyMovement
 extends Node
 
+var node_pos: Node3D
+
 @export var movement_speed: float = 4.0
+func _process(delta: float) -> void:
+	node_pos = find_closest_player_target()
+	var vector : Vector3 = node_pos.global_position
+	execute_movement(self.get_parent(),vector,delta)
 
 func find_closest_player_target() -> Node3D:
 	var closest_target: Node3D = null

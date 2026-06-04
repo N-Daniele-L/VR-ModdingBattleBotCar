@@ -4,6 +4,7 @@ extends Node
 
 ## Émis lorsqu'une collision physique valide est enregistrée avec un autre corps 3D.
 signal impact_emitted(target: Node3D)
+signal touched_enemy()
 
 func _ready() -> void:
 	if Engine.is_editor_hint():
@@ -14,3 +15,4 @@ func _ready() -> void:
 
 func _on_body_entered(body: Node3D) -> void:
 	impact_emitted.emit(body)
+	touched_enemy.emit()
