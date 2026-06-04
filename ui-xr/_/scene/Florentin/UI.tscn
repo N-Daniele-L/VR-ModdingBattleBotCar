@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://bp8thihlgx7pa"]
 
 [ext_resource type="FontFile" uid="uid://d12iio1e2y4jk" path="res://_/assets/Florentin/fonts/MorePerfectDOSVGA.ttf" id="1_66nus"]
-[ext_resource type="Script" uid="uid://dfqql7k3xidod" path="res://_/scene/Florentin/code_edit_color.gd" id="2_vm31h"]
+[ext_resource type="Script" uid="uid://b1fgagrjsvo2k" path="res://_/script/Emile Iselote/run_code_with_target.gd" id="1_hgu0o"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_vm31h"]
 bg_color = Color(0, 0, 0, 1)
@@ -18,7 +18,7 @@ anti_aliasing = false
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_hgu0o"]
 bg_color = Color(1, 1, 1, 1)
 
-[node name="UI" type="Control" unique_id=1982713081]
+[node name="UI" type="Control" unique_id=1982713081 node_paths=PackedStringArray("code_edit")]
 layout_mode = 3
 anchor_right = 1.3888888
 anchor_bottom = 1.8518518
@@ -26,6 +26,9 @@ offset_right = -736.0
 offset_bottom = -552.0
 grow_horizontal = 2
 grow_vertical = 2
+script = ExtResource("1_hgu0o")
+code_edit = NodePath("AspectRatioContainer/CodeEdit_Container/ColorRect/CodeEdit")
+unique_code_file_name = "code_edit_file.gd"
 
 [node name="AspectRatioContainer" type="AspectRatioContainer" parent="." unique_id=548256345]
 layout_mode = 1
@@ -60,11 +63,8 @@ theme_override_font_sizes/font_size = 24
 theme_override_styles/normal = SubResource("StyleBoxFlat_vm31h")
 text = "extends Node
 
-func _ready (delta: float) -> void:
-	pass
-
-func _process(delta: float) -> void:
-	pass"
+func _ready():
+	print(\"Bonjour madame\")"
 placeholder_text = "CODE TO WIN"
 wrap_mode = 1
 gutters_draw_breakpoints_gutter = true
@@ -72,10 +72,6 @@ gutters_draw_bookmarks = true
 gutters_draw_executing_lines = true
 gutters_draw_line_numbers = true
 metadata/_edit_use_anchors_ = true
-
-[node name="CodeEditColor" type="Node" parent="AspectRatioContainer/CodeEdit_Container/ColorRect" unique_id=2134826856 node_paths=PackedStringArray("code_edit")]
-script = ExtResource("2_vm31h")
-code_edit = NodePath("../CodeEdit")
 
 [node name="BTN_Container" type="HBoxContainer" parent="AspectRatioContainer" unique_id=2033867801]
 layout_mode = 2
@@ -134,3 +130,9 @@ theme_override_font_sizes/font_size = 24
 theme_override_styles/normal = SubResource("StyleBoxFlat_802u8")
 theme_override_styles/pressed = SubResource("StyleBoxFlat_hgu0o")
 text = "Stop and Restart"
+
+[connection signal="pressed" from="AspectRatioContainer/BTN_Container/BTN_Zoom-" to="." method="_on_less_size_button_pressed"]
+[connection signal="pressed" from="AspectRatioContainer/BTN_Container/BTN_Zoom+" to="." method="_on_plus_size_button_pressed"]
+[connection signal="pressed" from="AspectRatioContainer/BTN_Container/BTN_RunScript" to="." method="_on_run_button_pressed"]
+[connection signal="pressed" from="AspectRatioContainer/BTN_Container/BTN_ResetCode" to="." method="_on_reset_code_button_pressed"]
+[connection signal="pressed" from="AspectRatioContainer/BTN_Container/BTN_StopAndRestart" to="." method="_on_reset_all_overrides_button_pressed"]
