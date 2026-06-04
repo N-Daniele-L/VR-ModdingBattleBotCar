@@ -12,6 +12,8 @@
 [ext_resource type="PackedScene" uid="uid://bei0bw2gg5ig" path="res://_/scene/Nicolas/documentation_pickable_beta.tscn" id="10_5vy5g"]
 [ext_resource type="Script" uid="uid://b6i42h7jqarx2" path="res://_/script/Daniele/game_manager.gd" id="11_10bsh"]
 [ext_resource type="PackedScene" uid="uid://cvin6pwxbcto3" path="res://_/scene/Daniele/player_test.tscn" id="12_bs5cw"]
+[ext_resource type="Script" path="res://_/script/Nicolas/pool_system.gd" id="13_ck10e"]
+[ext_resource type="PackedScene" uid="uid://ddjlgmesf7ffm" path="res://_/scene/Daniele/basic_enemy.tscn" id="14_ck10e"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_1gxwg"]
 sky_horizon_color = Color(0.66224277, 0.6717428, 0.6867428, 1)
@@ -166,11 +168,17 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -1.256622)
 transform = Transform3D(0.1, 0, 0, 0, 0.1, 0, 0, 0, 0.1, 0, 0, 0)
 mesh = SubResource("SphereMesh_bs5cw")
 
-[node name="DNGameManager" type="Node" parent="." unique_id=348758727 node_paths=PackedStringArray("player_bot")]
+[node name="DNGameManager" type="Node" parent="." unique_id=348758727 node_paths=PackedStringArray("player_bot", "enemy_pool")]
 script = ExtResource("11_10bsh")
 wave_spawn_point = Array[Vector3]([Vector3(0, 0, 1.0955697)])
 player_bot = NodePath("../PlayerTest/Node3D")
+enemy_pool = NodePath("../NCARPoolSystem")
 metadata/_custom_type_script = "uid://b6i42h7jqarx2"
+
+[node name="NCARPoolSystem" type="Node3D" parent="." unique_id=450490826]
+script = ExtResource("13_ck10e")
+object_to_instantiate = ExtResource("14_ck10e")
+name_pooled = "enemy"
 
 [editable path="Viewport2Din3D"]
 [editable path="VirtualKeyboard"]
