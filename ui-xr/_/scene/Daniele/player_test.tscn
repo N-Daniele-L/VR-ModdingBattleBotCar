@@ -4,11 +4,13 @@
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_weeuf"]
 
-[node name="PlayerTest" type="CharacterBody3D" unique_id=233253796]
+[node name="PlayerTest" type="Node3D" unique_id=1352266104]
 transform = Transform3D(0.1, 0, 0, 0, 0.1, 0, 0, 0, 0.1, 0, 0, 0)
 
-[node name="MeshInstance3D" type="MeshInstance3D" parent="." unique_id=1210343253]
+[node name="Node3D" type="CharacterBody3D" parent="." unique_id=350990266]
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Node3D" unique_id=1210343253]
 mesh = SubResource("CapsuleMesh_qntmx")
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=1737611362]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Node3D" unique_id=1737611362]
 shape = SubResource("CapsuleShape3D_weeuf")
