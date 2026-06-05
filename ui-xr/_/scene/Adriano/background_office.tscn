@@ -314,7 +314,7 @@ transform = Transform3D(-0.0046213986, -1.7252226, 0.06299616, 0.087413, -0.7490
 [node name="3D_BG_OfficeTable" parent="graphic/MeshInstance3D/3D_BG_Office" unique_id=249302106 instance=ExtResource("2_a34ln")]
 transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, -1.9103801, 0.0054359436, 0.46556234)
 
-[node name="StaticBody3D" type="StaticBody3D" parent="graphic/MeshInstance3D/3D_BG_Office/3D_BG_OfficeTable/GEO_Table" parent_id_path=PackedInt32Array(249302106, 44941159) index="0" unique_id=1905639307]
+[node name="StaticBody3D" type="StaticBody3D" parent="graphic/MeshInstance3D/3D_BG_Office/3D_BG_OfficeTable/GEO_Table" parent_id_path=PackedInt32Array(249302106, 182679155) index="0" unique_id=1905639307]
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="graphic/MeshInstance3D/3D_BG_Office/3D_BG_OfficeTable/GEO_Table/StaticBody3D" unique_id=1039753645]
 shape = SubResource("ConcavePolygonShape3D_rxpq6")
@@ -364,7 +364,7 @@ script = ExtResource("2_1x0uo")
 viewport = NodePath("../P_CRT/SubViewport")
 
 [node name="P_CRT" parent="graphic" unique_id=1705081193 instance=ExtResource("2_fs4ot")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.91, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.91, -33.613266)
 
 [node name="SubViewport" parent="graphic/P_CRT" index="0" unique_id=1225241606]
 canvas_cull_mask = 4293918722
@@ -372,19 +372,29 @@ canvas_cull_mask = 4293918722
 [node name="Anchor_Camera3D" parent="graphic/P_CRT/SubViewport" index="0" unique_id=143777878]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 4.3, 0)
 
-[node name="P_Enn_BladeMech" parent="graphic/P_CRT/SubViewport/Anchor_Camera3D" index="1" unique_id=1774846936 instance=ExtResource("3_1x0uo")]
-transform = Transform3D(0.9659258, 0, 0.25881904, 0, 1, 0, -0.25881904, 0, 0.9659258, -8.849437, -4.3, -26.915705)
-
-[node name="P_Enn_BladeMech2" parent="graphic/P_CRT/SubViewport/Anchor_Camera3D" index="2" unique_id=766988637 instance=ExtResource("3_1x0uo")]
-transform = Transform3D(0.9659258, 0, -0.25881904, 0, 1, 0, 0.25881904, 0, 0.9659258, 9.253909, -4.3, -24.790133)
-
-[node name="P_Enn_BladeMech3" parent="graphic/P_CRT/SubViewport/Anchor_Camera3D" index="3" unique_id=26449818 instance=ExtResource("3_1x0uo")]
-transform = Transform3D(-1, 0, 8.742278e-08, 0, 1, 0, -8.742278e-08, 0, -1, -0.020001411, -4.3, -8.190002)
-
-[node name="Camera3D" parent="graphic/P_CRT/SubViewport/Anchor_Camera3D" index="4" unique_id=69060824]
-transform = Transform3D(1, 0, 0, 0, 0.9659258, 0.25881904, 0, -0.25881904, 0.9659258, 0, 5.6378293, -2.8906977)
+[node name="Camera3D" parent="graphic/P_CRT/SubViewport/Anchor_Camera3D" index="1" unique_id=69060824]
+transform = Transform3D(1, 0, 0, 0, 0.9659259, 0.25881907, 0, -0.25881907, 0.9659258, 0, 5.63783, -35.920513)
 cull_mask = 2
 fov = 80.0
+
+[node name="P_GameScene" type="Node3D" parent="graphic" unique_id=2082793675]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.91, -33.613266)
+
+[node name="P_Enn_BladeMech" parent="graphic/P_GameScene" unique_id=1774846936 instance=ExtResource("3_1x0uo")]
+transform = Transform3D(0.9659258, 0, 0.25881904, 0, 1, 0, -0.25881904, 0, 0.9659258, -8.849437, -0.91, -26.915705)
+
+[node name="P_Enn_BladeMech2" parent="graphic/P_GameScene" unique_id=766988637 instance=ExtResource("3_1x0uo")]
+transform = Transform3D(0.9659258, 0, -0.25881904, 0, 1, 0, 0.25881904, 0, 0.9659258, 9.253909, -0.91, -24.790133)
+
+[node name="P_Enn_BladeMech3" parent="graphic/P_GameScene" unique_id=26449818 instance=ExtResource("3_1x0uo")]
+transform = Transform3D(-1, 0, 8.742278e-08, 0, 1, 0, -8.742278e-08, 0, -1, -0.020001411, -0.91, -8.190002)
+
+[node name="SpotLight3D" type="SpotLight3D" parent="graphic/P_GameScene" unique_id=1996365027]
+transform = Transform3D(0.9558546, -0.07329855, -0.28455108, 0.23440234, 0.7741711, 0.587975, 0.17719351, -0.6287181, 0.7571764, -4.0392084, 12.684977, 1.8400307)
+light_color = Color(1, 0.58431375, 0.4509804, 1)
+light_energy = 8.018
+spot_range = 73.091
+spot_angle = 60.83
 
 [editable path="graphic/MeshInstance3D/3D_BG_Office"]
 [editable path="graphic/MeshInstance3D/3D_BG_Office/3D_BG_OfficeTable"]
