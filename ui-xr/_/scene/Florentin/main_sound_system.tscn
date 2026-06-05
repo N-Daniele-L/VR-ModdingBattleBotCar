@@ -314,14 +314,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.2564023, 0.0051471908, -1.3
 
 [node name="StaticBody3D" parent="Background/P_Office/graphic/3D_BG_Office/GEO_Trashbin" index="0" unique_id=1910551455 groups=["hit_metal"]]
 
-[node name="AudioStreamPlayer3D_hit_metal" type="AudioStreamPlayer3D" parent="Background/P_Office/graphic/3D_BG_Office/GEO_Trashbin/StaticBody3D" index="1" unique_id=953016267]
-stream = ExtResource("11_do1kh")
-volume_db = -4.0
-max_db = -12.0
-max_distance = 5.0
-bus = &"SFX"
-
-[node name="HitArea" type="Area3D" parent="Background/P_Office/graphic/3D_BG_Office/GEO_Trashbin/StaticBody3D" index="2" unique_id=1002360087]
+[node name="HitArea" type="Area3D" parent="Background/P_Office/graphic/3D_BG_Office/GEO_Trashbin/StaticBody3D" index="1" unique_id=1002360087]
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Background/P_Office/graphic/3D_BG_Office/GEO_Trashbin/StaticBody3D/HitArea" unique_id=1999364521]
 transform = Transform3D(0.25, 0, 0, 0, 0.25, 0, 0, 0, 0.25, 0, 0, 0)
