@@ -7,16 +7,28 @@ signal shot_requested(target_position: Vector3)
 ## Émis lorsqu'une nouvelle cible prioritaire est verrouillée par le radar.
 signal target_acquired(target: Node3D)
 
+@export var enemies_locked: Array[Node3D]
+
+func add_one_enemy_to_ennemies_locked(enemy: Node3D):
+	enemies_locked.append(enemy)
+	targets_to_aim.append(enemy)
+	
+func remove_enemy_dead_from_locked_enemy(enemy: Node3D):
+	var index = enemies_locked.find(enemy)
+	enemies_locked.erase(enemy)
+	targets_to_aim.remove_at(index)
+	
 @export var targets_to_aim: Array[Node3D]
+
+func replace_pos_every_frame(index: int,pos_node: Node3D):
+	targets_to_aim.set(index,pos_node)
+
 @export var automatic_fire: bool = true
 
 var fire_timer: float = 0.0
 var current_target: Node3D = null
 
 func _process(delta: float) -> void:
-	if Engine.is_editor_hint():
-		return
-		
 	_find_closest_target()
 	if current_target == null:
 		return

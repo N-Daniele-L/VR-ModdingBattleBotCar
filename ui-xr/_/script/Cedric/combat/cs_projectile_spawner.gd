@@ -9,8 +9,8 @@ signal projectile_spawned(projectile: CSProjectile)
 func spawn_projectile(pool_type: String, damage: int, lifetime: float, speed: float, trajectory_type: int, target_pos: Vector3, color: Color) -> void:
 	if Engine.is_editor_hint():
 		return
+	print("spawn realized")
 	var projectile = projectile_pool.get_object_from_pool() as CSProjectile
-	#get_tree().current_scene.add_child(projectile) 
 	projectile.global_position = global_position
 	projectile.initialize_projectile(damage,lifetime,speed,trajectory_type,target_pos,color)
 	projectile_spawned.emit(projectile)

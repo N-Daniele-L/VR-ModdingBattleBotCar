@@ -35,7 +35,8 @@ func _process(delta: float) -> void:
 			can_shoot = true
 			time_since_last_fire = 0.0
 	if can_shoot:
-		handle_shoot_signal(target_to_aim[0].global_position)
+		if !target_to_aim.is_empty():
+			handle_shoot_signal(target_to_aim[0].global_position)
 
 func handle_shoot_signal(target_position: Vector3) -> void:
 	if can_shoot:

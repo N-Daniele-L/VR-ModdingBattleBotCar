@@ -38,7 +38,11 @@ func _process(delta: float) -> void:
 	alive_time += delta
 	if alive_time >= max_lifetime:
 		projectile_expired.emit(self)
+		self.visible = false
 
 func _on_collision_impact(target: Node3D) -> void:
-	projectile_impacted.emit(self, target)
-	
+	if target.is_in_group("PlayerTargets"):
+		return
+	if target.is_in_group("enemy"):
+		projectile_impacted.emit(self, target)
+		self.visible = false

@@ -3,7 +3,7 @@ class_name CSEnemyController
 extends CharacterBody3D
 
 ## Émis lorsque le cycle de vie de l'ennemi se termine définitivement (Dead).
-signal enemy_lifecycle_ended(instance: CSEnemyController)
+signal enemy_lifecycle_ended(instance: Node3D)
 ## Émis lors de chaque changement interne d'état comportemental.
 signal state_changed(new_state: int, state_name: String)
 
@@ -19,6 +19,7 @@ enum EnemyState { INITIALIZING, SEARCHING_TARGET, MOVING_TO_TARGET, ATTACKING_TA
 
 var current_state: EnemyState = EnemyState.INITIALIZING
 var target_node: Node3D = null
+var player_pos: Vector3
 
 func _ready() -> void:
 	if Engine.is_editor_hint():
@@ -41,6 +42,7 @@ func change_state(new_state: EnemyState) -> void:
 	state_changed.emit(new_state, state_string)
 
 func _physics_process(delta: float) -> void:
+	
 	if Engine.is_editor_hint() or current_state == EnemyState.DYING or current_state == EnemyState.DEAD:
 		return
 		
@@ -75,25 +77,9 @@ func _physics_process(delta: float) -> void:
 				look_at(Vector3(target_node.global_position.x, global_position.y, target_node.global_position.z), Vector3.UP)
 				attack_comp.process_combat_loop(target_node.global_position, delta)
 
-func take_bullet_hit() -> void:
-	if current_state == EnemyState.DYING or current_state == EnemyState.DEAD:
-		return
-	change_state(EnemyState.DYING)
-	velocity = Vector3.ZERO
-	change_state(EnemyState.DEAD)
-	enemy_lifecycle_ended.emit(self)
-	
-func take_damage(amount: int) -> void:
-	health -= amount
-	target_damaged.emit(health)
-	
-	if health <= 0:
-		target_destroyed.emit()
-		if auto_reset:
-			health = 5
-		else:
-			queue_free()
-			
-
-func _on_area_entered(area: Area3D) -> void:
-	take_damage(5)
+func take_damage(body: Node3D) -> void:
+	if body.is_in_group("projectile"):
+		var character_parent: Node3D = self.get_parent()
+		character_parent.visible = false
+		change_state(EnemyState.DEAD)
+		enemy_lifecycle_ended.emit(self.get_parent_node_3d())

@@ -63,6 +63,8 @@ script = ExtResource("1_ixos7")
 
 [node name="WeaponPoint" type="Node3D" parent="CSTestTurret" unique_id=62761300]
 script = ExtResource("2_r188b")
+bullet_lifetime = 500.0
+fire_rate = 4.0
 
 [node name="ProjectileSpawner" type="Node3D" parent="CSTestTurret/WeaponPoint" unique_id=476421837 node_paths=PackedStringArray("projectile_pool")]
 script = ExtResource("3_mb78t")
