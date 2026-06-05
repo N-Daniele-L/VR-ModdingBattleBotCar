@@ -1,7 +1,7 @@
-[gd_scene format=4 uid="uid://cbdcmywff0soy"]
+[gd_scene format=4 uid="uid://bekq4pccvw80k"]
 
 [ext_resource type="PackedScene" uid="uid://dfel2sf5hjpau" path="res://_/ART/3D/Models/3D_ApartementsMedium.glb" id="1_v7ser"]
-[ext_resource type="Material" uid="uid://wog5kifhuqgq" path="res://_/ART/3D/Materials/M_GameScene.tres" id="2_plf5o"]
+[ext_resource type="Material" path="res://_/ART/3D/Materials/M_GameScene.tres" id="2_plf5o"]
 [ext_resource type="PackedScene" uid="uid://mpyh0v0tyh76" path="res://_/ART/3D/Models/3D_ApartementsSmall.glb" id="3_ipmpj"]
 [ext_resource type="PackedScene" uid="uid://bkh1tx14ph86i" path="res://_/ART/3D/Models/3D_ApartementsTall.glb" id="4_nj2io"]
 [ext_resource type="PackedScene" uid="uid://bfpkmbbrvf4d" path="res://_/ART/3D/Models/3D_Hotel.glb" id="5_2dpxx"]
@@ -87,63 +87,73 @@ shadow_mesh = SubResource("ArrayMesh_dbf4y")
 [node name="09_civilian househotel" parent="Graphics/MeshInstance3D" unique_id=555410472 instance=ExtResource("1_v7ser")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -23, 0, 28.12709)
 
-[node name="GEO_Apartments-Medium" parent="Graphics/MeshInstance3D/09_civilian househotel" index="0" unique_id=1112077785]
+[node name="GEO_Apartments-Medium" parent="Graphics/MeshInstance3D/09_civilian househotel" index="0" unique_id=2091751672]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -12.126747, -16.713516, -16.170122)
+layers = 2
 material_override = ExtResource("2_plf5o")
 
 [node name="09_civilian househotel2" parent="Graphics/MeshInstance3D" unique_id=2122410882 instance=ExtResource("3_ipmpj")]
 
-[node name="GEO_Apartments-Small" parent="Graphics/MeshInstance3D/09_civilian househotel2" index="0" unique_id=1096445585]
+[node name="GEO_Apartments-Small" parent="Graphics/MeshInstance3D/09_civilian househotel2" index="0" unique_id=1154328630]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -34.888016)
+layers = 2
 material_override = ExtResource("2_plf5o")
 
 [node name="09_civilian househotel3" parent="Graphics/MeshInstance3D" unique_id=1631783322 instance=ExtResource("4_nj2io")]
 transform = Transform3D(0.9998852, 0, 0.015148893, 0, 1, 0, -0.015148893, 0, 0.9998852, 31.123734, 0, 41.265656)
 
-[node name="GEO_Apartments-Tall" parent="Graphics/MeshInstance3D/09_civilian househotel3" index="0" unique_id=1371136803]
+[node name="GEO_Apartments-Tall" parent="Graphics/MeshInstance3D/09_civilian househotel3" index="0" unique_id=1864778360]
+layers = 2
 material_override = ExtResource("2_plf5o")
 
 [node name="GEO_Apartments-Tall" type="MeshInstance3D" parent="Graphics/MeshInstance3D/09_civilian househotel3/GEO_Apartments-Tall" index="0" unique_id=38855909]
 transform = Transform3D(0.0125834765, 0, 0.99992085, 0, 1, 0, -0.99992085, 0, 0.0125834765, -85.71959, 0, -120.00035)
+layers = 2
 material_override = ExtResource("2_plf5o")
 mesh = SubResource("ArrayMesh_b6kca")
 
 [node name="09_civilian househotel4" parent="Graphics/MeshInstance3D" unique_id=6976334 instance=ExtResource("5_2dpxx")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -37.883293)
 
-[node name="GEO_Hotel" parent="Graphics/MeshInstance3D/09_civilian househotel4" index="0" unique_id=313838091]
+[node name="GEO_Hotel" parent="Graphics/MeshInstance3D/09_civilian househotel4" index="0" unique_id=51503607]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -67.86325, 0, 87.30348)
+layers = 2
 material_override = ExtResource("2_plf5o")
 
 [node name="09_civilian househotel5" parent="Graphics/MeshInstance3D" unique_id=112166357 instance=ExtResource("6_c1h8l")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 60.061356, 0, 0)
 
-[node name="GEO_Skyscraper" parent="Graphics/MeshInstance3D/09_civilian househotel5" index="0" unique_id=6848856]
+[node name="GEO_Skyscraper" parent="Graphics/MeshInstance3D/09_civilian househotel5" index="0" unique_id=1721911518]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -16.330414)
+layers = 2
 material_override = ExtResource("2_plf5o")
 
 [node name="GEO_Skyscraper" type="MeshInstance3D" parent="Graphics/MeshInstance3D/09_civilian househotel5/GEO_Skyscraper" index="0" unique_id=774384974]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -167.7774, 0, -16.330414)
+layers = 2
 material_override = ExtResource("2_plf5o")
 mesh = SubResource("ArrayMesh_723go")
 
 [node name="09_civilian househotel6" parent="Graphics/MeshInstance3D" unique_id=767750843 instance=ExtResource("7_idgom")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 81.008965, 0, -75.81086)
 
-[node name="GEO_BrokeHotel_Base" parent="Graphics/MeshInstance3D/09_civilian househotel6" index="0" unique_id=147962045]
+[node name="GEO_BrokeHotel_Base" parent="Graphics/MeshInstance3D/09_civilian househotel6" index="0" unique_id=1220196701]
 transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, -28.599525, 0, 0)
+layers = 2
 material_override = ExtResource("2_plf5o")
 
 [node name="09_civilian househotel7" parent="Graphics/MeshInstance3D" unique_id=393934130 instance=ExtResource("8_ltqdn")]
 
-[node name="GEO_BrokeHotel_Top" parent="Graphics/MeshInstance3D/09_civilian househotel7" index="0" unique_id=1886705801]
+[node name="GEO_BrokeHotel_Top" parent="Graphics/MeshInstance3D/09_civilian househotel7" index="0" unique_id=1868073374]
 transform = Transform3D(0.8660254, 0, -0.5, 0, 1, 0, 0.5, 0, 0.8660254, 21.875172, 0, -115.069084)
+layers = 2
 material_override = ExtResource("2_plf5o")
 
 [node name="09_civilian househotel8" parent="Graphics/MeshInstance3D" unique_id=1729413460 instance=ExtResource("9_23wuj")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 95.9335)
 
-[node name="GEO_BuildingTop" parent="Graphics/MeshInstance3D/09_civilian househotel8" index="0" unique_id=1075102398]
+[node name="GEO_BuildingTop" parent="Graphics/MeshInstance3D/09_civilian househotel8" index="0" unique_id=1937600724]
+layers = 2
 material_override = ExtResource("2_plf5o")
 
 [editable path="Graphics/MeshInstance3D/09_civilian househotel"]
