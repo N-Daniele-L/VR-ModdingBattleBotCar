@@ -4,6 +4,7 @@
 [ext_resource type="Script" uid="uid://b18kkstg643yw" path="res://addons/godot-xr-tools/functions/function_pickup.gd" id="3_sgves"]
 [ext_resource type="PackedScene" uid="uid://cqhw276realc" path="res://addons/godot-xr-tools/functions/function_pointer.tscn" id="4_8ewul"]
 [ext_resource type="PackedScene" uid="uid://njx823gyk04n" path="res://addons/godot-xr-tools/hands/scenes/highpoly/left_hand.tscn" id="4_iqrj0"]
+[ext_resource type="Script" uid="uid://gl3adtlwggkq" path="res://_/scene/Nicolas/fps_counter.gd" id="5_16e8f"]
 [ext_resource type="PackedScene" uid="uid://raeeicvvindd" path="res://addons/godot-xr-tools/hands/scenes/highpoly/right_hand.tscn" id="5_v7wsq"]
 [ext_resource type="PackedScene" path="res://_/scene/Nicolas/paper_ball_pickable.tscn" id="8_iqrj0"]
 [ext_resource type="PackedScene" uid="uid://d3spwpl4gmsnc" path="res://_/scene/Adriano/background_office.tscn" id="8_v7wsq"]
@@ -30,6 +31,13 @@ metadata/_custom_type_script = "uid://b18kkstg643yw"
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.02, 0.05, -0.1)
 
 [node name="LeftHand" parent="XROrigin3D/XRControllerLeft" unique_id=1828235213 instance=ExtResource("4_iqrj0")]
+
+[node name="FpsCounter" type="Label3D" parent="XROrigin3D/XRControllerLeft" unique_id=919953715]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.13, 0)
+text = "FPS:"
+font_size = 16
+outline_size = 4
+script = ExtResource("5_16e8f")
 
 [node name="XRControllerRight" type="XRController3D" parent="XROrigin3D" unique_id=1510464946]
 tracker = &"right_hand"

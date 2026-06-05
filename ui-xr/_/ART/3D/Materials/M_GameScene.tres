@@ -6,6 +6,6 @@
 resource_name = "M_GameScene"
 transparency = 4
 cull_mode = 2
-albedo_color = Color(0.9063318, 0.9063318, 0.9063318, 1)
+shading_mode = 0
+albedo_color = Color(0.6665686, 0.6665689, 0.66656816, 1)
 albedo_texture = ExtResource("1_7vrqw")
-roughness = 0.59
