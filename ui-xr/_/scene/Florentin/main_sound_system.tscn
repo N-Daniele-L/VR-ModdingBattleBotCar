@@ -1,0 +1,81 @@
+[gd_scene format=3 uid="uid://cs4720abuipuu"]
+
+[ext_resource type="Script" uid="uid://clipxhr1jpdbq" path="res://addons/godot-demo-xr/scenes/demo_scene_base.gd" id="1_qvs7m"]
+[ext_resource type="PackedScene" uid="uid://bnx4hithcij6y" path="res://addons/godot-xr-tools/hands/model/Hand_Glove_low_L.gltf" id="2_xcpnb"]
+[ext_resource type="PackedScene" uid="uid://csgsp0wuw8ucy" path="res://addons/godot-xr-tools/hands/model/Hand_Glove_low_R.gltf" id="3_fy3g7"]
+[ext_resource type="PackedScene" uid="uid://cqhw276realc" path="res://addons/godot-xr-tools/functions/function_pointer.tscn" id="4_4i15i"]
+[ext_resource type="PackedScene" uid="uid://d3spwpl4gmsnc" path="res://_/scene/Adriano/background_office.tscn" id="5_k5qfl"]
+[ext_resource type="AudioStream" uid="uid://dgrj0eynifkog" path="res://_/assets/Florentin/audio/ambiant/neon.ogg" id="6_16cy4"]
+[ext_resource type="AudioStream" uid="uid://pceqvyma8wgg" path="res://_/assets/Florentin/audio/ambiant/pc_running_loop.ogg" id="7_16cy4"]
+[ext_resource type="AudioStream" uid="uid://ineqo8c0mrj3" path="res://_/assets/Florentin/audio/ambiant/crt_left_running_loop.ogg" id="9_jy21p"]
+[ext_resource type="AudioStream" uid="uid://n266xlyfiycw" path="res://_/assets/Florentin/audio/ambiant/crt_right_running_loop.ogg" id="10_s1g62"]
+
+[node name="Main" type="Node3D" unique_id=1421353623]
+script = ExtResource("1_qvs7m")
+
+[node name="XROrigin3D" type="XROrigin3D" parent="." unique_id=666322222]
+
+[node name="XRCamera3D" type="XRCamera3D" parent="XROrigin3D" unique_id=278342559]
+
+[node name="AudioListener3D" type="AudioListener3D" parent="XROrigin3D/XRCamera3D" unique_id=1004276903]
+doppler_tracking = 2
+current = true
+
+[node name="XRControllerLeft" type="XRController3D" parent="XROrigin3D" unique_id=1744335750]
+tracker = &"left_hand"
+
+[node name="hand_l" parent="XROrigin3D/XRControllerLeft" unique_id=1441204479 instance=ExtResource("2_xcpnb")]
+
+[node name="XRControllerRight" type="XRController3D" parent="XROrigin3D" unique_id=1510464946]
+tracker = &"right_hand"
+
+[node name="hand_r" parent="XROrigin3D/XRControllerRight" unique_id=2088910385 instance=ExtResource("3_fy3g7")]
+
+[node name="FunctionPointer" parent="XROrigin3D/XRControllerRight" unique_id=1203588822 instance=ExtResource("4_4i15i")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.02, 0.05, -0.1)
+
+[node name="Background" parent="." unique_id=72946100 instance=ExtResource("5_k5qfl")]
+
+[node name="AudioStreamPlayer3D_neon" type="AudioStreamPlayer3D" parent="Background/P_Office/graphic/3D_BG_Office/GEO_Light" parent_id_path=PackedInt32Array(72946100, 608721767, 1453700499) index="0" unique_id=655784173]
+transform = Transform3D(0.9957754, 0, 0, 0, 1, 0, 0, 0, 0.88587874, 0, 2.2302523, 0.28056914)
+stream = ExtResource("6_16cy4")
+volume_db = -18.0
+max_db = 0.0
+autoplay = true
+max_distance = 5.0
+bus = &"Ambiant"
+parameters/looping = true
+
+[node name="AudioStreamPlayer3D_pc_running_loop" type="AudioStreamPlayer3D" parent="Background/P_Office/graphic/3D_BG_Office/GEO_PC" parent_id_path=PackedInt32Array(72946100, 608721767, 832720443) index="1" unique_id=1663565902]
+stream = ExtResource("7_16cy4")
+volume_db = -16.0
+max_db = 2.0
+autoplay = true
+max_distance = 5.0
+bus = &"Ambiant"
+parameters/looping = true
+
+[node name="AudioStreamPlayer3D_crt_left_loop" type="AudioStreamPlayer3D" parent="Background/P_Office/graphic/3D_BG_Office/GEO_Monitor01" parent_id_path=PackedInt32Array(72946100, 608721767, 72583275) index="1" unique_id=1966026797]
+stream = ExtResource("9_jy21p")
+volume_db = -12.0
+max_db = 0.0
+autoplay = true
+max_distance = 5.0
+bus = &"Ambiant"
+parameters/looping = true
+
+[node name="AudioStreamPlayer3D_crt_right_loop" type="AudioStreamPlayer3D" parent="Background/P_Office/graphic/3D_BG_Office/GEO_Monitor02" parent_id_path=PackedInt32Array(72946100, 608721767, 498674327) index="1" unique_id=672260339]
+transform = Transform3D(0.83333325, 0, 0, 0, 0.83333325, 0, 0, 0, 0.83333325, 0, 0.12268454, 0)
+stream = ExtResource("10_s1g62")
+volume_db = -12.0
+max_db = 0.0
+autoplay = true
+max_distance = 5.0
+bus = &"Ambiant"
+parameters/looping = true
+
+[editable path="Background"]
+[editable path="Background/P_Office/graphic/3D_BG_Office"]
+[editable path="Background/P_Office/graphic/3D_BG_Office/3D_BG_OfficeTable"]
+[editable path="Background/P_Office/graphic/3D_BG_Office/3D_BG_OfficeTable/3D_A_Enn_BladeMech"]
+[editable path="Background/P_GameScene/P_CRT"]

@@ -1,0 +1,100 @@
+[gd_scene format=3 uid="uid://8m6bki14ps6f"]
+
+[ext_resource type="PackedScene" uid="uid://dgt6o4oovdft1" path="res://_/ART/3D/Models/3D_A_Enn_BladeMech.glb" id="1_q32yf"]
+[ext_resource type="Script" uid="uid://b178sv18by8fk" path="res://_/scene/Nicolas/enemy_animation.gd" id="2_q32yf"]
+
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_lci2v"]
+animation = &"EnemyBlade_Attack"
+
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_7koo2"]
+animation = &"EnemyBlade_Death"
+
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_q32yf"]
+animation = &"EnemyBlade_Idle"
+
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_ig0ww"]
+animation = &"EnemyBlade_Move"
+
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_lci2v"]
+advance_mode = 2
+
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_xxvb6"]
+advance_mode = 2
+advance_condition = &"move"
+
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_rq3sl"]
+advance_mode = 2
+advance_condition = &"notmove"
+
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_7koo2"]
+advance_mode = 2
+advance_condition = &"death"
+
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_q3ng6"]
+advance_mode = 2
+advance_condition = &"attack"
+
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_gm6uj"]
+switch_mode = 2
+advance_mode = 2
+
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_hjypa"]
+advance_mode = 2
+advance_condition = &"attack"
+
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_q32yf"]
+advance_mode = 2
+advance_condition = &"death"
+
+[sub_resource type="AnimationNodeStateMachine" id="AnimationNodeStateMachine_q3ng6"]
+states/EnemyBlade_Attack/node = SubResource("AnimationNodeAnimation_lci2v")
+states/EnemyBlade_Attack/position = Vector2(507, 9)
+states/EnemyBlade_Death/node = SubResource("AnimationNodeAnimation_7koo2")
+states/EnemyBlade_Death/position = Vector2(482, 232)
+states/EnemyBlade_Idle/node = SubResource("AnimationNodeAnimation_q32yf")
+states/EnemyBlade_Idle/position = Vector2(383, 95)
+states/EnemyBlade_Move/node = SubResource("AnimationNodeAnimation_ig0ww")
+states/EnemyBlade_Move/position = Vector2(598, 100)
+states/Start/position = Vector2(161, 100)
+transitions = ["Start", "EnemyBlade_Idle", SubResource("AnimationNodeStateMachineTransition_lci2v"), "EnemyBlade_Idle", "EnemyBlade_Move", SubResource("AnimationNodeStateMachineTransition_xxvb6"), "EnemyBlade_Move", "EnemyBlade_Idle", SubResource("AnimationNodeStateMachineTransition_rq3sl"), "EnemyBlade_Move", "EnemyBlade_Death", SubResource("AnimationNodeStateMachineTransition_7koo2"), "EnemyBlade_Move", "EnemyBlade_Attack", SubResource("AnimationNodeStateMachineTransition_q3ng6"), "EnemyBlade_Attack", "EnemyBlade_Idle", SubResource("AnimationNodeStateMachineTransition_gm6uj"), "EnemyBlade_Idle", "EnemyBlade_Attack", SubResource("AnimationNodeStateMachineTransition_hjypa"), "EnemyBlade_Idle", "EnemyBlade_Death", SubResource("AnimationNodeStateMachineTransition_q32yf")]
+graph_offset = Vector2(-56, -42)
+
+[node name="3D_A_Enn_BladeMech" unique_id=53382495 instance=ExtResource("1_q32yf")]
+
+[node name="Skeleton3D" parent="Armature" parent_id_path=PackedInt32Array(1184944184) index="0" unique_id=1337549719]
+bones/1/rotation = Quaternion(1.6940659e-21, 1, 0, 4.3312576e-07)
+bones/2/position = Vector3(-1.157224e-06, 0.017512562, -1.3358984)
+bones/2/rotation = Quaternion(-5.591473e-07, 0.7071068, -0.7071068, -5.3385055e-08)
+bones/3/rotation = Quaternion(-3.8046807e-08, 1.6292068e-07, 2.1014577e-14, 1)
+bones/4/rotation = Quaternion(5.6531e-10, 3.7057691e-22, -2.2013886e-16, 1)
+bones/5/rotation = Quaternion(0.37964308, 0.56968796, -0.42153117, 0.5946748)
+bones/6/rotation = Quaternion(0.7258817, 0.084079914, -0.057724085, 0.68021643)
+bones/7/rotation = Quaternion(0.12861234, -0.0029197563, 0.12635933, 0.98360753)
+bones/8/rotation = Quaternion(-0.010255782, 0.010971968, -0.036225848, 0.9992308)
+bones/9/rotation = Quaternion(0.13855563, 0.00064232986, 0.05600565, 0.98876965)
+bones/10/rotation = Quaternion(0.29216668, -0.0024349275, -0.0012624176, 0.95636356)
+bones/11/rotation = Quaternion(0.114803255, 0.008374615, 0.053222474, 0.9919262)
+bones/12/rotation = Quaternion(0.31455204, -0.010803156, 0.0030785594, 0.94917375)
+bones/13/rotation = Quaternion(-0.038548637, 0.62748724, 0.2619725, 0.73221874)
+bones/14/rotation = Quaternion(0.21147397, 0.067848325, -0.04709722, 0.97388774)
+bones/15/rotation = Quaternion(0.08979824, -0.00042648363, 0.97512364, -0.2026574)
+bones/16/rotation = Quaternion(0.37964332, -0.56968766, 0.4215311, 0.5946752)
+bones/17/rotation = Quaternion(0.72588164, -0.08407993, 0.0577241, 0.6802165)
+bones/18/rotation = Quaternion(0.12861228, 0.0029197743, -0.12635934, 0.9836075)
+bones/19/rotation = Quaternion(-0.010255727, -0.010971948, 0.036225874, 0.99923074)
+bones/20/rotation = Quaternion(0.13855563, -0.0006423148, -0.05600562, 0.98876965)
+bones/21/rotation = Quaternion(0.29216668, 0.0024349168, 0.0012623876, 0.95636356)
+bones/22/rotation = Quaternion(0.114803284, -0.00837461, -0.053222485, 0.9919262)
+bones/23/rotation = Quaternion(0.31455204, 0.010803149, -0.0030785592, 0.94917375)
+bones/24/rotation = Quaternion(-0.03854858, -0.6274872, -0.26197252, 0.73221874)
+bones/25/rotation = Quaternion(0.21147406, -0.0678483, 0.04709725, 0.9738877)
+bones/26/rotation = Quaternion(-0.089798175, -0.00042653372, 0.97512364, 0.20265725)
+
+[node name="AnimationTree" type="AnimationTree" parent="." index="2" unique_id=1419390670]
+tree_root = SubResource("AnimationNodeStateMachine_q3ng6")
+anim_player = NodePath("../AnimationPlayer")
+parameters/conditions/attack = false
+parameters/conditions/death = false
+parameters/conditions/move = false
+parameters/conditions/notmove = false
+script = ExtResource("2_q32yf")

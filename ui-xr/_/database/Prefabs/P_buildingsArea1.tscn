@@ -1,0 +1,123 @@
+[gd_scene format=3 uid="uid://dq4wbqnnabtvw"]
+
+[ext_resource type="PackedScene" uid="uid://dfel2sf5hjpau" path="res://_/ART/3D/Models/3D_ApartementsMedium.glb" id="1_joxkq"]
+[ext_resource type="Material" path="res://_/ART/3D/Materials/M_GameScene.tres" id="2_67ej2"]
+[ext_resource type="PackedScene" uid="uid://mpyh0v0tyh76" path="res://_/ART/3D/Models/3D_ApartementsSmall.glb" id="3_vy4nj"]
+[ext_resource type="PackedScene" uid="uid://bkh1tx14ph86i" path="res://_/ART/3D/Models/3D_ApartementsTall.glb" id="4_rg57q"]
+[ext_resource type="PackedScene" uid="uid://db1rdatjdiaic" path="res://_/ART/3D/Models/3D_BrokeBuildingTop_Base.glb" id="5_6muqc"]
+[ext_resource type="PackedScene" uid="uid://87dfos4fl0xb" path="res://_/ART/3D/Models/3D_BrokeBuildingTop_Middle.glb" id="6_xhy1a"]
+[ext_resource type="PackedScene" uid="uid://bko8ynqkql8s2" path="res://_/ART/3D/Models/3D_BrokeBuildingTop_Top.glb" id="7_q08x8"]
+[ext_resource type="PackedScene" uid="uid://ckbj4t6s05bn2" path="res://_/ART/3D/Models/3D_BrokeHotel_Base.glb" id="8_i3mau"]
+[ext_resource type="PackedScene" uid="uid://bfpkmbbrvf4d" path="res://_/ART/3D/Models/3D_Hotel.glb" id="9_qj4gn"]
+[ext_resource type="PackedScene" uid="uid://c5tkwisktt2v3" path="res://_/ART/3D/Models/3D_BrokeSkyScraper_Top.glb" id="10_0nxgc"]
+
+[node name="P_BuildingsArea1" type="Node3D" unique_id=2014463887]
+
+[node name="Graphics" type="Node3D" parent="." unique_id=1148322396]
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Graphics" unique_id=1676242718]
+layers = 2
+
+[node name="09_civilian househotel" parent="Graphics/MeshInstance3D" unique_id=555410472 instance=ExtResource("1_joxkq")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -86.58125, 0, 15.541946)
+
+[node name="GEO_Apartments-Medium" parent="Graphics/MeshInstance3D/09_civilian househotel" index="0" unique_id=2091751672]
+layers = 2
+material_override = ExtResource("2_67ej2")
+
+[node name="09_civilian househotel12" parent="Graphics/MeshInstance3D" unique_id=473357651 instance=ExtResource("1_joxkq")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -86.58125, 0, 15.541946)
+
+[node name="GEO_Apartments-Medium" parent="Graphics/MeshInstance3D/09_civilian househotel12" index="0" unique_id=2091751672]
+layers = 2
+
+[node name="09_civilian househotel2" parent="Graphics/MeshInstance3D" unique_id=2122410882 instance=ExtResource("3_vy4nj")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -47.92283, -1.5258789e-05, -4.5498276)
+
+[node name="GEO_Apartments-Small" parent="Graphics/MeshInstance3D/09_civilian househotel2" index="0" unique_id=1154328630]
+layers = 2
+material_override = ExtResource("2_67ej2")
+
+[node name="09_civilian househotel3" parent="Graphics/MeshInstance3D" unique_id=1676249330 instance=ExtResource("4_rg57q")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -21.541618, 0, -43.302803)
+
+[node name="GEO_Apartments-Tall" parent="Graphics/MeshInstance3D/09_civilian househotel3" index="0" unique_id=1864778360]
+layers = 2
+material_override = ExtResource("2_67ej2")
+
+[node name="09_civilian househotel4" parent="Graphics/MeshInstance3D" unique_id=656013417 instance=ExtResource("5_6muqc")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 17.810795, 0, 0.2743187)
+
+[node name="GEO_BrokeBuildingTop_Base" parent="Graphics/MeshInstance3D/09_civilian househotel4" index="0" unique_id=1379564697]
+layers = 2
+material_override = ExtResource("2_67ej2")
+
+[node name="09_civilian househotel5" parent="Graphics/MeshInstance3D" unique_id=2105799931 instance=ExtResource("6_xhy1a")]
+transform = Transform3D(0.56948036, 0, -0.8220049, 0, 1, 0, 0.8220049, 0, 0.56948036, -32.47919, 0, 47.061203)
+
+[node name="GEO_BrokeBuildingTop_Middle" parent="Graphics/MeshInstance3D/09_civilian househotel5" index="0" unique_id=386823057]
+layers = 2
+material_override = ExtResource("2_67ej2")
+
+[node name="09_civilian househotel6" parent="Graphics/MeshInstance3D" unique_id=785450269 instance=ExtResource("7_q08x8")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -47.19716, 0, 95.773476)
+
+[node name="GEO_BrokeBuildingTop_Top" parent="Graphics/MeshInstance3D/09_civilian househotel6" index="0" unique_id=164532378]
+layers = 2
+material_override = ExtResource("2_67ej2")
+
+[node name="09_civilian househotel7" parent="Graphics/MeshInstance3D" unique_id=767750843 instance=ExtResource("8_i3mau")]
+transform = Transform3D(0.999979, 0, 0.0064751264, 0, 1, 0, -0.0064751264, 0, 0.999979, -68.050125, 0, -36.803513)
+
+[node name="GEO_BrokeHotel_Base" parent="Graphics/MeshInstance3D/09_civilian househotel7" index="0" unique_id=1220196701]
+layers = 2
+material_override = ExtResource("2_67ej2")
+
+[node name="09_civilian househotel8" parent="Graphics/MeshInstance3D" unique_id=6976334 instance=ExtResource("9_qj4gn")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 59.801643, 0, 64.60791)
+
+[node name="GEO_Hotel" parent="Graphics/MeshInstance3D/09_civilian househotel8" index="0" unique_id=51503607]
+layers = 2
+material_override = ExtResource("2_67ej2")
+
+[node name="09_civilian househotel9" parent="Graphics/MeshInstance3D" unique_id=1037431740 instance=ExtResource("10_0nxgc")]
+transform = Transform3D(0.999974, 0.004646445, -0.0055096797, -0.0046345587, 0.9999869, 0.002166643, 0.005519681, -0.0021410345, 0.9999825, 84.22169, 0, 24.947525)
+
+[node name="GEO_BrokeSkyScraper_Top" parent="Graphics/MeshInstance3D/09_civilian househotel9" index="0" unique_id=2145289993]
+layers = 2
+material_override = ExtResource("2_67ej2")
+
+[node name="09_civilian househotel10" parent="Graphics/MeshInstance3D" unique_id=56626567 instance=ExtResource("4_rg57q")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -95.9895, 0, 83.20622)
+
+[node name="GEO_Apartments-Tall" parent="Graphics/MeshInstance3D/09_civilian househotel10" index="0" unique_id=1864778360]
+layers = 2
+material_override = ExtResource("2_67ej2")
+
+[node name="09_civilian househotel11" parent="Graphics/MeshInstance3D" unique_id=616614529 instance=ExtResource("3_vy4nj")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7.8360786, -3.0517578e-05, 71.70195)
+
+[node name="GEO_Apartments-Small" parent="Graphics/MeshInstance3D/09_civilian househotel11" index="0" unique_id=1154328630]
+layers = 2
+material_override = ExtResource("2_67ej2")
+
+[node name="09_civilian househotel13" parent="Graphics/MeshInstance3D" unique_id=1631783322 instance=ExtResource("4_rg57q")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 25.698456, 0, 79.01734)
+
+[node name="GEO_Apartments-Tall" parent="Graphics/MeshInstance3D/09_civilian househotel13" index="0" unique_id=1864778360]
+layers = 2
+material_override = ExtResource("2_67ej2")
+
+[editable path="Graphics/MeshInstance3D/09_civilian househotel"]
+[editable path="Graphics/MeshInstance3D/09_civilian househotel12"]
+[editable path="Graphics/MeshInstance3D/09_civilian househotel2"]
+[editable path="Graphics/MeshInstance3D/09_civilian househotel3"]
+[editable path="Graphics/MeshInstance3D/09_civilian househotel4"]
+[editable path="Graphics/MeshInstance3D/09_civilian househotel5"]
+[editable path="Graphics/MeshInstance3D/09_civilian househotel6"]
+[editable path="Graphics/MeshInstance3D/09_civilian househotel7"]
+[editable path="Graphics/MeshInstance3D/09_civilian househotel8"]
+[editable path="Graphics/MeshInstance3D/09_civilian househotel9"]
+[editable path="Graphics/MeshInstance3D/09_civilian househotel10"]
+[editable path="Graphics/MeshInstance3D/09_civilian househotel11"]
+[editable path="Graphics/MeshInstance3D/09_civilian househotel13"]
