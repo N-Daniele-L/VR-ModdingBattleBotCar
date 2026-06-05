@@ -1,0 +1,45 @@
+[gd_scene format=3 uid="uid://b7y4hmu12pyto"]
+
+[ext_resource type="Texture2D" uid="uid://cotv7lk2evb2m" path="res://_/ART/2D/2D_VFX_MuzzleFlash.png" id="1_alx0y"]
+[ext_resource type="ArrayMesh" uid="uid://45qvy2tji8w6" path="res://_/ART/3D/Models/3D_VFX_MuzzlePlane.obj" id="2_wnc45"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_cd2qy"]
+transparency = 1
+blend_mode = 1
+cull_mode = 2
+shading_mode = 0
+vertex_color_use_as_albedo = true
+vertex_color_is_srgb = true
+albedo_texture = ExtResource("1_alx0y")
+
+[sub_resource type="Curve" id="Curve_jxys1"]
+_data = [Vector2(0, 1), 0.0, 0.0, 0, 0, Vector2(1, 0), 0.0, 0.0, 0, 0]
+point_count = 2
+
+[sub_resource type="CurveTexture" id="CurveTexture_vit22"]
+curve = SubResource("Curve_jxys1")
+
+[sub_resource type="Curve" id="Curve_oroym"]
+_data = [Vector2(0, 0), 0.0, 3.217029, 0, 0, Vector2(1, 1), 0.0, 0.0, 0, 0]
+point_count = 2
+
+[sub_resource type="CurveTexture" id="CurveTexture_xuk2d"]
+curve = SubResource("Curve_oroym")
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_tqhxm"]
+gravity = Vector3(0, 0, 0)
+scale_curve = SubResource("CurveTexture_xuk2d")
+color = Color(1.3528494, 1.0041119, 0.60555494, 1)
+alpha_curve = SubResource("CurveTexture_vit22")
+
+[node name="P_MuzzleFlash" type="Node3D" unique_id=157769270]
+
+[node name="GPUParticles3D" type="GPUParticles3D" parent="." unique_id=318705942]
+material_override = SubResource("StandardMaterial3D_cd2qy")
+emitting = false
+amount = 1
+lifetime = 0.09999999999999999
+one_shot = true
+randomness = 1.0
+process_material = SubResource("ParticleProcessMaterial_tqhxm")
+draw_pass_1 = ExtResource("2_wnc45")
