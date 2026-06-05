@@ -5,7 +5,7 @@
 [ext_resource type="PackedScene" uid="uid://cqhw276realc" path="res://addons/godot-xr-tools/functions/function_pointer.tscn" id="4_8ewul"]
 [ext_resource type="PackedScene" uid="uid://njx823gyk04n" path="res://addons/godot-xr-tools/hands/scenes/highpoly/left_hand.tscn" id="4_iqrj0"]
 [ext_resource type="PackedScene" uid="uid://raeeicvvindd" path="res://addons/godot-xr-tools/hands/scenes/highpoly/right_hand.tscn" id="5_v7wsq"]
-[ext_resource type="PackedScene" path="res://_/scene/Nicolas/paper_ball_pickable.tscn" id="8_iqrj0"]
+[ext_resource type="PackedScene" uid="uid://dit5utrlm4qhc" path="res://_/scene/Nicolas/paper_ball_pickable.tscn" id="8_iqrj0"]
 [ext_resource type="PackedScene" uid="uid://d3spwpl4gmsnc" path="res://_/scene/Adriano/background_office.tscn" id="8_v7wsq"]
 [ext_resource type="PackedScene" uid="uid://dgdb1texynduw" path="res://addons/godot-xr-tools/objects/virtual_keyboard.tscn" id="9_gmri5"]
 [ext_resource type="PackedScene" uid="uid://cuvhkqy0mqv7p" path="res://_/scene/Nicolas/viewport_to_text_edit.tscn" id="9_v7wsq"]
@@ -58,8 +58,8 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.0749397, 0.19559127, -0.12
 [node name="Background" parent="." unique_id=72946100 instance=ExtResource("8_v7wsq")]
 
 [node name="ViewportToTextEdit" parent="." unique_id=1639018848 instance=ExtResource("9_v7wsq")]
-transform = Transform3D(0.94614065, 0, 0.32375574, 0, 1, 0, -0.32375574, 0, 0.94614065, -0.21034871, 0.94462425, -1.8558388)
-screen_size = Vector2(0.3, 0.225)
+transform = Transform3D(0.9484095, 0, 0.31704777, 0, 1, 0, -0.31704777, 0, 0.9484095, -0.21774682, 0.9910762, -1.8274969)
+screen_size = Vector2(0.35, 0.268)
 
 [node name="VirtualKeyboard" parent="." unique_id=1694852370 instance=ExtResource("9_gmri5")]
 transform = Transform3D(0.25, 0, 0, 0, -1.0927847e-08, 0.25, 0, -0.25, -1.0927847e-08, 0, 0.7234334, -1.6370298)
