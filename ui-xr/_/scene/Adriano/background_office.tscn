@@ -1,10 +1,9 @@
 [gd_scene format=3 uid="uid://d3spwpl4gmsnc"]
 
 [ext_resource type="PackedScene" uid="uid://c032h8jskloju" path="res://_/ART/3D/Models/3D_BG_Office.glb" id="1_opxxu"]
-[ext_resource type="Script" uid="uid://b0kro1jcw6l38" path="res://_/scene/Adriano/viewport_to_CRT.gd" id="2_1x0uo"]
+[ext_resource type="Script" path="res://_/scene/Adriano/viewport_to_CRT.gd" id="2_1x0uo"]
 [ext_resource type="PackedScene" uid="uid://rh4ekcto33af" path="res://_/ART/3D/Models/3D_BG_OfficeTable.glb" id="2_a34ln"]
 [ext_resource type="PackedScene" uid="uid://qwhpmux245gg" path="res://_/scene/Adriano/cctv_adriano.tscn" id="2_fs4ot"]
-[ext_resource type="PackedScene" uid="uid://b4cgx3a0bt4sv" path="res://_/database/Prefabs/P_Enn_BladeMech.tscn" id="3_1x0uo"]
 [ext_resource type="Material" uid="uid://bhic86sybtlmb" path="res://_/ART/3D/Materials/M_Ground.tres" id="5_rxpq6"]
 [ext_resource type="PackedScene" uid="uid://bekq4pccvw80k" path="res://_/database/Prefabs/P_BuildingsArea2.tscn" id="7_1waep"]
 [ext_resource type="PackedScene" uid="uid://ces87kmsqt06e" path="res://_/database/Prefabs/P_buildingsArea1.tscn" id="7_d2eip"]
@@ -136,7 +135,7 @@ viewport = NodePath("../../../P_GameScene/P_CRT/SubViewport")
 
 [node name="3D_BG_Office" parent="P_Office/graphic" unique_id=608721767 instance=ExtResource("1_opxxu")]
 
-[node name="GEO_Office" parent="P_Office/graphic/3D_BG_Office" index="0" unique_id=1154840488]
+[node name="GEO_Office" parent="P_Office/graphic/3D_BG_Office" index="0" unique_id=1341794936]
 cast_shadow = 2
 
 [node name="StaticBody3D" type="StaticBody3D" parent="P_Office/graphic/3D_BG_Office/GEO_Office" index="0" unique_id=201938318]
@@ -157,7 +156,7 @@ shape = SubResource("BoxShape3D_opxxu")
 transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 0.016571585, 1.4007246, -1.9549403)
 shape = SubResource("BoxShape3D_opxxu")
 
-[node name="GEO_Ceilling" parent="P_Office/graphic/3D_BG_Office" index="2" unique_id=747508142]
+[node name="GEO_Ceilling" parent="P_Office/graphic/3D_BG_Office" index="2" unique_id=1951666748]
 transform = Transform3D(1.1, 0, 0, 0, 1.096, 0, 0, 0, 1.237, 0, 0.078490585, 0)
 cast_shadow = 2
 
@@ -171,10 +170,10 @@ shape = SubResource("BoxShape3D_ow5fq")
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.09165575, 0)
 shape = SubResource("BoxShape3D_ow5fq")
 
-[node name="GEO_Drawers" parent="P_Office/graphic/3D_BG_Office" index="5" unique_id=1640767633]
+[node name="GEO_Drawers" parent="P_Office/graphic/3D_BG_Office" index="5" unique_id=419663733]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -1.8280938)
 
-[node name="GEO_Desk_Left" parent="P_Office/graphic/3D_BG_Office" index="6" unique_id=1991126806]
+[node name="GEO_Desk_Left" parent="P_Office/graphic/3D_BG_Office" index="6" unique_id=1560113590]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -1.8280938)
 
 [node name="StaticBody3D" type="StaticBody3D" parent="P_Office/graphic/3D_BG_Office/GEO_Desk_Left" index="0" unique_id=776324118]
@@ -182,7 +181,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -1.8280938)
 [node name="CollisionShape3D" type="CollisionShape3D" parent="P_Office/graphic/3D_BG_Office/GEO_Desk_Left/StaticBody3D" unique_id=657978132]
 shape = SubResource("ConcavePolygonShape3D_opxxu")
 
-[node name="GEO_Desk" parent="P_Office/graphic/3D_BG_Office" index="7" unique_id=440896075]
+[node name="GEO_Desk" parent="P_Office/graphic/3D_BG_Office" index="7" unique_id=1142208562]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -1.8280938)
 
 [node name="StaticBody3D" type="StaticBody3D" parent="P_Office/graphic/3D_BG_Office/GEO_Desk" index="0" unique_id=1558750511]
@@ -190,7 +189,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -1.8280938)
 [node name="CollisionShape3D" type="CollisionShape3D" parent="P_Office/graphic/3D_BG_Office/GEO_Desk/StaticBody3D" unique_id=1253855602]
 shape = SubResource("ConcavePolygonShape3D_ow5fq")
 
-[node name="GEO_Desk_Right" parent="P_Office/graphic/3D_BG_Office" index="8" unique_id=13765922]
+[node name="GEO_Desk_Right" parent="P_Office/graphic/3D_BG_Office" index="8" unique_id=564596894]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.57121843, 0, -1.8280938)
 
 [node name="StaticBody3D" type="StaticBody3D" parent="P_Office/graphic/3D_BG_Office/GEO_Desk_Right" index="0" unique_id=1186632614]
@@ -198,7 +197,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.57121843, 0, -1.8280938)
 [node name="CollisionShape3D" type="CollisionShape3D" parent="P_Office/graphic/3D_BG_Office/GEO_Desk_Right/StaticBody3D" unique_id=99738685]
 shape = SubResource("ConcavePolygonShape3D_fs4ot")
 
-[node name="GEO_PC" parent="P_Office/graphic/3D_BG_Office" index="9" unique_id=448714528]
+[node name="GEO_PC" parent="P_Office/graphic/3D_BG_Office" index="9" unique_id=1636736009]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.57690763, 0.06802502, -1.8280938)
 
 [node name="StaticBody3D" type="StaticBody3D" parent="P_Office/graphic/3D_BG_Office/GEO_PC" index="0" unique_id=1700788220]
@@ -206,7 +205,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.57690763, 0.06802502, -1.82
 [node name="CollisionShape3D" type="CollisionShape3D" parent="P_Office/graphic/3D_BG_Office/GEO_PC/StaticBody3D" unique_id=1367946678]
 shape = SubResource("ConcavePolygonShape3D_1igh1")
 
-[node name="GEO_Monitor01" parent="P_Office/graphic/3D_BG_Office" index="10" unique_id=1513490273]
+[node name="GEO_Monitor01" parent="P_Office/graphic/3D_BG_Office" index="10" unique_id=1908253607]
 transform = Transform3D(1.2, 0, 0, 0, 1.2, 0, 0, 0, 1.2, -0.27226096, 0.7109312, -1.9896183)
 
 [node name="StaticBody3D" type="StaticBody3D" parent="P_Office/graphic/3D_BG_Office/GEO_Monitor01" index="0" unique_id=1148936533]
@@ -214,28 +213,28 @@ transform = Transform3D(1.2, 0, 0, 0, 1.2, 0, 0, 0, 1.2, -0.27226096, 0.7109312,
 [node name="CollisionShape3D" type="CollisionShape3D" parent="P_Office/graphic/3D_BG_Office/GEO_Monitor01/StaticBody3D" unique_id=1694741516]
 shape = SubResource("ConcavePolygonShape3D_a34ln")
 
-[node name="GEO_Mouse" parent="P_Office/graphic/3D_BG_Office" index="11" unique_id=1934089449]
+[node name="GEO_Mouse" parent="P_Office/graphic/3D_BG_Office" index="11" unique_id=1680686685]
 transform = Transform3D(-0.9103608, 0.41381538, 4.4703484e-08, 4.4703484e-08, 1.1920929e-07, -1, -0.41381538, -0.9103608, -1.1920929e-07, 0.33608437, 0.7069755, -1.6939936)
 
-[node name="GEO_PencilHolder" parent="P_Office/graphic/3D_BG_Office" index="12" unique_id=2116255425]
+[node name="GEO_PencilHolder" parent="P_Office/graphic/3D_BG_Office" index="12" unique_id=1003707601]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.52726245, 0.7092487, -1.8788891)
 
-[node name="GEO_Pen_001" parent="P_Office/graphic/3D_BG_Office" index="13" unique_id=688563476]
+[node name="GEO_Pen_001" parent="P_Office/graphic/3D_BG_Office" index="13" unique_id=353714318]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.53156585, 0.7277335, -1.8693169)
 
-[node name="GEO_Pen_002" parent="P_Office/graphic/3D_BG_Office" index="14" unique_id=188669071]
+[node name="GEO_Pen_002" parent="P_Office/graphic/3D_BG_Office" index="14" unique_id=328861947]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.51448303, 0.72695637, -1.8891815)
 
-[node name="GEO_Pen_003" parent="P_Office/graphic/3D_BG_Office" index="15" unique_id=1611382420]
+[node name="GEO_Pen_003" parent="P_Office/graphic/3D_BG_Office" index="15" unique_id=1495526766]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.53251064, 0.7284543, -1.8800647)
 
-[node name="GEO_Pen_004" parent="P_Office/graphic/3D_BG_Office" index="16" unique_id=1266789228]
+[node name="GEO_Pen_004" parent="P_Office/graphic/3D_BG_Office" index="16" unique_id=1012008109]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.5372621, 0.7302481, -1.8852655)
 
-[node name="GEO_Mug" parent="P_Office/graphic/3D_BG_Office" index="17" unique_id=1192005860]
+[node name="GEO_Mug" parent="P_Office/graphic/3D_BG_Office" index="17" unique_id=1432188191]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.05625373, 0.71337736, -1.8312752)
 
-[node name="GEO_Rack" parent="P_Office/graphic/3D_BG_Office" index="18" unique_id=1782938055]
+[node name="GEO_Rack" parent="P_Office/graphic/3D_BG_Office" index="18" unique_id=827511319]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.5953815, 0.7112168, -1.9079593)
 
 [node name="StaticBody3D" type="StaticBody3D" parent="P_Office/graphic/3D_BG_Office/GEO_Rack" index="0" unique_id=1349034720]
@@ -264,7 +263,7 @@ shape = SubResource("BoxShape3D_1x0uo")
 transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 0.00051259995, 0.07382834, -0.17624152)
 shape = SubResource("BoxShape3D_1igh1")
 
-[node name="GEO_Lamp" parent="P_Office/graphic/3D_BG_Office" index="19" unique_id=195590611]
+[node name="GEO_Lamp" parent="P_Office/graphic/3D_BG_Office" index="19" unique_id=529169314]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.63523257, 0.70871276, -1.9740102)
 
 [node name="StaticBody3D" type="StaticBody3D" parent="P_Office/graphic/3D_BG_Office/GEO_Lamp" index="0" unique_id=1100064569]
@@ -272,7 +271,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.63523257, 0.70871276, -1.9
 [node name="CollisionShape3D" type="CollisionShape3D" parent="P_Office/graphic/3D_BG_Office/GEO_Lamp/StaticBody3D" unique_id=516650211]
 shape = SubResource("ConcavePolygonShape3D_d2eip")
 
-[node name="GEO_Monitor02" parent="P_Office/graphic/3D_BG_Office" index="20" unique_id=1658369902]
+[node name="GEO_Monitor02" parent="P_Office/graphic/3D_BG_Office" index="20" unique_id=1770531998]
 transform = Transform3D(1.2, 0, 0, 0, 1.2, 0, 0, 0, 1.2, 0.26382753, 0.7109312, -2.0186963)
 cast_shadow = 2
 
@@ -281,7 +280,7 @@ cast_shadow = 2
 [node name="CollisionShape3D" type="CollisionShape3D" parent="P_Office/graphic/3D_BG_Office/GEO_Monitor02/StaticBody3D" unique_id=1545555166]
 shape = SubResource("ConcavePolygonShape3D_1waep")
 
-[node name="GEO_Trashbin" parent="P_Office/graphic/3D_BG_Office" index="21" unique_id=194481331]
+[node name="GEO_Trashbin" parent="P_Office/graphic/3D_BG_Office" index="21" unique_id=1666593364]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.9953785, 0.0051471908, -1.2443819)
 
 [node name="StaticBody3D" type="StaticBody3D" parent="P_Office/graphic/3D_BG_Office/GEO_Trashbin" index="0" unique_id=1910551455]
@@ -290,25 +289,25 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.9953785, 0.0051471908, -1.2
 visible = false
 shape = SubResource("ConcavePolygonShape3D_1x0uo")
 
-[node name="GEO_Stapler" parent="P_Office/graphic/3D_BG_Office" index="22" unique_id=1968118943]
+[node name="GEO_Stapler" parent="P_Office/graphic/3D_BG_Office" index="22" unique_id=566355040]
 transform = Transform3D(-0.75926316, 0, -0.65078354, 0, 1, 0, 0.65078354, 0, -0.75926316, -0.62353516, 0.7106932, -1.7280802)
 
-[node name="GEO_Ashtray" parent="P_Office/graphic/3D_BG_Office" index="23" unique_id=1042847570]
+[node name="GEO_Ashtray" parent="P_Office/graphic/3D_BG_Office" index="23" unique_id=892999504]
 transform = Transform3D(1.3125, 0, 0, 0, 1.2200341, 0, 0, 0, 1.3125, -0.40401947, 0.7102446, -1.6958139)
 
-[node name="GEO_Cigarette_001" parent="P_Office/graphic/3D_BG_Office" index="24" unique_id=1703893537]
+[node name="GEO_Cigarette_001" parent="P_Office/graphic/3D_BG_Office" index="24" unique_id=1477128270]
 transform = Transform3D(0.10000001, 0, 0, 0, 2.2253754, 0, 0, 0, 0.10000001, -0.4077753, 0.7161236, -1.7210357)
 
-[node name="GEO_Cigarette_002" parent="P_Office/graphic/3D_BG_Office" index="25" unique_id=1615645103]
+[node name="GEO_Cigarette_002" parent="P_Office/graphic/3D_BG_Office" index="25" unique_id=1745037938]
 transform = Transform3D(0.10000001, 0, 0, 0, 2.2253754, 0, 0, 0, 0.10000001, -0.37803772, 0.71408457, -1.6891148)
 
-[node name="GEO_Cigarette_003" parent="P_Office/graphic/3D_BG_Office" index="26" unique_id=365642979]
+[node name="GEO_Cigarette_003" parent="P_Office/graphic/3D_BG_Office" index="26" unique_id=202686366]
 transform = Transform3D(-0.0046213986, -1.7252226, 0.06299616, 0.087413, -0.74909675, -0.03501238, 0.04834886, 1.1894356, 0.06932258, -0.41037047, 0.718534, -1.6972125)
 
 [node name="3D_BG_OfficeTable" parent="P_Office/graphic/3D_BG_Office" unique_id=249302106 instance=ExtResource("2_a34ln")]
 transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, -1.9103801, 0.0054359436, 0.46556234)
 
-[node name="StaticBody3D" type="StaticBody3D" parent="P_Office/graphic/3D_BG_Office/3D_BG_OfficeTable/GEO_Table" parent_id_path=PackedInt32Array(249302106, 182679155) index="0" unique_id=1905639307]
+[node name="StaticBody3D" type="StaticBody3D" parent="P_Office/graphic/3D_BG_Office/3D_BG_OfficeTable/GEO_Table" parent_id_path=PackedInt32Array(249302106, 1157162715) index="0" unique_id=1905639307]
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="P_Office/graphic/3D_BG_Office/3D_BG_OfficeTable/GEO_Table/StaticBody3D" unique_id=1039753645]
 shape = SubResource("ConcavePolygonShape3D_rxpq6")
@@ -326,19 +325,19 @@ layers = 2
 mesh = SubResource("PlaneMesh_1waep")
 
 [node name="P_BuildingsArea1" parent="P_GameScene/graphic/Enviro" unique_id=252361921 instance=ExtResource("7_d2eip")]
-transform = Transform3D(-0.03710647, 0, -0.4986212, 0, 0.5, 0, 0.4986212, 0, -0.03710647, -12.876125, -2.2149925, -84.810974)
+transform = Transform3D(-0.03710647, 0, -0.4986212, 0, 0.5, 0, 0.4986212, 0, -0.03710647, -12.876125, -2.2149925, -103.0547)
 
 [node name="P_BuildingsArea2" parent="P_GameScene/graphic/Enviro" unique_id=386784741 instance=ExtResource("7_1waep")]
-transform = Transform3D(0.35376927, 0, -0.35333735, 0, 0.5, 0, 0.35333735, 0, 0.35376927, 33.23568, -2.2149925, -82.05081)
-
-[node name="P_Enn_BladeMech" parent="P_GameScene/graphic" unique_id=1774846936 instance=ExtResource("3_1x0uo")]
-transform = Transform3D(0.9659258, 0, 0.25881904, 0, 1, 0, -0.25881904, 0, 0.9659258, -8.849437, -0.91, -30.919945)
+transform = Transform3D(0.35376927, 0, -0.35333735, 0, 0.5, 0, 0.35333735, 0, 0.35376927, 33.23568, -2.2149925, -96.63774)
 
 [node name="P_Ply_PlayerMech" parent="P_GameScene/graphic" unique_id=346653880 instance=ExtResource("9_u8dyq")]
 transform = Transform3D(-1, 0, 8.742278e-08, 0, 1, 0, -8.742278e-08, 0, -1, 0, -0.939229, -8.191551)
 
-[node name="P_Enn_BladeMech2" parent="P_GameScene/graphic" unique_id=766988637 instance=ExtResource("3_1x0uo")]
-transform = Transform3D(0.9659258, 0, -0.25881904, 0, 1, 0, 0.25881904, 0, 0.9659258, 9.253909, -0.91, -28.794373)
+[node name="Spawn" type="Node3D" parent="P_GameScene/graphic" unique_id=1556745146]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 16.02217, 0, -49.46251)
+
+[node name="Spawn2" type="Node3D" parent="P_GameScene/graphic" unique_id=1164465041]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -15.38988, 0, -49.46251)
 
 [node name="P_CRT" parent="P_GameScene" unique_id=1705081193 instance=ExtResource("2_fs4ot")]
 

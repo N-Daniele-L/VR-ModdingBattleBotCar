@@ -20,6 +20,10 @@
 [ext_resource type="PackedScene" uid="uid://cjrac51wst3tu" path="res://addons/godot-xr-tools/hands/model/Hand_low_R.gltf" id="12_1n6c3"]
 [ext_resource type="PackedScene" uid="uid://bxipj7hyjwy6f" path="res://addons/godot-xr-tools/hands/animations/right/AnimationPlayer.tscn" id="13_2gvgx"]
 [ext_resource type="Script" uid="uid://croqmkrfaqxs1" path="res://_/script/Emile Iselote/facade_robot.gd" id="20_sdcc4"]
+[ext_resource type="Script" uid="uid://d4b1c0g114f1q" path="res://_/scene/Nicolas/debug_input.gd" id="21_gikq3"]
+[ext_resource type="Script" uid="uid://68m5x47mwjix" path="res://_/script/Nicolas/pool_system.gd" id="21_xf2vy"]
+[ext_resource type="PackedScene" uid="uid://b4cgx3a0bt4sv" path="res://_/database/Prefabs/P_Enn_BladeMech.tscn" id="22_66q8g"]
+[ext_resource type="Script" uid="uid://df7unu71l64b2" path="res://spawner.gd" id="23_7gxjm"]
 
 [sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_sdcc4"]
 animation = &"Grip"
@@ -231,6 +235,24 @@ controlled_target = NodePath("../Background/P_GameScene/graphic/P_Ply_PlayerMech
 auto_forward_to_target = true
 
 [node name="RunCode" type="Node3D" parent="StaticCode" unique_id=1800122549]
+
+[node name="Manager" type="Node3D" parent="." unique_id=2029907229]
+script = ExtResource("21_gikq3")
+
+[node name="PoolSystem-Enemy" type="Node3D" parent="Manager" unique_id=211360576]
+script = ExtResource("21_xf2vy")
+object_to_instantiate = ExtResource("22_66q8g")
+number_of_object = 4
+name_pooled = "Enemy"
+metadata/_custom_type_script = "uid://68m5x47mwjix"
+
+[node name="NCARSpawner-Enemy" type="Node3D" parent="Manager" unique_id=1584972005 node_paths=PackedStringArray("spawn_pos", "poolsystem")]
+script = ExtResource("23_7gxjm")
+spawn_pos = [NodePath("../../Background/P_GameScene/graphic/Spawn"), NodePath("../../Background/P_GameScene/graphic/Spawn2")]
+poolsystem = NodePath("../PoolSystem-Enemy")
+metadata/_custom_type_script = "uid://df7unu71l64b2"
+
+[connection signal="button_pressed" from="XROrigin3D/XRControllerRight" to="Manager" method="on_button_press"]
 
 [editable path="XROrigin3D/XRControllerLeft/LeftHand/Hand_low_L"]
 [editable path="XROrigin3D/XRControllerRight/RightHand/Hand_low_R"]

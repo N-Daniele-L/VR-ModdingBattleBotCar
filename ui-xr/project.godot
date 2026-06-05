@@ -34,6 +34,7 @@ enabled=PackedStringArray("res://addons/godot-xr-tools/plugin.cfg")
 documentation=""
 enemy=""
 projectile=""
+player=""
 
 [physics]
 

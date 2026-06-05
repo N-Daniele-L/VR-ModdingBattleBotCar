@@ -1,6 +1,7 @@
 [gd_scene format=3 uid="uid://b4cgx3a0bt4sv"]
 
 [ext_resource type="PackedScene" uid="uid://dgt6o4oovdft1" path="res://_/ART/3D/Models/3D_A_Enn_BladeMech.glb" id="1_4gbor"]
+[ext_resource type="Script" uid="uid://d2q4jsjyvamu8" path="res://_/database/Prefabs/enemy_movement.gd" id="1_mvnb3"]
 [ext_resource type="Script" uid="uid://b178sv18by8fk" path="res://_/scene/Nicolas/enemy_animation.gd" id="2_ixd00"]
 
 [sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_ixd00"]
@@ -63,18 +64,24 @@ states/EnemyBlade_Move/position = Vector2(606, 100)
 transitions = ["Start", "EnemyBlade_Idle", SubResource("AnimationNodeStateMachineTransition_hcq6y"), "EnemyBlade_Idle", "EnemyBlade_Move", SubResource("AnimationNodeStateMachineTransition_tssks"), "EnemyBlade_Move", "EnemyBlade_Idle", SubResource("AnimationNodeStateMachineTransition_iupjs"), "EnemyBlade_Idle", "EnemyBlade_Death", SubResource("AnimationNodeStateMachineTransition_o2464"), "EnemyBlade_Move", "EnemyBlade_Death", SubResource("AnimationNodeStateMachineTransition_0yrh5"), "EnemyBlade_Move", "EnemyBlade_Attack", SubResource("AnimationNodeStateMachineTransition_ovfce"), "EnemyBlade_Idle", "EnemyBlade_Attack", SubResource("AnimationNodeStateMachineTransition_01ng5"), "EnemyBlade_Attack", "EnemyBlade_Idle", SubResource("AnimationNodeStateMachineTransition_p6gep")]
 graph_offset = Vector2(7, -46)
 
-[node name="P_Enn_BladeMech" type="Node3D" unique_id=1774846936]
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_mvnb3"]
+radius = 1.7529297
+height = 8.030273
+
+[node name="P_Enn_BladeMech" type="CharacterBody3D" unique_id=1025519805 node_paths=PackedStringArray("enemy_anim") groups=["enemy"]]
+script = ExtResource("1_mvnb3")
+enemy_anim = NodePath("3D_A_Enn_BladeMech/AnimationTree")
 
 [node name="3D_A_Enn_BladeMech" parent="." unique_id=1143415215 instance=ExtResource("1_4gbor")]
 
-[node name="Skeleton3D" parent="3D_A_Enn_BladeMech/Armature" parent_id_path=PackedInt32Array(1143415215, 1184944184) index="0" unique_id=1337549719]
+[node name="Skeleton3D" parent="3D_A_Enn_BladeMech/Armature" parent_id_path=PackedInt32Array(1143415215, 95093211) index="0" unique_id=1655451550]
 bones/1/rotation = Quaternion(1.6940659e-21, 1, 0, 4.3312576e-07)
-bones/2/position = Vector3(-1.1435931e-06, 0.01751256, -1.3201629)
+bones/2/position = Vector3(-1.157001e-06, 0.017512562, -1.3356409)
 bones/2/rotation = Quaternion(-5.591473e-07, 0.7071068, -0.7071068, -5.3385055e-08)
 bones/3/rotation = Quaternion(-3.8046807e-08, 1.6292068e-07, 2.1014577e-14, 1)
 bones/4/rotation = Quaternion(5.6531e-10, 3.7057691e-22, -2.2013886e-16, 1)
-bones/5/rotation = Quaternion(0.38095954, 0.5688084, -0.4229053, 0.59369856)
-bones/6/rotation = Quaternion(0.72432446, 0.08400749, -0.057770412, 0.6818793)
+bones/5/rotation = Quaternion(0.37877503, 0.5702654, -0.42062506, 0.59531623)
+bones/6/rotation = Quaternion(0.72691697, 0.084127896, -0.057693046, 0.6791066)
 bones/7/rotation = Quaternion(0.12861234, -0.0029197563, 0.12635933, 0.98360753)
 bones/8/rotation = Quaternion(-0.010255782, 0.010971968, -0.036225848, 0.9992308)
 bones/9/rotation = Quaternion(0.13855563, 0.00064232986, 0.05600565, 0.98876965)
@@ -84,8 +91,8 @@ bones/12/rotation = Quaternion(0.31455204, -0.010803156, 0.0030785594, 0.9491737
 bones/13/rotation = Quaternion(-0.038548637, 0.62748724, 0.2619725, 0.73221874)
 bones/14/rotation = Quaternion(0.21147397, 0.067848325, -0.04709722, 0.97388774)
 bones/15/rotation = Quaternion(0.08979824, -0.00042648363, 0.97512364, -0.2026574)
-bones/16/rotation = Quaternion(0.38095972, -0.5688082, 0.42290524, 0.59369874)
-bones/17/rotation = Quaternion(0.7243065, -0.084006675, 0.057770964, 0.6818985)
+bones/16/rotation = Quaternion(0.3787752, -0.5702653, 0.420625, 0.5953164)
+bones/17/rotation = Quaternion(0.7269169, -0.084127925, 0.05769306, 0.67910665)
 bones/18/rotation = Quaternion(0.12861228, 0.0029197743, -0.12635934, 0.9836075)
 bones/19/rotation = Quaternion(-0.010255727, -0.010971948, 0.036225874, 0.99923074)
 bones/20/rotation = Quaternion(0.13855563, -0.0006423148, -0.05600562, 0.98876965)
@@ -96,7 +103,7 @@ bones/24/rotation = Quaternion(-0.03854858, -0.6274872, -0.26197252, 0.73221874)
 bones/25/rotation = Quaternion(0.21147406, -0.0678483, 0.04709725, 0.9738877)
 bones/26/rotation = Quaternion(-0.089798175, -0.00042653372, 0.97512364, 0.20265725)
 
-[node name="3D_RobotMain_003" parent="3D_A_Enn_BladeMech/Armature/Skeleton3D" index="0" unique_id=1167002523]
+[node name="3D_RobotMain_003" parent="3D_A_Enn_BladeMech/Armature/Skeleton3D" index="0" unique_id=1947978726]
 layers = 2
 
 [node name="AnimationTree" type="AnimationTree" parent="3D_A_Enn_BladeMech" unique_id=1425042518]
@@ -107,5 +114,9 @@ parameters/conditions/death = false
 parameters/conditions/move = false
 parameters/conditions/notmove = false
 script = ExtResource("2_ixd00")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=848797410]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 3.0151367, 0)
+shape = SubResource("CapsuleShape3D_mvnb3")
 
 [editable path="3D_A_Enn_BladeMech"]
