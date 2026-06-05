@@ -28,6 +28,8 @@ curve = SubResource("Curve_oroym")
 
 [sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_tqhxm"]
 gravity = Vector3(0, 0, 0)
+scale_min = 3.0
+scale_max = 3.0
 scale_curve = SubResource("CurveTexture_xuk2d")
 color = Color(1.8247963, 1.1263318, 0.3280865, 1)
 alpha_curve = SubResource("CurveTexture_vit22")
