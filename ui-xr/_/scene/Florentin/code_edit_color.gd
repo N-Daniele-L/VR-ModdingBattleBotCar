@@ -19,7 +19,7 @@ func load_text_color_style():
 		"match": Color("06DA01"),
 		"break": Color("06DA01"),
 		"continue": Color("06DA01"),
-		"pass": Color("ff7fc5ff"),
+		"pass": Color("ff6600ff"),
 		"return": Color("06DA01"),
 		"class": Color("06DA01"),
 		"class_name": Color("06DA01"),
@@ -38,17 +38,17 @@ func load_text_color_style():
 
 	# Built-in types
 	highlighter.member_keyword_colors = {
-		"int": Color("4179feff"),
-		"float": Color("4179feff"),
-		"bool": Color("4179feff"),
-		"String": Color("4179feff"),
-		"Array": Color("4179feff"),
-		"Dictionary": Color("4179feff"),
-		"Vector2": Color("4179feff"),
-		"Vector3": Color("4179feff"),
-		"Color": Color("4179feff"),
-		"Node": Color("4179feff"),
-		"Object": Color("4179feff")
+		"int": Color("41fffeff"),
+		"float": Color("41fffeff"),
+		"bool": Color("41fffeff"),
+		"String": Color("41fffeff"),
+		"Array": Color("41fffeff"),
+		"Dictionary": Color("41fffeff"),
+		"Vector2": Color("41fffeff"),
+		"Vector3": Color("41fffeff"),
+		"Color": Color("41fffeff"),
+		"Node": Color("41fffeff"),
+		"Object": Color("41fffeff")
 	}
 
 	# General token colors

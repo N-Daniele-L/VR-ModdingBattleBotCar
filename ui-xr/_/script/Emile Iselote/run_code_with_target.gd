@@ -21,19 +21,14 @@ signal reset_all_overrides_requested
 @export_group("Debug")
 @export var created_node_holding_code: Node
 
-var default_code: String = """extends Node
-
-var target: Node = 10
-
-func _on_received_target(new_target: Node) -> void:
-	target = new_target
-	if target and target.has_method("shoot"):
-		target.shoot()
+var default_code: String = """
 """
 
 func _ready() -> void:
 	if code_edit and code_edit.text.strip_edges() == "":
 		code_edit.text = default_code
+
+	
 
 	if use_default_color_style and code_edit:
 		load_text_color_style()
@@ -50,7 +45,7 @@ func _on_reset_code_button_pressed() -> void:
 func _on_reset_all_overrides_button_pressed() -> void:
 	reset_all_overrides_requested.emit()
 
-	if target_node and target_node.has_method("reset_all_overrides"):
+	if target_node  and target_node.has_method("reset_all_overrides"):
 		target_node.call("reset_all_overrides")
 
 func _on_plus_size_button_pressed() -> void:
@@ -227,23 +222,23 @@ func load_text_color_style():
 
 	# Built-in types
 	highlighter.member_keyword_colors = {
-		"int": Color("000AAB"),
-		"float": Color("000AAB"),
-		"bool": Color("000AAB"),
-		"String": Color("000AAB"),
-		"Array": Color("000AAB"),
-		"Dictionary": Color("000AAB"),
-		"Vector2": Color("000AAB"),
-		"Vector3": Color("000AAB"),
-		"Color": Color("000AAB"),
-		"Node": Color("000AAB"),
-		"Object": Color("000AAB")
+		"int": Color("2FFFF5"),
+		"float": Color("2FFFF5"),
+		"bool": Color("2FFFF5"),
+		"String": Color("2FFFF5"),
+		"Array": Color("2FFFF5"),
+		"Dictionary": Color("2FFFF5"),
+		"Vector2": Color("2FFFF5"),
+		"Vector3": Color("2FFFF5"),
+		"Color": Color("2FFFF5"),
+		"Node": Color("2FFFF5"),
+		"Object": Color("2FFFF5")
 	}
 
 	# General token colors
 	highlighter.number_color = Color("06DA01")
 	highlighter.symbol_color = Color("514EB2")
-	highlighter.function_color = Color("000AAB")
+	highlighter.function_color = Color("ce0000ff")
 	highlighter.member_variable_color = Color("623CD4")
 	
 
