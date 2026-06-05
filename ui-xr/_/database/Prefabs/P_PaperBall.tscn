@@ -1,0 +1,27 @@
+[gd_scene format=3 uid="uid://cg2f1wq4piuhs"]
+
+[ext_resource type="PackedScene" uid="uid://budvrkq26t2pn" path="res://_/ART/3D/Models/3D_PaperBall.glb" id="1_8uw32"]
+[ext_resource type="Material" uid="uid://bred8d5vtyl8s" path="res://_/ART/3D/Materials/M_Office.tres" id="2_05t6c"]
+
+[sub_resource type="SphereShape3D" id="SphereShape3D_0j2le"]
+
+[node name="P_PaperBall" type="Node3D" unique_id=1283382857]
+
+[node name="Graphics" type="Node3D" parent="." unique_id=206578612]
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Graphics" unique_id=900725179]
+
+[node name="3D_PaperBall" parent="Graphics/MeshInstance3D" unique_id=1174520005 instance=ExtResource("1_8uw32")]
+
+[node name="GEO_PaperBall" parent="Graphics/MeshInstance3D/3D_PaperBall" index="0" unique_id=90446827]
+material_override = ExtResource("2_05t6c")
+
+[node name="Collider" type="Node3D" parent="." unique_id=1312416208]
+
+[node name="StaticBody3D" type="StaticBody3D" parent="Collider" unique_id=1478332510]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Collider/StaticBody3D" unique_id=1069798490]
+transform = Transform3D(0.13, 0, 0, 0, 0.13, 0, 0, 0, 0.13, 0, 0, 0)
+shape = SubResource("SphereShape3D_0j2le")
+
+[editable path="Graphics/MeshInstance3D/3D_PaperBall"]
