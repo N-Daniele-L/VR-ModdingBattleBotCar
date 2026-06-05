@@ -6,6 +6,9 @@ extends Node3D
 signal quota_verified(active_count: int)
 
 @export var spawn_points: Array[Marker3D] = []
+@export var enemy_pool: NCARPoolSystem
+@export var turret: CSTestTurretController
+var current_enemy_alive: Array[Node3D]
 
 var active_enemies: Array[CSEnemyController] = []
 const MAX_SIMULTANEOUS_ENEMIES: int = 2
@@ -14,8 +17,31 @@ func _ready() -> void:
 	if Engine.is_editor_hint():
 		return
 	enforce_enemy_quota()
-	var x = request_enemy_from_pool()
-	x.visible = true
+	var enemy_node = enemy_pool.get_object_from_pool()
+	enemy_node.global_position = spawn_points[0].global_position
+	enemy_node.global_position.y += 1
+	enemy_node.visible
+	turret.add_one_enemy_to_ennemies_locked(enemy_node)
+	current_enemy_alive.append(enemy_node)
+	print(turret.current_target)
+	print(turret.enemies_locked)
+	print(turret.targets_to_aim)
+	for child in enemy_node.get_children():
+		if child is CSEnemyController:
+			var control: CSEnemyController = child as CSEnemyController
+			#control.enemy_lifecycle_ended.connect(remove_from_target)
+
+func _process(delta: float) -> void:
+	for target in current_enemy_alive:
+		var found = turret.enemies_locked.find(target)
+		turret.replace_pos_every_frame(found,target)
+
+#func remove_from_target(enemy: Node3D):
+	#var e: Node3D = enemy.get_parent()
+	#for target in current_enemy_alive:
+		#var found = turret.enemies_locked.find(e)
+		#turret.remove_enemy_dead_from_locked_enemy(e)
+		#current_enemy_alive.erase(e)
 
 func enforce_enemy_quota() -> void:
 	while active_enemies.size() < MAX_SIMULTANEOUS_ENEMIES:
