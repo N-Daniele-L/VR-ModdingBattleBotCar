@@ -1,5 +1,5 @@
-class_name RobotFacade
-extends Node
+class_name Robot
+extends Node3D
 
 signal shoot_requested
 signal stop_requested
@@ -30,6 +30,19 @@ signal controlled_target_changed(node: Node)
 @export var fire_rate: float = 1.0
 @export var target_mode: String = "nearest"
 
+static var order : Robot
+
+func _enter_tree() -> void:
+	if order == null:
+		order = self
+		print("SINGLETON")
+	else:
+		queue_free()
+
+func _exit_tree() -> void:
+	if order == self:
+		order = null
+
 var allowed_target_modes: Array[String] = [
 	"nearest",
 	"strongest",
@@ -44,7 +57,7 @@ func set_controlled_target(node: Node) -> void:
 func shoot() -> void:
 	shoot_requested.emit()
 	_forward_method("shoot")
-	_send_message("Shoot requested.")
+	#_send_message("Shoot requested.")
 
 func stop() -> void:
 	stop_requested.emit()
@@ -128,7 +141,7 @@ func get_target_mode() -> String:
 func _forward_method(method_name: String) -> void:
 	if not auto_forward_to_target:
 		return
-
+	print("foward method")
 	if controlled_target and controlled_target.has_method(method_name):
 		controlled_target.call(method_name)
 

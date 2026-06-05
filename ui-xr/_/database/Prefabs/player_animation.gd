@@ -1,3 +1,4 @@
+class_name PlayerAnimation
 extends AnimationTree
 
 @onready var animation_tree: AnimationTree = $"."

@@ -29,6 +29,7 @@ grow_vertical = 2
 script = ExtResource("1_hgu0o")
 code_edit = NodePath("AspectRatioContainer/CodeEdit_Container/ColorRect/CodeEdit")
 unique_code_file_name = "code_edit_file.gd"
+create_node_as_node_3d = true
 
 [node name="AspectRatioContainer" type="AspectRatioContainer" parent="." unique_id=548256345]
 layout_mode = 1
@@ -60,6 +61,10 @@ size_flags_vertical = 3
 theme_override_fonts/font = ExtResource("1_66nus")
 theme_override_font_sizes/font_size = 24
 theme_override_styles/normal = SubResource("StyleBoxFlat_vm31h")
+text = "extends Node
+
+func _ready()->void:
+	Robot.order.shoot()"
 placeholder_text = "#Start coding here"
 wrap_mode = 1
 gutters_draw_breakpoints_gutter = true

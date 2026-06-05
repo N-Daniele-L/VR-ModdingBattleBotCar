@@ -1,44 +1,141 @@
 [gd_scene format=3 uid="uid://btl0qfycokhku"]
 
 [ext_resource type="PackedScene" uid="uid://ctmiv4vbk0if4" path="res://_/ART/3D/Models/3D_A_Ply_PlayerMech.glb" id="1_n0hxm"]
+[ext_resource type="Script" uid="uid://bgpeuhyydeqdk" path="res://_/database/Prefabs/player_robot.gd" id="1_puvyy"]
 [ext_resource type="Material" uid="uid://pau7aec75rl8" path="res://_/ART/3D/Materials/M_GameScene.tres" id="2_a7n14"]
 [ext_resource type="PackedScene" uid="uid://b7y4hmu12pyto" path="res://_/database/Prefabs/P_VFX_MuzzleFlash.tscn" id="3_a7n14"]
+[ext_resource type="Script" uid="uid://cragve50b3267" path="res://_/database/Prefabs/player_animation.gd" id="4_0uqab"]
 
-[node name="P_Ply_PlayerMech" type="Node3D" unique_id=346653880]
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_a7n14"]
+animation = &"PlayerMech_ArmCannon"
+
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_0uqab"]
+animation = &"PlayerMech_Death"
+
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_puvyy"]
+animation = &"PlayerMech_Hit"
+
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_tq68o"]
+animation = &"PlayerMech_Idle"
+
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_q7jns"]
+animation = &"PlayerMech_MissileLaunch"
+
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_dsm2j"]
+animation = &"PlayerMech_Move"
+
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_q7jns"]
+advance_mode = 2
+
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_73ku6"]
+xfade_time = 0.15
+advance_mode = 2
+advance_condition = &"move"
+
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_prhtl"]
+xfade_time = 0.15
+advance_mode = 2
+advance_condition = &"armattack"
+
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_54alq"]
+xfade_time = 0.15
+advance_mode = 2
+advance_condition = &"armattack"
+
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_0se5k"]
+xfade_time = 0.15
+switch_mode = 2
+advance_mode = 2
+
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_1eney"]
+xfade_time = 0.15
+advance_mode = 2
+advance_condition = &"hit"
+
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_522sh"]
+xfade_time = 0.15
+advance_mode = 2
+advance_condition = &"death"
+
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_qbuj1"]
+xfade_time = 0.15
+switch_mode = 2
+advance_mode = 2
+
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_jujqc"]
+xfade_time = 0.15
+advance_mode = 2
+
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_qik4f"]
+xfade_time = 0.15
+advance_mode = 2
+advance_condition = &"notmove"
+
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_5c8mo"]
+advance_mode = 2
+advance_condition = &"missileattack"
+
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_pmfj6"]
+advance_mode = 2
+advance_condition = &"missileattack"
+
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_5pbnq"]
+switch_mode = 2
+advance_mode = 2
+
+[sub_resource type="AnimationNodeStateMachine" id="AnimationNodeStateMachine_5c8mo"]
+states/PlayerMech_ArmCannon/node = SubResource("AnimationNodeAnimation_a7n14")
+states/PlayerMech_ArmCannon/position = Vector2(419, -18)
+states/PlayerMech_Death/node = SubResource("AnimationNodeAnimation_0uqab")
+states/PlayerMech_Death/position = Vector2(627, 276)
+states/PlayerMech_Hit/node = SubResource("AnimationNodeAnimation_puvyy")
+states/PlayerMech_Hit/position = Vector2(387, 219)
+states/PlayerMech_Idle/node = SubResource("AnimationNodeAnimation_tq68o")
+states/PlayerMech_Idle/position = Vector2(387, 100)
+states/PlayerMech_MissileLaunch/node = SubResource("AnimationNodeAnimation_q7jns")
+states/PlayerMech_MissileLaunch/position = Vector2(695, -15)
+states/PlayerMech_Move/node = SubResource("AnimationNodeAnimation_dsm2j")
+states/PlayerMech_Move/position = Vector2(618, 100)
+transitions = ["Start", "PlayerMech_Idle", SubResource("AnimationNodeStateMachineTransition_q7jns"), "PlayerMech_Idle", "PlayerMech_Move", SubResource("AnimationNodeStateMachineTransition_73ku6"), "PlayerMech_Idle", "PlayerMech_ArmCannon", SubResource("AnimationNodeStateMachineTransition_prhtl"), "PlayerMech_Move", "PlayerMech_ArmCannon", SubResource("AnimationNodeStateMachineTransition_54alq"), "PlayerMech_ArmCannon", "PlayerMech_Idle", SubResource("AnimationNodeStateMachineTransition_0se5k"), "PlayerMech_Idle", "PlayerMech_Hit", SubResource("AnimationNodeStateMachineTransition_1eney"), "PlayerMech_Idle", "PlayerMech_Death", SubResource("AnimationNodeStateMachineTransition_522sh"), "PlayerMech_Hit", "PlayerMech_Idle", SubResource("AnimationNodeStateMachineTransition_qbuj1"), "PlayerMech_Move", "PlayerMech_Hit", SubResource("AnimationNodeStateMachineTransition_jujqc"), "PlayerMech_Move", "PlayerMech_Idle", SubResource("AnimationNodeStateMachineTransition_qik4f"), "PlayerMech_Idle", "PlayerMech_MissileLaunch", SubResource("AnimationNodeStateMachineTransition_5c8mo"), "PlayerMech_Move", "PlayerMech_MissileLaunch", SubResource("AnimationNodeStateMachineTransition_pmfj6"), "PlayerMech_MissileLaunch", "PlayerMech_Idle", SubResource("AnimationNodeStateMachineTransition_5pbnq")]
+graph_offset = Vector2(-3, -106)
+
+[node name="P_Ply_PlayerMech" type="Node3D" unique_id=346653880 node_paths=PackedStringArray("player_anim")]
+script = ExtResource("1_puvyy")
+player_anim = NodePath("AnimationTree")
 
 [node name="3D_A_Ply_PlayerMech" parent="." unique_id=1076190745 instance=ExtResource("1_n0hxm")]
 
-[node name="Skeleton3D" parent="3D_A_Ply_PlayerMech/Armature" parent_id_path=PackedInt32Array(1076190745, 2065390387) index="0" unique_id=1597687466]
+[node name="Skeleton3D" parent="3D_A_Ply_PlayerMech/Armature" parent_id_path=PackedInt32Array(1076190745, 326931736) index="0" unique_id=1650270071]
 bones/1/rotation = Quaternion(1.6940659e-21, 1, 0, 4.3312576e-07)
-bones/2/position = Vector3(-1.1529331e-06, 0.017512562, -1.330945)
+bones/2/position = Vector3(-1.1418388e-06, 0.01751256, -1.3181378)
 bones/2/rotation = Quaternion(-5.591473e-07, 0.7071068, -0.7071068, -5.3385055e-08)
 bones/3/rotation = Quaternion(-3.8046807e-08, 1.6292068e-07, 2.1014577e-14, 1)
 bones/4/rotation = Quaternion(5.6531e-10, 3.7057691e-22, -2.2013886e-16, 1)
-bones/5/rotation = Quaternion(0.38184404, 0.5682151, -0.42382842, 0.5930398)
-bones/6/rotation = Quaternion(0.7232446, 0.08395711, -0.05780231, 0.6830281)
+bones/5/rotation = Quaternion(0.38086852, 0.5688693, -0.42281035, 0.59376615)
+bones/6/rotation = Quaternion(0.7244155, 0.08401174, -0.057767723, 0.68178236)
 bones/7/rotation = Quaternion(0.12861234, -0.0029197563, 0.12635933, 0.98360753)
-bones/8/rotation = Quaternion(-0.013295233, -0.0045015654, 0.25873354, 0.9658467)
-bones/9/rotation = Quaternion(0.013454428, -0.006386744, 0.055643994, 0.99833965)
-bones/10/rotation = Quaternion(0.005076026, -0.001969579, -0.0019087438, 0.9999834)
-bones/11/rotation = Quaternion(-0.010506303, 0.0016335503, 0.053852525, 0.9984923)
-bones/12/rotation = Quaternion(0.028583394, -0.011232185, -0.00015507058, 0.9995283)
-bones/13/rotation = Quaternion(0.09584029, 0.18408068, 0.24684049, 0.9465722)
-bones/14/rotation = Quaternion(0.004526148, 0.06619139, -0.0029881417, 0.99779224)
+bones/8/rotation = Quaternion(-0.010255782, 0.010971968, -0.036225848, 0.9992308)
+bones/9/rotation = Quaternion(0.13855563, 0.00064232986, 0.05600565, 0.98876965)
+bones/10/rotation = Quaternion(0.29216668, -0.0024349275, -0.0012624176, 0.95636356)
+bones/11/rotation = Quaternion(0.114803255, 0.008374615, 0.053222474, 0.9919262)
+bones/12/rotation = Quaternion(0.31455204, -0.010803156, 0.0030785594, 0.94917375)
+bones/13/rotation = Quaternion(-0.038548637, 0.62748724, 0.2619725, 0.73221874)
+bones/14/rotation = Quaternion(0.21147397, 0.067848325, -0.04709722, 0.97388774)
 bones/15/rotation = Quaternion(0.08979824, -0.00042648363, 0.97512364, -0.2026574)
 bones/16/position = Vector3(0.72006273, 0.6196611, -0.043556307)
 bones/16/rotation = Quaternion(0.012546767, 0.0024617391, 0.13428587, 0.99086016)
 bones/17/position = Vector3(0.72006273, 0.6196611, -0.043556307)
 bones/17/rotation = Quaternion(0.012546767, 0.0024617391, 0.13428587, 0.99086016)
-bones/18/rotation = Quaternion(0.38184413, -0.56821483, 0.4238283, 0.59304005)
-bones/19/rotation = Quaternion(0.72324455, -0.08395715, 0.057802327, 0.68302816)
+bones/18/rotation = Quaternion(0.38086873, -0.5688691, 0.4228103, 0.59376645)
+bones/19/rotation = Quaternion(0.72441554, -0.08401175, 0.057767738, 0.68178236)
 bones/20/rotation = Quaternion(0.12861228, 0.0029197743, -0.12635934, 0.9836075)
-bones/21/rotation = Quaternion(-0.0132951895, 0.004501605, -0.25873357, 0.9658467)
-bones/22/rotation = Quaternion(0.013454428, 0.0063867504, -0.055643942, 0.99833965)
-bones/23/rotation = Quaternion(0.0050760293, 0.001969579, 0.0019087223, 0.9999834)
-bones/24/rotation = Quaternion(-0.010506292, -0.0016335447, -0.05385253, 0.9984923)
-bones/25/rotation = Quaternion(0.028583381, 0.011232182, 0.00015508031, 0.9995283)
-bones/26/rotation = Quaternion(0.09584032, -0.18408065, -0.24684046, 0.9465721)
-bones/27/rotation = Quaternion(0.00452614, -0.06619139, 0.0029881387, 0.99779224)
+bones/21/rotation = Quaternion(-0.010255727, -0.010971948, 0.036225874, 0.99923074)
+bones/22/rotation = Quaternion(0.13855563, -0.0006423148, -0.05600562, 0.98876965)
+bones/23/rotation = Quaternion(0.29216668, 0.0024349168, 0.0012623876, 0.95636356)
+bones/24/rotation = Quaternion(0.114803284, -0.00837461, -0.053222485, 0.9919262)
+bones/25/rotation = Quaternion(0.31455204, 0.010803149, -0.0030785592, 0.94917375)
+bones/26/rotation = Quaternion(-0.03854858, -0.6274872, -0.26197252, 0.73221874)
+bones/27/rotation = Quaternion(0.21147406, -0.0678483, 0.04709725, 0.9738877)
 bones/30/rotation = Quaternion(-0.1718443, -0.046165958, -0.08310557, 0.98052627)
 bones/31/rotation = Quaternion(0.013012738, -3.7300726e-08, 0.089133285, 0.9959348)
 bones/31/scale = Vector3(1, 1.0000001, 1)
@@ -52,15 +149,15 @@ bones/37/rotation = Quaternion(0.008840671, 0.030328507, 0.09010026, 0.9954316)
 bones/38/rotation = Quaternion(0.01301271, 4.339138e-08, -0.089133196, 0.9959347)
 bones/38/scale = Vector3(1, 0.99999994, 1.0000001)
 
-[node name="3D_MissleLuncher" parent="3D_A_Ply_PlayerMech/Armature/Skeleton3D" index="0" unique_id=1984430538]
+[node name="3D_MissleLuncher" parent="3D_A_Ply_PlayerMech/Armature/Skeleton3D" index="0" unique_id=1255987832]
 layers = 2
 surface_material_override/0 = ExtResource("2_a7n14")
 
-[node name="3D_RobotMain_004" parent="3D_A_Ply_PlayerMech/Armature/Skeleton3D" index="1" unique_id=928973157]
+[node name="3D_RobotMain_004" parent="3D_A_Ply_PlayerMech/Armature/Skeleton3D" index="1" unique_id=193965236]
 layers = 2
 surface_material_override/0 = ExtResource("2_a7n14")
 
-[node name="3D_UnderArmGun" parent="3D_A_Ply_PlayerMech/Armature/Skeleton3D" index="2" unique_id=25897219]
+[node name="3D_UnderArmGun" parent="3D_A_Ply_PlayerMech/Armature/Skeleton3D" index="2" unique_id=1763890548]
 layers = 2
 surface_material_override/0 = ExtResource("2_a7n14")
 
@@ -69,6 +166,18 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.01, -0.61, 0.62)
 
 [node name="GPUParticles3D" parent="3D_A_Ply_PlayerMech/Armature/Skeleton3D/3D_UnderArmGun/P_MuzzleFlash" index="0" unique_id=318705942]
 transform = Transform3D(1, 0, 0, 0, 0.9362376, 0.35136783, 0, -0.35136783, 0.9362376, 0, 0.08847833, 0.23575503)
+
+[node name="AnimationTree" type="AnimationTree" parent="." unique_id=219890756]
+root_node = NodePath("../3D_A_Ply_PlayerMech")
+tree_root = SubResource("AnimationNodeStateMachine_5c8mo")
+anim_player = NodePath("../3D_A_Ply_PlayerMech/AnimationPlayer")
+parameters/conditions/armattack = false
+parameters/conditions/death = false
+parameters/conditions/hit = false
+parameters/conditions/missileattack = false
+parameters/conditions/move = false
+parameters/conditions/notmove = false
+script = ExtResource("4_0uqab")
 
 [editable path="3D_A_Ply_PlayerMech"]
 [editable path="3D_A_Ply_PlayerMech/Armature/Skeleton3D/3D_UnderArmGun/P_MuzzleFlash"]

@@ -18,6 +18,10 @@ signal reset_all_overrides_requested
 @export var create_node_as_node_3d: bool = false
 @export var use_default_color_style: bool = true
 
+var timer : float
+var chrono : float = 1.0
+var referenced : bool
+
 @export_group("Debug")
 @export var created_node_holding_code: Node
 
@@ -27,11 +31,27 @@ var default_code: String = """
 func _ready() -> void:
 	if code_edit and code_edit.text.strip_edges() == "":
 		code_edit.text = default_code
-
 	
-
 	if use_default_color_style and code_edit:
 		load_text_color_style()
+		
+func _get_reference()-> void:
+	target_node = get_tree().root.find_child("StaticCode", true, false)
+	where_to_run_code = get_tree().root.find_child("RunCode", true, false)
+	
+	
+func _process(delta: float) -> void:
+	if target_node != null and where_to_run_code != null and not referenced:
+		print (target_node.name)
+		print(where_to_run_code.name)
+		referenced = true
+		return
+		
+	if timer > chrono:
+		_get_reference()
+		timer = 0
+	else:
+		timer += delta
 
 func _on_run_button_pressed() -> void:
 	reload_code_from_code_edit()
