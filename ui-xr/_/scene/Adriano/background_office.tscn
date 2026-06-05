@@ -9,6 +9,8 @@
 [ext_resource type="Material" uid="uid://bhic86sybtlmb" path="res://_/ART/3D/Materials/M_Ground.tres" id="5_rxpq6"]
 [ext_resource type="PackedScene" uid="uid://bekq4pccvw80k" path="res://_/database/Prefabs/P_BuildingsArea2.tscn" id="7_1waep"]
 [ext_resource type="PackedScene" uid="uid://dq4wbqnnabtvw" path="res://_/database/Prefabs/P_buildingsArea1.tscn" id="7_d2eip"]
+[ext_resource type="PackedScene" uid="uid://btl0qfycokhku" path="res://_/database/Prefabs/P_Ply_PlayerMech.tscn" id="9_u8dyq"]
+[ext_resource type="PackedScene" uid="uid://e4x4ro6fpa74" path="res://_/database/Prefabs/P_GameScene_UI.tscn" id="11_4gcbb"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_opxxu"]
 sky_horizon_color = Color(0.66224277, 0.6717428, 0.6867428, 1)
@@ -100,7 +102,7 @@ environment = SubResource("Environment_fs4ot")
 [node name="---Light---" type="Node" parent="." unique_id=1539997929]
 
 [node name="Light_CCTV01" type="OmniLight3D" parent="---Light---" unique_id=562136057]
-transform = Transform3D(0.9697443, 0, -0.2441228, 0, 1, 0, 0.2441228, 0, 0.9697443, 0.23635173, 0.99832654, -1.8548448)
+transform = Transform3D(0.9697443, 0, -0.2441228, 0, 1, 0, 0.2441228, 0, 0.9697443, 0.23781323, 0.99832654, -1.8613961)
 light_color = Color(0.99916905, 0.65726364, 0.59114283, 1)
 light_energy = 0.25
 shadow_enabled = true
@@ -115,9 +117,9 @@ distance_fade_length = 1.0
 omni_range = 1.404
 
 [node name="Light_CCTV02" type="OmniLight3D" parent="---Light---" unique_id=540712808]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.23744932, 0.95006657, -1.8212199)
+transform = Transform3D(0.9530956, 0, 0.30266932, 0, 1, 0, -0.30266932, 0, 0.9530956, -0.21865486, 0.95006657, -1.8400224)
 light_color = Color(0.96862745, 1, 1, 1)
-light_energy = 0.05
+light_energy = 0.02
 shadow_enabled = true
 shadow_bias = 0.0
 shadow_normal_bias = 0.31
@@ -380,12 +382,16 @@ transform = Transform3D(0.9558546, -0.07329859, -0.28455105, 0.13944611, 0.96554
 layers = 2
 light_color = Color(1, 0.80784315, 0.7019608, 1)
 light_energy = 0.7
+light_cull_mask = 4293918722
 shadow_enabled = true
+shadow_caster_mask = 4293918722
 
 [node name="SpotLight3D" type="SpotLight3D" parent="P_GameScene/---Light---" unique_id=1996365027]
-transform = Transform3D(0.9558546, -0.07329855, -0.28455108, 0.23440234, 0.7741711, 0.587975, 0.17719351, -0.6287181, 0.7571764, -4.0392084, 13.594976, -31.773235)
+transform = Transform3D(0.9558546, -0.07329855, -0.28455105, 0.28839725, 0.41954547, 0.8607024, 0.056293868, -0.9047701, 0.42216358, -4.0392084, 14.597231, -40.316944)
+layers = 2
 light_color = Color(1, 0.58431375, 0.4509804, 1)
 light_energy = 2.0
+light_cull_mask = 4293918722
 spot_range = 73.091
 spot_angle = 60.83
 
@@ -416,11 +422,11 @@ transform = Transform3D(-0.009921636, 0, -0.49990156, 0, 0.5, 0, 0.49990156, 0, 
 [node name="P_Enn_BladeMech" parent="P_GameScene/graphic" unique_id=1774846936 instance=ExtResource("3_1x0uo")]
 transform = Transform3D(0.9659258, 0, 0.25881904, 0, 1, 0, -0.25881904, 0, 0.9659258, -8.849437, -0.91, -30.919945)
 
+[node name="P_Ply_PlayerMech" parent="P_GameScene/graphic" unique_id=346653880 instance=ExtResource("9_u8dyq")]
+transform = Transform3D(-1, 0, 8.742278e-08, 0, 1, 0, -8.742278e-08, 0, -1, 0, -0.939229, -8.191551)
+
 [node name="P_Enn_BladeMech2" parent="P_GameScene/graphic" unique_id=766988637 instance=ExtResource("3_1x0uo")]
 transform = Transform3D(0.9659258, 0, -0.25881904, 0, 1, 0, 0.25881904, 0, 0.9659258, 9.253909, -0.91, -28.794373)
-
-[node name="P_Enn_BladeMech3" parent="P_GameScene/graphic" unique_id=26449818 instance=ExtResource("3_1x0uo")]
-transform = Transform3D(-1, 0, 8.742278e-08, 0, 1, 0, -8.742278e-08, 0, -1, -0.020001411, -0.91, -8.190002)
 
 [node name="P_CRT" parent="P_GameScene" unique_id=1705081193 instance=ExtResource("2_fs4ot")]
 
@@ -430,8 +436,10 @@ canvas_cull_mask = 4293918722
 [node name="Anchor_Camera3D" parent="P_GameScene/P_CRT/SubViewport" index="0" unique_id=143777878]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 4.3, 0)
 
-[node name="Camera3D" parent="P_GameScene/P_CRT/SubViewport/Anchor_Camera3D" index="1" unique_id=69060824]
-transform = Transform3D(1, 0, 0, 0, 0.9659259, 0.25881907, 0, -0.25881907, 0.9659258, 0, 5.63783, -35.920513)
+[node name="P_GameScene_UI" parent="P_GameScene/P_CRT/SubViewport/Anchor_Camera3D" index="0" unique_id=779327736 instance=ExtResource("11_4gcbb")]
+
+[node name="Camera3D" parent="P_GameScene/P_CRT/SubViewport/Anchor_Camera3D" index="2" unique_id=69060824]
+transform = Transform3D(1, 0, 0, 0, 0.9659259, 0.25881907, 0, -0.25881907, 0.9659258, 0, 6.343, -34.711)
 cull_mask = 2
 fov = 80.0
 
