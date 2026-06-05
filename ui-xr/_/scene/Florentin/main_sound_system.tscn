@@ -1,19 +1,131 @@
 [gd_scene format=3 uid="uid://cs4720abuipuu"]
 
 [ext_resource type="Script" uid="uid://clipxhr1jpdbq" path="res://addons/godot-demo-xr/scenes/demo_scene_base.gd" id="1_qvs7m"]
-[ext_resource type="PackedScene" uid="uid://bnx4hithcij6y" path="res://addons/godot-xr-tools/hands/model/Hand_Glove_low_L.gltf" id="2_xcpnb"]
-[ext_resource type="PackedScene" uid="uid://csgsp0wuw8ucy" path="res://addons/godot-xr-tools/hands/model/Hand_Glove_low_R.gltf" id="3_fy3g7"]
+[ext_resource type="Script" uid="uid://b18kkstg643yw" path="res://addons/godot-xr-tools/functions/function_pickup.gd" id="2_25v5j"]
+[ext_resource type="PackedScene" uid="uid://c4nba0qpi0uls" path="res://addons/godot-xr-tools/hands/model/Hand_Nails_low_L.gltf" id="2_g4wwv"]
+[ext_resource type="Material" uid="uid://dy6nhifvvmm73" path="res://addons/godot-xr-tools/hands/materials/caucasian_hand.tres" id="3_25v5j"]
 [ext_resource type="PackedScene" uid="uid://cqhw276realc" path="res://addons/godot-xr-tools/functions/function_pointer.tscn" id="4_4i15i"]
+[ext_resource type="PackedScene" uid="uid://the6y7swe6j0" path="res://addons/godot-xr-tools/hands/animations/left/AnimationPlayer.tscn" id="4_lwl06"]
+[ext_resource type="Script" uid="uid://cnwtovj4mqc45" path="res://addons/godot-xr-tools/hands/hand.gd" id="4_lxkj0"]
+[ext_resource type="AnimationNodeBlendTree" uid="uid://dl8yf7ipqotd1" path="res://addons/godot-xr-tools/hands/animations/left/hand_blend_tree.tres" id="5_26sxf"]
 [ext_resource type="PackedScene" uid="uid://d3spwpl4gmsnc" path="res://_/scene/Adriano/background_office.tscn" id="5_k5qfl"]
 [ext_resource type="AudioStream" uid="uid://dgrj0eynifkog" path="res://_/assets/Florentin/audio/ambiant/neon.ogg" id="6_16cy4"]
 [ext_resource type="AudioStream" uid="uid://pceqvyma8wgg" path="res://_/assets/Florentin/audio/ambiant/pc_running_loop.ogg" id="7_16cy4"]
+[ext_resource type="Resource" uid="uid://dertgu7k8alls" path="res://addons/godot-xr-tools/hands/poses/pose_default_left.tres" id="7_mu1e5"]
 [ext_resource type="AudioStream" uid="uid://ineqo8c0mrj3" path="res://_/assets/Florentin/audio/ambiant/crt_left_running_loop.ogg" id="9_jy21p"]
+[ext_resource type="PackedScene" uid="uid://b5trtov7002fg" path="res://_/scene/Nicolas/documentation_pickable.tscn" id="10_iu4lv"]
 [ext_resource type="AudioStream" uid="uid://n266xlyfiycw" path="res://_/assets/Florentin/audio/ambiant/crt_right_running_loop.ogg" id="10_s1g62"]
+[ext_resource type="Script" path="res://_/scene/Nicolas/fps_counter.gd" id="10_yv762"]
+[ext_resource type="PackedScene" uid="uid://dit5utrlm4qhc" path="res://_/scene/Nicolas/paper_ball_pickable.tscn" id="11_dcos0"]
+[ext_resource type="AudioStream" uid="uid://d4kv7vxxfa17u" path="res://_/assets/Florentin/audio/sfx/hit_metal.ogg" id="11_do1kh"]
+[ext_resource type="AnimationNodeBlendTree" uid="uid://m85b1gogdums" path="res://addons/godot-xr-tools/hands/animations/right/hand_blend_tree.tres" id="11_y0dtq"]
+[ext_resource type="Resource" uid="uid://dmpjtk0l8vh6v" path="res://addons/godot-xr-tools/hands/poses/pose_default_right.tres" id="12_viqoq"]
+[ext_resource type="PackedScene" uid="uid://dunu03tc5vdbh" path="res://addons/godot-xr-tools/hands/model/Hand_Nails_low_R.gltf" id="13_x2y4l"]
+[ext_resource type="PackedScene" uid="uid://bxipj7hyjwy6f" path="res://addons/godot-xr-tools/hands/animations/right/AnimationPlayer.tscn" id="14_ccv7p"]
+[ext_resource type="Script" uid="uid://chn5mqfowjxro" path="res://_/script/Florentin/play_sound_on_hit.gd" id="24_x2y4l"]
+[ext_resource type="Script" uid="uid://0b7wkxi4vymb" path="res://addons/godot-xr-tools/objects/highlight/highlight_visible.gd" id="25_ccv7p"]
+[ext_resource type="Script" uid="uid://dx3swqg2owe4p" path="res://addons/godot-xr-tools/objects/grab_points/grab_point_hand.gd" id="26_l80y6"]
+[ext_resource type="Animation" uid="uid://nq3xh1olqipq" path="res://addons/godot-xr-tools/hands/animations/left/Grip Shaft.res" id="27_svif0"]
+[ext_resource type="Script" uid="uid://dvobm6vcfnqe8" path="res://addons/godot-xr-tools/hands/poses/hand_pose_settings.gd" id="28_oo4ga"]
+[ext_resource type="Animation" uid="uid://c8dghcftg1thx" path="res://addons/godot-xr-tools/hands/animations/right/Grip Shaft.res" id="29_f8so8"]
+[ext_resource type="AudioStream" uid="uid://boi3vvhi5hgdn" path="res://_/assets/Florentin/audio/sfx/hit_wood.ogg" id="30_l80y6"]
+[ext_resource type="AudioStream" uid="uid://bue3xrdjdwvi1" path="res://_/assets/Florentin/audio/sfx/hit_rug.ogg" id="31_svif0"]
+
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_c50k1"]
+animation = &"Grip"
+
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_j4i40"]
+animation = &"Grip"
+
+[sub_resource type="AnimationNodeBlend2" id="AnimationNodeBlend2_khfpx"]
+filter_enabled = true
+filters = ["Armature/Skeleton3D:Little_Distal_L", "Armature/Skeleton3D:Little_Intermediate_L", "Armature/Skeleton3D:Little_Metacarpal_L", "Armature/Skeleton3D:Little_Proximal_L", "Armature/Skeleton3D:Middle_Distal_L", "Armature/Skeleton3D:Middle_Intermediate_L", "Armature/Skeleton3D:Middle_Metacarpal_L", "Armature/Skeleton3D:Middle_Proximal_L", "Armature/Skeleton3D:Ring_Distal_L", "Armature/Skeleton3D:Ring_Intermediate_L", "Armature/Skeleton3D:Ring_Metacarpal_L", "Armature/Skeleton3D:Ring_Proximal_L", "Armature/Skeleton3D:Thumb_Distal_L", "Armature/Skeleton3D:Thumb_Metacarpal_L", "Armature/Skeleton3D:Thumb_Proximal_L", "Armature/Skeleton:Little_Distal_L", "Armature/Skeleton:Little_Intermediate_L", "Armature/Skeleton:Little_Proximal_L", "Armature/Skeleton:Middle_Distal_L", "Armature/Skeleton:Middle_Intermediate_L", "Armature/Skeleton:Middle_Proximal_L", "Armature/Skeleton:Ring_Distal_L", "Armature/Skeleton:Ring_Intermediate_L", "Armature/Skeleton:Ring_Proximal_L", "Armature/Skeleton:Thumb_Distal_L", "Armature/Skeleton:Thumb_Proximal_L"]
+
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_3mbnp"]
+animation = &"Grip 5"
+
+[sub_resource type="AnimationNodeBlend2" id="AnimationNodeBlend2_kc7dx"]
+filter_enabled = true
+filters = ["Armature/Skeleton3D:Index_Distal_L", "Armature/Skeleton3D:Index_Intermediate_L", "Armature/Skeleton3D:Index_Metacarpal_L", "Armature/Skeleton3D:Index_Proximal_L", "Armature/Skeleton:Index_Distal_L", "Armature/Skeleton:Index_Intermediate_L", "Armature/Skeleton:Index_Proximal_L"]
+
+[sub_resource type="AnimationNodeBlendTree" id="AnimationNodeBlendTree_4ixfq"]
+graph_offset = Vector2(-536, 11)
+nodes/ClosedHand1/node = SubResource("AnimationNodeAnimation_c50k1")
+nodes/ClosedHand1/position = Vector2(-600, 300)
+nodes/ClosedHand2/node = SubResource("AnimationNodeAnimation_j4i40")
+nodes/ClosedHand2/position = Vector2(-360, 300)
+nodes/Grip/node = SubResource("AnimationNodeBlend2_khfpx")
+nodes/Grip/position = Vector2(0, 20)
+nodes/OpenHand/node = SubResource("AnimationNodeAnimation_3mbnp")
+nodes/OpenHand/position = Vector2(-600, 100)
+nodes/Trigger/node = SubResource("AnimationNodeBlend2_kc7dx")
+nodes/Trigger/position = Vector2(-360, 20)
+node_connections = [&"output", 0, &"Grip", &"Grip", 0, &"Trigger", &"Grip", 1, &"ClosedHand2", &"Trigger", 0, &"OpenHand", &"Trigger", 1, &"ClosedHand1"]
+
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_5i1tk"]
+animation = &"Grip"
+
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_kgmj8"]
+animation = &"Grip"
+
+[sub_resource type="AnimationNodeBlend2" id="AnimationNodeBlend2_g6bks"]
+filter_enabled = true
+filters = ["Armature/Skeleton3D:Little_Distal_R", "Armature/Skeleton3D:Little_Intermediate_R", "Armature/Skeleton3D:Little_Metacarpal_R", "Armature/Skeleton3D:Little_Proximal_R", "Armature/Skeleton3D:Middle_Distal_R", "Armature/Skeleton3D:Middle_Intermediate_R", "Armature/Skeleton3D:Middle_Metacarpal_R", "Armature/Skeleton3D:Middle_Proximal_R", "Armature/Skeleton3D:Ring_Distal_R", "Armature/Skeleton3D:Ring_Intermediate_R", "Armature/Skeleton3D:Ring_Metacarpal_R", "Armature/Skeleton3D:Ring_Proximal_R", "Armature/Skeleton3D:Thumb_Distal_R", "Armature/Skeleton3D:Thumb_Metacarpal_R", "Armature/Skeleton3D:Thumb_Proximal_R", "Armature/Skeleton:Little_Distal_R", "Armature/Skeleton:Little_Intermediate_R", "Armature/Skeleton:Little_Proximal_R", "Armature/Skeleton:Middle_Distal_R", "Armature/Skeleton:Middle_Intermediate_R", "Armature/Skeleton:Middle_Proximal_R", "Armature/Skeleton:Ring_Distal_R", "Armature/Skeleton:Ring_Intermediate_R", "Armature/Skeleton:Ring_Proximal_R", "Armature/Skeleton:Thumb_Distal_R", "Armature/Skeleton:Thumb_Proximal_R"]
+
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_bck6f"]
+animation = &"Grip 5"
+
+[sub_resource type="AnimationNodeBlend2" id="AnimationNodeBlend2_5hhwy"]
+filter_enabled = true
+filters = ["Armature/Skeleton3D:Index_Distal_R", "Armature/Skeleton3D:Index_Intermediate_R", "Armature/Skeleton3D:Index_Metacarpal_R", "Armature/Skeleton3D:Index_Proximal_R", "Armature/Skeleton:Index_Distal_R", "Armature/Skeleton:Index_Intermediate_R", "Armature/Skeleton:Index_Proximal_R"]
+
+[sub_resource type="AnimationNodeBlendTree" id="AnimationNodeBlendTree_q3v3x"]
+graph_offset = Vector2(-552.664, 107.301)
+nodes/ClosedHand1/node = SubResource("AnimationNodeAnimation_5i1tk")
+nodes/ClosedHand1/position = Vector2(-600, 300)
+nodes/ClosedHand2/node = SubResource("AnimationNodeAnimation_kgmj8")
+nodes/ClosedHand2/position = Vector2(-360, 300)
+nodes/Grip/node = SubResource("AnimationNodeBlend2_g6bks")
+nodes/Grip/position = Vector2(0, 40)
+nodes/OpenHand/node = SubResource("AnimationNodeAnimation_bck6f")
+nodes/OpenHand/position = Vector2(-600, 100)
+nodes/Trigger/node = SubResource("AnimationNodeBlend2_5hhwy")
+nodes/Trigger/position = Vector2(-360, 40)
+node_connections = [&"output", 0, &"Grip", &"Grip", 0, &"Trigger", &"Grip", 1, &"ClosedHand2", &"Trigger", 0, &"OpenHand", &"Trigger", 1, &"ClosedHand1"]
+
+[sub_resource type="CylinderShape3D" id="CylinderShape3D_s1g62"]
+
+[sub_resource type="SphereShape3D" id="SphereShape3D_gsfxp"]
+margin = 0.01
+radius = 0.023
+
+[sub_resource type="SphereMesh" id="SphereMesh_sba8n"]
+radius = 0.02
+height = 0.04
+
+[sub_resource type="SphereMesh" id="SphereMesh_m2wy2"]
+flip_faces = true
+radius = 0.023
+height = 0.045
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_5yjyy"]
+albedo_color = Color(0.5785255, 1.2747362, 0, 1)
+
+[sub_resource type="Resource" id="Resource_uy1cw"]
+script = ExtResource("28_oo4ga")
+closed_pose = ExtResource("27_svif0")
+metadata/_custom_type_script = "uid://dvobm6vcfnqe8"
+
+[sub_resource type="Resource" id="Resource_gcews"]
+script = ExtResource("28_oo4ga")
+closed_pose = ExtResource("29_f8so8")
+metadata/_custom_type_script = "uid://dvobm6vcfnqe8"
 
 [node name="Main" type="Node3D" unique_id=1421353623]
 script = ExtResource("1_qvs7m")
 
 [node name="XROrigin3D" type="XROrigin3D" parent="." unique_id=666322222]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -1)
 
 [node name="XRCamera3D" type="XRCamera3D" parent="XROrigin3D" unique_id=278342559]
 
@@ -21,61 +133,262 @@ script = ExtResource("1_qvs7m")
 doppler_tracking = 2
 current = true
 
-[node name="XRControllerLeft" type="XRController3D" parent="XROrigin3D" unique_id=1744335750]
+[node name="XRControllerLeft" type="XRController3D" parent="XROrigin3D" unique_id=1788789342]
 tracker = &"left_hand"
 
-[node name="hand_l" parent="XROrigin3D/XRControllerLeft" unique_id=1441204479 instance=ExtResource("2_xcpnb")]
+[node name="XRToolsFunctionPickup" type="Node3D" parent="XROrigin3D/XRControllerLeft" unique_id=2030009691]
+script = ExtResource("2_25v5j")
+metadata/_custom_type_script = "uid://b18kkstg643yw"
 
-[node name="XRControllerRight" type="XRController3D" parent="XROrigin3D" unique_id=1510464946]
+[node name="FunctionPointer" parent="XROrigin3D/XRControllerLeft" unique_id=2123456391 instance=ExtResource("4_4i15i")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.02, 0.05, -0.1)
+
+[node name="LeftHand" type="Node3D" parent="XROrigin3D/XRControllerLeft" unique_id=162896340]
+script = ExtResource("4_lxkj0")
+hand_blend_tree = ExtResource("5_26sxf")
+hand_material_override = ExtResource("3_25v5j")
+default_pose = ExtResource("7_mu1e5")
+
+[node name="Hand_Nails_low_L" parent="XROrigin3D/XRControllerLeft/LeftHand" unique_id=236915095 instance=ExtResource("2_g4wwv")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.01, 0, 0.05)
+
+[node name="Skeleton3D" parent="XROrigin3D/XRControllerLeft/LeftHand/Hand_Nails_low_L/Armature" parent_id_path=PackedInt32Array(236915095, 115526339) index="0" unique_id=2000429303]
+bones/1/rotation = Quaternion(0.323537, -2.5658142e-05, -0.027220426, 0.9458239)
+bones/2/rotation = Quaternion(-0.09044407, -0.04151748, -0.16629349, 0.98104167)
+bones/3/rotation = Quaternion(-0.04661986, 0.02097099, 0.010327632, 0.9986392)
+bones/5/rotation = Quaternion(-0.0012845465, -0.011608094, -0.016825877, 0.99979025)
+bones/6/rotation = Quaternion(0.10292491, -0.009932083, -0.007944166, 0.9946078)
+bones/7/rotation = Quaternion(-0.012859, -0.023610815, -0.32325828, 0.9459289)
+bones/8/rotation = Quaternion(0.012057539, -0.009291937, -0.24747224, 0.96877545)
+bones/10/rotation = Quaternion(-0.035753887, -0.0004000325, 0.0063676415, 0.9993403)
+bones/11/rotation = Quaternion(-0.0026496367, -0.0011447113, -0.12599176, 0.9920271)
+bones/12/rotation = Quaternion(0.039422527, 0.0019339261, -0.22807404, 0.97284347)
+bones/13/rotation = Quaternion(-0.012339468, -0.008812943, -0.28066906, 0.9596848)
+bones/15/rotation = Quaternion(-0.070265576, 0.010190836, -0.024330735, 0.9971795)
+bones/16/rotation = Quaternion(-0.032063447, -0.002236244, -0.06863657, 0.99712384)
+bones/17/rotation = Quaternion(0.025345208, 0.008124622, -0.2490055, 0.9681363)
+bones/18/rotation = Quaternion(0.0025223217, 0.007880732, -0.2432038, 0.9699399)
+bones/20/rotation = Quaternion(-0.09173688, 0.020302717, -0.010182976, 0.9955242)
+bones/21/rotation = Quaternion(-0.06251818, -0.00022572002, -0.115392834, 0.99135065)
+bones/22/rotation = Quaternion(0.058578636, 0.021648303, -0.26990518, 0.9608596)
+bones/23/rotation = Quaternion(0.006871769, -0.0035727466, -0.21195254, 0.97724926)
+
+[node name="mesh_Hand_Nails_low_L" parent="XROrigin3D/XRControllerLeft/LeftHand/Hand_Nails_low_L/Armature/Skeleton3D" index="0" unique_id=115577112]
+material_override = ExtResource("3_25v5j")
+
+[node name="AnimationPlayer" parent="XROrigin3D/XRControllerLeft/LeftHand/Hand_Nails_low_L" unique_id=488287358 instance=ExtResource("4_lwl06")]
+
+[node name="AnimationTree" type="AnimationTree" parent="XROrigin3D/XRControllerLeft/LeftHand" unique_id=1002181710]
+root_node = NodePath("../Hand_Nails_low_L")
+tree_root = SubResource("AnimationNodeBlendTree_4ixfq")
+anim_player = NodePath("../Hand_Nails_low_L/AnimationPlayer")
+parameters/Grip/blend_amount = 0.0
+parameters/Trigger/blend_amount = 0.0
+
+[node name="FPS_Counter" type="Label3D" parent="XROrigin3D/XRControllerLeft" unique_id=1593788391]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.11273195, 0)
+text = "FPS:"
+font_size = 16
+outline_size = 4
+script = ExtResource("10_yv762")
+
+[node name="XRControllerRight" type="XRController3D" parent="XROrigin3D" unique_id=117782225]
 tracker = &"right_hand"
 
-[node name="hand_r" parent="XROrigin3D/XRControllerRight" unique_id=2088910385 instance=ExtResource("3_fy3g7")]
-
-[node name="FunctionPointer" parent="XROrigin3D/XRControllerRight" unique_id=1203588822 instance=ExtResource("4_4i15i")]
+[node name="FunctionPointer" parent="XROrigin3D/XRControllerRight" unique_id=599073078 instance=ExtResource("4_4i15i")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.02, 0.05, -0.1)
+
+[node name="XRToolsFunctionPickup" type="Node3D" parent="XROrigin3D/XRControllerRight" unique_id=239920458]
+script = ExtResource("2_25v5j")
+metadata/_custom_type_script = "uid://b18kkstg643yw"
+
+[node name="RightHand" type="Node3D" parent="XROrigin3D/XRControllerRight" unique_id=52450907]
+script = ExtResource("4_lxkj0")
+hand_blend_tree = ExtResource("11_y0dtq")
+hand_material_override = ExtResource("3_25v5j")
+default_pose = ExtResource("12_viqoq")
+
+[node name="Hand_Nails_low_R" parent="XROrigin3D/XRControllerRight/RightHand" unique_id=1185883530 instance=ExtResource("13_x2y4l")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.01, 0, 0.05)
+
+[node name="Skeleton3D" parent="XROrigin3D/XRControllerRight/RightHand/Hand_Nails_low_R/Armature" parent_id_path=PackedInt32Array(1185883530, 857642340) index="0" unique_id=219386016]
+bones/1/rotation = Quaternion(0.323537, 2.5658142e-05, 0.027220426, 0.9458239)
+bones/2/rotation = Quaternion(-0.09044407, 0.04151748, 0.16629349, 0.98104167)
+bones/3/rotation = Quaternion(-0.04661986, -0.020970985, -0.010327632, 0.9986392)
+bones/5/rotation = Quaternion(-0.0012845465, 0.011608096, 0.01682588, 0.99979025)
+bones/6/rotation = Quaternion(0.10292492, 0.009932085, 0.007944188, 0.9946078)
+bones/7/rotation = Quaternion(-0.012859004, 0.023610815, 0.32325834, 0.94592875)
+bones/8/rotation = Quaternion(0.012057537, 0.0092919255, 0.24747224, 0.96877545)
+bones/10/rotation = Quaternion(-0.035753887, 0.00040003238, -0.0063676336, 0.9993403)
+bones/11/rotation = Quaternion(-0.0026496367, 0.0011447114, 0.1259918, 0.9920271)
+bones/12/rotation = Quaternion(0.03942253, -0.0019339275, 0.2280741, 0.97284347)
+bones/13/rotation = Quaternion(-0.012339467, 0.008812944, 0.28066906, 0.9596848)
+bones/15/rotation = Quaternion(-0.07026557, -0.010190836, 0.024330745, 0.99717957)
+bones/16/rotation = Quaternion(-0.032063447, 0.002236245, 0.06863657, 0.99712384)
+bones/17/rotation = Quaternion(0.025345206, -0.00812462, 0.24900547, 0.9681363)
+bones/18/rotation = Quaternion(0.0025223275, -0.007880732, 0.24320383, 0.9699399)
+bones/20/rotation = Quaternion(-0.09173688, -0.020302719, 0.010182976, 0.9955242)
+bones/21/rotation = Quaternion(-0.06251817, 0.00022572096, 0.115392834, 0.99135065)
+bones/22/rotation = Quaternion(0.058578644, -0.021648303, 0.26990518, 0.9608596)
+bones/23/rotation = Quaternion(0.0068717655, 0.0035727452, 0.21195254, 0.97724926)
+
+[node name="mesh_Hand_Nails_low_R" parent="XROrigin3D/XRControllerRight/RightHand/Hand_Nails_low_R/Armature/Skeleton3D" index="0" unique_id=1050608156]
+material_override = ExtResource("3_25v5j")
+
+[node name="AnimationPlayer" parent="XROrigin3D/XRControllerRight/RightHand/Hand_Nails_low_R" unique_id=967116079 instance=ExtResource("14_ccv7p")]
+
+[node name="AnimationTree" type="AnimationTree" parent="XROrigin3D/XRControllerRight/RightHand" unique_id=1369090454]
+root_node = NodePath("../Hand_Nails_low_R")
+tree_root = SubResource("AnimationNodeBlendTree_q3v3x")
+anim_player = NodePath("../Hand_Nails_low_R/AnimationPlayer")
+parameters/Grip/blend_amount = 0.0
+parameters/Trigger/blend_amount = 0.0
 
 [node name="Background" parent="." unique_id=72946100 instance=ExtResource("5_k5qfl")]
 
-[node name="AudioStreamPlayer3D_neon" type="AudioStreamPlayer3D" parent="Background/P_Office/graphic/3D_BG_Office/GEO_Light" parent_id_path=PackedInt32Array(72946100, 608721767, 1453700499) index="0" unique_id=655784173]
+[node name="StaticBody3D" parent="Background/P_Office/graphic/3D_BG_Office/GEO_Office" parent_id_path=PackedInt32Array(72946100, 608721767, 1678122951) index="0" unique_id=201938318 groups=["hit_floor"]]
+
+[node name="StaticBody3D" parent="Background/P_Office/graphic/3D_BG_Office/GEO_Ceilling" parent_id_path=PackedInt32Array(72946100, 608721767, 23792172) index="0" unique_id=1788677643 groups=["hit_floor"]]
+
+[node name="GEO_Door" parent="Background/P_Office/graphic/3D_BG_Office" parent_id_path=PackedInt32Array(72946100, 608721767) index="3" unique_id=741021967 groups=["hit_wood"]]
+
+[node name="GEO_Light" parent="Background/P_Office/graphic/3D_BG_Office" parent_id_path=PackedInt32Array(72946100, 608721767) index="4" unique_id=1453700499 groups=["hit_metal"]]
+
+[node name="AudioStreamPlayer3D_neon" type="AudioStreamPlayer3D" parent="Background/P_Office/graphic/3D_BG_Office/GEO_Light" index="0" unique_id=655784173]
 transform = Transform3D(0.9957754, 0, 0, 0, 1, 0, 0, 0, 0.88587874, 0, 2.2302523, 0.28056914)
 stream = ExtResource("6_16cy4")
-volume_db = -18.0
+volume_db = -4.0
 max_db = 0.0
 autoplay = true
 max_distance = 5.0
 bus = &"Ambiant"
 parameters/looping = true
 
+[node name="StaticBody3D" parent="Background/P_Office/graphic/3D_BG_Office/GEO_Desk_Left" parent_id_path=PackedInt32Array(72946100, 608721767, 653034221) index="0" unique_id=776324118 groups=["hit_wood"]]
+
+[node name="StaticBody3D" parent="Background/P_Office/graphic/3D_BG_Office/GEO_Desk" parent_id_path=PackedInt32Array(72946100, 608721767, 345604775) index="0" unique_id=1558750511 groups=["hit_wood"]]
+
+[node name="StaticBody3D" parent="Background/P_Office/graphic/3D_BG_Office/GEO_Desk_Right" parent_id_path=PackedInt32Array(72946100, 608721767, 1287018551) index="0" unique_id=1186632614 groups=["hit_wood"]]
+
+[node name="StaticBody3D" parent="Background/P_Office/graphic/3D_BG_Office/GEO_PC" parent_id_path=PackedInt32Array(72946100, 608721767, 832720443) index="0" unique_id=1700788220 groups=["hit_plastic"]]
+
 [node name="AudioStreamPlayer3D_pc_running_loop" type="AudioStreamPlayer3D" parent="Background/P_Office/graphic/3D_BG_Office/GEO_PC" parent_id_path=PackedInt32Array(72946100, 608721767, 832720443) index="1" unique_id=1663565902]
 stream = ExtResource("7_16cy4")
-volume_db = -16.0
+volume_db = -4.0
 max_db = 2.0
 autoplay = true
 max_distance = 5.0
 bus = &"Ambiant"
 parameters/looping = true
 
+[node name="StaticBody3D" parent="Background/P_Office/graphic/3D_BG_Office/GEO_Monitor01" parent_id_path=PackedInt32Array(72946100, 608721767, 72583275) index="0" unique_id=1148936533 groups=["hit_plastic"]]
+
 [node name="AudioStreamPlayer3D_crt_left_loop" type="AudioStreamPlayer3D" parent="Background/P_Office/graphic/3D_BG_Office/GEO_Monitor01" parent_id_path=PackedInt32Array(72946100, 608721767, 72583275) index="1" unique_id=1966026797]
 stream = ExtResource("9_jy21p")
-volume_db = -12.0
+volume_db = -4.0
 max_db = 0.0
 autoplay = true
 max_distance = 5.0
 bus = &"Ambiant"
 parameters/looping = true
+
+[node name="StaticBody3D" parent="Background/P_Office/graphic/3D_BG_Office/GEO_Rack" parent_id_path=PackedInt32Array(72946100, 608721767, 1698751759) index="0" unique_id=1349034720 groups=["hit_plastic"]]
+
+[node name="StaticBody3D" parent="Background/P_Office/graphic/3D_BG_Office/GEO_Lamp" parent_id_path=PackedInt32Array(72946100, 608721767, 1920946213) index="0" unique_id=1100064569 groups=["hit_metal"]]
+
+[node name="StaticBody3D" parent="Background/P_Office/graphic/3D_BG_Office/GEO_Monitor02" parent_id_path=PackedInt32Array(72946100, 608721767, 498674327) index="0" unique_id=1815341021 groups=["hit_plastic"]]
 
 [node name="AudioStreamPlayer3D_crt_right_loop" type="AudioStreamPlayer3D" parent="Background/P_Office/graphic/3D_BG_Office/GEO_Monitor02" parent_id_path=PackedInt32Array(72946100, 608721767, 498674327) index="1" unique_id=672260339]
 transform = Transform3D(0.83333325, 0, 0, 0, 0.83333325, 0, 0, 0, 0.83333325, 0, 0.12268454, 0)
 stream = ExtResource("10_s1g62")
-volume_db = -12.0
+volume_db = -4.0
 max_db = 0.0
 autoplay = true
 max_distance = 5.0
 bus = &"Ambiant"
 parameters/looping = true
 
+[node name="GEO_Trashbin" parent="Background/P_Office/graphic/3D_BG_Office" parent_id_path=PackedInt32Array(72946100, 608721767) index="21" unique_id=689265163]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.2564023, 0.0051471908, -1.3532706)
+
+[node name="StaticBody3D" parent="Background/P_Office/graphic/3D_BG_Office/GEO_Trashbin" index="0" unique_id=1910551455 groups=["hit_metal"]]
+
+[node name="AudioStreamPlayer3D_hit_metal" type="AudioStreamPlayer3D" parent="Background/P_Office/graphic/3D_BG_Office/GEO_Trashbin/StaticBody3D" index="1" unique_id=953016267]
+stream = ExtResource("11_do1kh")
+volume_db = -4.0
+max_db = -12.0
+max_distance = 5.0
+bus = &"SFX"
+
+[node name="HitArea" type="Area3D" parent="Background/P_Office/graphic/3D_BG_Office/GEO_Trashbin/StaticBody3D" index="2" unique_id=1002360087]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Background/P_Office/graphic/3D_BG_Office/GEO_Trashbin/StaticBody3D/HitArea" unique_id=1999364521]
+transform = Transform3D(0.25, 0, 0, 0, 0.25, 0, 0, 0, 0.25, 0, 0, 0)
+shape = SubResource("CylinderShape3D_s1g62")
+
+[node name="StaticBody3D" parent="Background/P_Office/graphic/3D_BG_Office/3D_BG_OfficeTable/GEO_Table" parent_id_path=PackedInt32Array(72946100, 249302106, 1802171714) index="0" unique_id=1905639307 groups=["hit_wood"]]
+
+[node name="DocumentationPickable" parent="Background/P_Office/graphic/3D_BG_Office" parent_id_path=PackedInt32Array(72946100, 608721767) index="28" unique_id=91139976 groups=["hit_wood"] instance=ExtResource("10_iu4lv")]
+transform = Transform3D(1, 0, 0, 0, 0.94040275, 0.34006277, 0, -0.34006277, 0.94040275, 0.48244494, 0.89108926, -1.641422)
+
+[node name="PaperBallPickable" parent="Background/P_Office/graphic/3D_BG_Office" parent_id_path=PackedInt32Array(72946100, 608721767) index="29" unique_id=1557228164 groups=["PaperBall"] instance=ExtResource("11_dcos0")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.021222174, 0.73379993, -1.5655262)
+
+[node name="CollisionShape3D" parent="Background/P_Office/graphic/3D_BG_Office/PaperBallPickable" index="0" groups=["PaperBall"]]
+
+[node name="PaperBallPickable2" type="RigidBody3D" parent="Background/P_Office/graphic/3D_BG_Office" parent_id_path=PackedInt32Array(72946100, 608721767) index="30" unique_id=426717986 groups=["PaperBall"]]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.13376611, 0.73379993, -1.5655262)
+collision_layer = 4
+collision_mask = 196615
+freeze_mode = 1
+continuous_cd = true
+contact_monitor = true
+max_contacts_reported = 4
+script = ExtResource("24_x2y4l")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Background/P_Office/graphic/3D_BG_Office/PaperBallPickable2" unique_id=1515386310]
+shape = SubResource("SphereShape3D_gsfxp")
+
+[node name="PaperBall" type="MeshInstance3D" parent="Background/P_Office/graphic/3D_BG_Office/PaperBallPickable2" unique_id=915857045]
+mesh = SubResource("SphereMesh_sba8n")
+
+[node name="XRToolsHighlightVisible" type="Node3D" parent="Background/P_Office/graphic/3D_BG_Office/PaperBallPickable2" unique_id=1943746665]
+script = ExtResource("25_ccv7p")
+metadata/_custom_type_script = "uid://0b7wkxi4vymb"
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Background/P_Office/graphic/3D_BG_Office/PaperBallPickable2/XRToolsHighlightVisible" unique_id=1712771127]
+mesh = SubResource("SphereMesh_m2wy2")
+surface_material_override/0 = SubResource("StandardMaterial3D_5yjyy")
+
+[node name="XRToolsGrabPointHandLeft" type="Marker3D" parent="Background/P_Office/graphic/3D_BG_Office/PaperBallPickable2/XRToolsHighlightVisible" unique_id=1141480714]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.008730069, 0.046685636, -0.079782255)
+visible = false
+script = ExtResource("26_l80y6")
+hand_pose = SubResource("Resource_uy1cw")
+metadata/_custom_type_script = "uid://dx3swqg2owe4p"
+
+[node name="XRToolsGrabPointHandRight" type="Marker3D" parent="Background/P_Office/graphic/3D_BG_Office/PaperBallPickable2/XRToolsHighlightVisible" unique_id=930630514]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.01440648, 0.043386146, -0.09230739)
+visible = false
+script = ExtResource("26_l80y6")
+hand = 1
+hand_pose = SubResource("Resource_gcews")
+metadata/_custom_type_script = "uid://dx3swqg2owe4p"
+
+[node name="AudioStreamPlayer3D_hit_metal" type="AudioStreamPlayer3D" parent="Background/P_Office/graphic/3D_BG_Office/PaperBallPickable2" unique_id=1421010438]
+stream = ExtResource("11_do1kh")
+
+[node name="AudioStreamPlayer3D_hit_wood" type="AudioStreamPlayer3D" parent="Background/P_Office/graphic/3D_BG_Office/PaperBallPickable2" unique_id=1210355699]
+stream = ExtResource("30_l80y6")
+
+[node name="AudioStreamPlayer3D_hit_floor" type="AudioStreamPlayer3D" parent="Background/P_Office/graphic/3D_BG_Office/PaperBallPickable2" unique_id=1301287401]
+stream = ExtResource("31_svif0")
+
+[editable path="XROrigin3D/XRControllerLeft/LeftHand/Hand_Nails_low_L"]
+[editable path="XROrigin3D/XRControllerRight/RightHand/Hand_Nails_low_R"]
 [editable path="Background"]
 [editable path="Background/P_Office/graphic/3D_BG_Office"]
 [editable path="Background/P_Office/graphic/3D_BG_Office/3D_BG_OfficeTable"]
 [editable path="Background/P_Office/graphic/3D_BG_Office/3D_BG_OfficeTable/3D_A_Enn_BladeMech"]
+[editable path="Background/P_Office/graphic/3D_BG_Office/PaperBallPickable"]
 [editable path="Background/P_GameScene/P_CRT"]
