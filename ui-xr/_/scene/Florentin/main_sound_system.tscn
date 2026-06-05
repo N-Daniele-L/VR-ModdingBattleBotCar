@@ -371,18 +371,23 @@ metadata/_custom_type_script = "uid://dx3swqg2owe4p"
 
 [node name="AudioStreamPlayer3D_hit_metal" type="AudioStreamPlayer3D" parent="Background/P_Office/graphic/3D_BG_Office/PaperBallPickable2" unique_id=1421010438]
 stream = ExtResource("11_do1kh")
+max_db = 1.0
+max_distance = 5.0
 bus = &"SFX"
 
 [node name="AudioStreamPlayer3D_hit_wood" type="AudioStreamPlayer3D" parent="Background/P_Office/graphic/3D_BG_Office/PaperBallPickable2" unique_id=1210355699]
 stream = ExtResource("30_l80y6")
+max_distance = 5.0
 bus = &"SFX"
 
 [node name="AudioStreamPlayer3D_hit_floor" type="AudioStreamPlayer3D" parent="Background/P_Office/graphic/3D_BG_Office/PaperBallPickable2" unique_id=1301287401]
 stream = ExtResource("31_svif0")
+max_distance = 5.0
 bus = &"SFX"
 
 [node name="AudioStreamPlayer3D_hit_plastic" type="AudioStreamPlayer3D" parent="Background/P_Office/graphic/3D_BG_Office/PaperBallPickable2" unique_id=1490637837]
 stream = ExtResource("31_l80y6")
+max_distance = 5.0
 bus = &"SFX"
 
 [editable path="XROrigin3D/XRControllerLeft/LeftHand/Hand_Nails_low_L"]
