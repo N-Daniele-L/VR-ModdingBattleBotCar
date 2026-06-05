@@ -1,3 +1,4 @@
+class_name SoundManager
 extends "res://addons/godot-xr-tools/objects/pickable.gd"
 
 @onready var metal_sound: AudioStreamPlayer3D = $AudioStreamPlayer3D_hit_metal
