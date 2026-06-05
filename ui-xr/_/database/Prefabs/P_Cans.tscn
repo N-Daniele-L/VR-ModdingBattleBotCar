@@ -1,0 +1,17 @@
+[gd_scene format=3 uid="uid://daoaxm1j0umti"]
+
+[ext_resource type="PackedScene" uid="uid://dl0km5ch74bk3" path="res://_/ART/3D/Models/3D_BG_Cans.glb" id="1_wg2jt"]
+[ext_resource type="Material" uid="uid://pau7aec75rl8" path="res://_/ART/3D/Materials/M_GameScene.tres" id="2_tlp12"]
+
+[node name="P_Cans" type="Node3D" unique_id=1326089949]
+
+[node name="graphics" type="Node3D" parent="." unique_id=1139161079]
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="graphics" unique_id=293921418]
+
+[node name="3D_BG_Cans" parent="graphics/MeshInstance3D" unique_id=1856132263 instance=ExtResource("1_wg2jt")]
+
+[node name="3D_Cans" parent="graphics/MeshInstance3D/3D_BG_Cans" index="0" unique_id=564249835]
+material_override = ExtResource("2_tlp12")
+
+[editable path="graphics/MeshInstance3D/3D_BG_Cans"]

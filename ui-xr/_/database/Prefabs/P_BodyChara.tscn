@@ -1,0 +1,11 @@
+[gd_scene format=3 uid="uid://cyhsbstrcf3gp"]
+
+[ext_resource type="PackedScene" uid="uid://dsomihyv3n5x4" path="res://_/ART/3D/Models/3D_BodyChara.glb" id="1_tkqcc"]
+
+[node name="P_BodyChara" type="Node3D" unique_id=137563323]
+
+[node name="Graphics" type="Node3D" parent="." unique_id=1244856342]
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Graphics" unique_id=922054907]
+
+[node name="3D_BodyChara" parent="Graphics/MeshInstance3D" unique_id=1146051792 instance=ExtResource("1_tkqcc")]

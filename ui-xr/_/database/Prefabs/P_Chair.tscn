@@ -1,0 +1,17 @@
+[gd_scene format=3 uid="uid://cb726vmdon7dv"]
+
+[ext_resource type="PackedScene" uid="uid://djtcwbx6n2xgu" path="res://_/ART/3D/Models/3D_Chair.glb" id="1_j12te"]
+[ext_resource type="Material" uid="uid://wog5kifhuqgq" path="res://_/ART/3D/Materials/M_GameScene.tres" id="2_fuxv0"]
+
+[node name="P_Chair" type="Node3D" unique_id=1748897883]
+
+[node name="Graphics" type="Node3D" parent="." unique_id=1304915479]
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Graphics" unique_id=1825511681]
+
+[node name="3D_Chair" parent="Graphics/MeshInstance3D" unique_id=636852077 instance=ExtResource("1_j12te")]
+
+[node name="Geo_Chair" parent="Graphics/MeshInstance3D/3D_Chair" index="0" unique_id=1764398603]
+surface_material_override/0 = ExtResource("2_fuxv0")
+
+[editable path="Graphics/MeshInstance3D/3D_Chair"]

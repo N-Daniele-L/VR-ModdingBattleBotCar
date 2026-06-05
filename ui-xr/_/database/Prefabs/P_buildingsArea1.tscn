@@ -1,4 +1,4 @@
-[gd_scene format=3 uid="uid://dq4wbqnnabtvw"]
+[gd_scene format=3 uid="uid://ces87kmsqt06e"]
 
 [ext_resource type="PackedScene" uid="uid://dfel2sf5hjpau" path="res://_/ART/3D/Models/3D_ApartementsMedium.glb" id="1_joxkq"]
 [ext_resource type="Material" path="res://_/ART/3D/Materials/M_GameScene.tres" id="2_67ej2"]
