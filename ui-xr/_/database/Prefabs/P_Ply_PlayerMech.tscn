@@ -2,6 +2,7 @@
 
 [ext_resource type="PackedScene" uid="uid://ctmiv4vbk0if4" path="res://_/ART/3D/Models/3D_A_Ply_PlayerMech.glb" id="1_n0hxm"]
 [ext_resource type="Material" uid="uid://pau7aec75rl8" path="res://_/ART/3D/Materials/M_GameScene.tres" id="2_a7n14"]
+[ext_resource type="PackedScene" uid="uid://b7y4hmu12pyto" path="res://_/database/Prefabs/P_VFX_MuzzleFlash.tscn" id="3_a7n14"]
 
 [node name="P_Ply_PlayerMech" type="Node3D" unique_id=346653880]
 
@@ -63,4 +64,11 @@ surface_material_override/0 = ExtResource("2_a7n14")
 layers = 2
 surface_material_override/0 = ExtResource("2_a7n14")
 
+[node name="P_MuzzleFlash" parent="3D_A_Ply_PlayerMech/Armature/Skeleton3D/3D_UnderArmGun" index="0" unique_id=157769270 instance=ExtResource("3_a7n14")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.01, -0.61, 0.62)
+
+[node name="GPUParticles3D" parent="3D_A_Ply_PlayerMech/Armature/Skeleton3D/3D_UnderArmGun/P_MuzzleFlash" index="0" unique_id=318705942]
+transform = Transform3D(1, 0, 0, 0, 0.9362376, 0.35136783, 0, -0.35136783, 0.9362376, 0, 0.08847833, 0.23575503)
+
 [editable path="3D_A_Ply_PlayerMech"]
+[editable path="3D_A_Ply_PlayerMech/Armature/Skeleton3D/3D_UnderArmGun/P_MuzzleFlash"]

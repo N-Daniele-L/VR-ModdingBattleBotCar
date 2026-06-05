@@ -29,7 +29,7 @@ curve = SubResource("Curve_oroym")
 [sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_tqhxm"]
 gravity = Vector3(0, 0, 0)
 scale_curve = SubResource("CurveTexture_xuk2d")
-color = Color(1.3528494, 1.0041119, 0.60555494, 1)
+color = Color(1.8247963, 1.1263318, 0.3280865, 1)
 alpha_curve = SubResource("CurveTexture_vit22")
 
 [node name="P_MuzzleFlash" type="Node3D" unique_id=157769270]
@@ -38,7 +38,7 @@ alpha_curve = SubResource("CurveTexture_vit22")
 material_override = SubResource("StandardMaterial3D_cd2qy")
 emitting = false
 amount = 1
-lifetime = 0.09999999999999999
+lifetime = 0.1
 one_shot = true
 randomness = 1.0
 process_material = SubResource("ParticleProcessMaterial_tqhxm")
