@@ -8,3 +8,5 @@ cull_mode = 2
 albedo_color = Color(0, 0, 0, 1)
 albedo_texture = ExtResource("1_2c5i3")
 roughness = 0.12
+emission_enabled = true
+emission_energy_multiplier = 2.0
