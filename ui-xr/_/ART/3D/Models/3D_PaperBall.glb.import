@@ -3,13 +3,13 @@
 importer="scene"
 importer_version=1
 type="PackedScene"
-uid="uid://c5tkwisktt2v3"
-path="res://.godot/imported/3D_BrokeSkyScraper_Top.glb-acafac3bfd82265d1665e4b6c0608bb3.scn"
+uid="uid://budvrkq26t2pn"
+path="res://.godot/imported/3D_PaperBall.glb-902b49691eafbe0c541dee57751d5a7a.scn"
 
 [deps]
 
-source_file="res://_/ART/3D/Models/3D_BrokeSkyScraper_Top.glb"
-dest_files=["res://.godot/imported/3D_BrokeSkyScraper_Top.glb-acafac3bfd82265d1665e4b6c0608bb3.scn"]
+source_file="res://_/ART/3D/Models/3D_PaperBall.glb"
+dest_files=["res://.godot/imported/3D_PaperBall.glb-902b49691eafbe0c541dee57751d5a7a.scn"]
 
 [params]
 
@@ -37,6 +37,13 @@ import_script/path=""
 materials/extract=0
 materials/extract_format=0
 materials/extract_path=""
-_subresources={}
+_subresources={
+"materials": {
+"@MATERIAL:0": {
+"use_external/enabled": true,
+"use_external/path": "uid://bred8d5vtyl8s"
+}
+}
+}
 gltf/naming_version=2
 gltf/embedded_image_handling=1

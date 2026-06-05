@@ -1,12 +1,111 @@
 [gd_scene format=3 uid="uid://b4cgx3a0bt4sv"]
 
 [ext_resource type="PackedScene" uid="uid://dgt6o4oovdft1" path="res://_/ART/3D/Models/3D_A_Enn_BladeMech.glb" id="1_4gbor"]
+[ext_resource type="Script" uid="uid://b178sv18by8fk" path="res://_/scene/Nicolas/enemy_animation.gd" id="2_ixd00"]
+
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_ixd00"]
+animation = &"EnemyBlade_Attack"
+
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_mvnb3"]
+animation = &"EnemyBlade_Death"
+
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_6kftg"]
+animation = &"EnemyBlade_Idle"
+
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_opwua"]
+animation = &"EnemyBlade_Move"
+
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_hcq6y"]
+advance_mode = 2
+
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_tssks"]
+xfade_time = 0.15
+advance_mode = 2
+advance_condition = &"move"
+
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_iupjs"]
+xfade_time = 0.15
+advance_mode = 2
+advance_condition = &"notmove"
+
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_o2464"]
+xfade_time = 0.1
+advance_mode = 2
+advance_condition = &"death"
+
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_0yrh5"]
+advance_mode = 2
+advance_condition = &"death"
+
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_ovfce"]
+advance_mode = 2
+advance_condition = &"attack"
+
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_01ng5"]
+xfade_time = 0.15
+advance_mode = 2
+advance_condition = &"attack"
+
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_p6gep"]
+xfade_time = 0.1
+switch_mode = 2
+advance_mode = 2
+
+[sub_resource type="AnimationNodeStateMachine" id="AnimationNodeStateMachine_4gbor"]
+states/EnemyBlade_Attack/node = SubResource("AnimationNodeAnimation_ixd00")
+states/EnemyBlade_Attack/position = Vector2(473, 6)
+states/EnemyBlade_Death/node = SubResource("AnimationNodeAnimation_mvnb3")
+states/EnemyBlade_Death/position = Vector2(473, 190)
+states/EnemyBlade_Idle/node = SubResource("AnimationNodeAnimation_6kftg")
+states/EnemyBlade_Idle/position = Vector2(403, 100)
+states/EnemyBlade_Move/node = SubResource("AnimationNodeAnimation_opwua")
+states/EnemyBlade_Move/position = Vector2(606, 100)
+transitions = ["Start", "EnemyBlade_Idle", SubResource("AnimationNodeStateMachineTransition_hcq6y"), "EnemyBlade_Idle", "EnemyBlade_Move", SubResource("AnimationNodeStateMachineTransition_tssks"), "EnemyBlade_Move", "EnemyBlade_Idle", SubResource("AnimationNodeStateMachineTransition_iupjs"), "EnemyBlade_Idle", "EnemyBlade_Death", SubResource("AnimationNodeStateMachineTransition_o2464"), "EnemyBlade_Move", "EnemyBlade_Death", SubResource("AnimationNodeStateMachineTransition_0yrh5"), "EnemyBlade_Move", "EnemyBlade_Attack", SubResource("AnimationNodeStateMachineTransition_ovfce"), "EnemyBlade_Idle", "EnemyBlade_Attack", SubResource("AnimationNodeStateMachineTransition_01ng5"), "EnemyBlade_Attack", "EnemyBlade_Idle", SubResource("AnimationNodeStateMachineTransition_p6gep")]
+graph_offset = Vector2(7, -46)
 
 [node name="P_Enn_BladeMech" type="Node3D" unique_id=1774846936]
 
 [node name="3D_A_Enn_BladeMech" parent="." unique_id=1143415215 instance=ExtResource("1_4gbor")]
 
-[node name="3D_RobotMain_003" parent="3D_A_Enn_BladeMech/Armature/Skeleton3D" parent_id_path=PackedInt32Array(1143415215, 334650490) index="0" unique_id=2020903804]
+[node name="Skeleton3D" parent="3D_A_Enn_BladeMech/Armature" parent_id_path=PackedInt32Array(1143415215, 1184944184) index="0" unique_id=1337549719]
+bones/1/rotation = Quaternion(1.6940659e-21, 1, 0, 4.3312576e-07)
+bones/2/position = Vector3(-1.1435931e-06, 0.01751256, -1.3201629)
+bones/2/rotation = Quaternion(-5.591473e-07, 0.7071068, -0.7071068, -5.3385055e-08)
+bones/3/rotation = Quaternion(-3.8046807e-08, 1.6292068e-07, 2.1014577e-14, 1)
+bones/4/rotation = Quaternion(5.6531e-10, 3.7057691e-22, -2.2013886e-16, 1)
+bones/5/rotation = Quaternion(0.38095954, 0.5688084, -0.4229053, 0.59369856)
+bones/6/rotation = Quaternion(0.72432446, 0.08400749, -0.057770412, 0.6818793)
+bones/7/rotation = Quaternion(0.12861234, -0.0029197563, 0.12635933, 0.98360753)
+bones/8/rotation = Quaternion(-0.010255782, 0.010971968, -0.036225848, 0.9992308)
+bones/9/rotation = Quaternion(0.13855563, 0.00064232986, 0.05600565, 0.98876965)
+bones/10/rotation = Quaternion(0.29216668, -0.0024349275, -0.0012624176, 0.95636356)
+bones/11/rotation = Quaternion(0.114803255, 0.008374615, 0.053222474, 0.9919262)
+bones/12/rotation = Quaternion(0.31455204, -0.010803156, 0.0030785594, 0.94917375)
+bones/13/rotation = Quaternion(-0.038548637, 0.62748724, 0.2619725, 0.73221874)
+bones/14/rotation = Quaternion(0.21147397, 0.067848325, -0.04709722, 0.97388774)
+bones/15/rotation = Quaternion(0.08979824, -0.00042648363, 0.97512364, -0.2026574)
+bones/16/rotation = Quaternion(0.38095972, -0.5688082, 0.42290524, 0.59369874)
+bones/17/rotation = Quaternion(0.7243065, -0.084006675, 0.057770964, 0.6818985)
+bones/18/rotation = Quaternion(0.12861228, 0.0029197743, -0.12635934, 0.9836075)
+bones/19/rotation = Quaternion(-0.010255727, -0.010971948, 0.036225874, 0.99923074)
+bones/20/rotation = Quaternion(0.13855563, -0.0006423148, -0.05600562, 0.98876965)
+bones/21/rotation = Quaternion(0.29216668, 0.0024349168, 0.0012623876, 0.95636356)
+bones/22/rotation = Quaternion(0.114803284, -0.00837461, -0.053222485, 0.9919262)
+bones/23/rotation = Quaternion(0.31455204, 0.010803149, -0.0030785592, 0.94917375)
+bones/24/rotation = Quaternion(-0.03854858, -0.6274872, -0.26197252, 0.73221874)
+bones/25/rotation = Quaternion(0.21147406, -0.0678483, 0.04709725, 0.9738877)
+bones/26/rotation = Quaternion(-0.089798175, -0.00042653372, 0.97512364, 0.20265725)
+
+[node name="3D_RobotMain_003" parent="3D_A_Enn_BladeMech/Armature/Skeleton3D" index="0" unique_id=1167002523]
 layers = 2
+
+[node name="AnimationTree" type="AnimationTree" parent="3D_A_Enn_BladeMech" unique_id=1425042518]
+tree_root = SubResource("AnimationNodeStateMachine_4gbor")
+anim_player = NodePath("../AnimationPlayer")
+parameters/conditions/attack = false
+parameters/conditions/death = false
+parameters/conditions/move = false
+parameters/conditions/notmove = false
+script = ExtResource("2_ixd00")
 
 [editable path="3D_A_Enn_BladeMech"]
