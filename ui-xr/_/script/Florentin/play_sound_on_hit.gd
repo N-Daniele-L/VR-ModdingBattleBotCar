@@ -6,22 +6,15 @@ extends "res://addons/godot-xr-tools/objects/pickable.gd"
 @onready var plastic_sound: AudioStreamPlayer3D = $AudioStreamPlayer3D_hit_plastic
 
 @export var cooldown: float = 0.2
-@export var guards: Array[Node]
-
 var can_play_sound: bool = true
 
 
 func _ready() -> void:
-	print("coucou")
-	guards = get_tree().get_nodes_in_group("<<<<<<<HEADhit_metal")
-	print("g", ", ".join(guards))
 	super._ready()
 	body_entered.connect(_on_body_entered)
 	
 
 func _on_body_entered(body: Node) -> void:
-	print("Collision avec :", body.name)
-
 	if not can_play_sound:
 		return
 
